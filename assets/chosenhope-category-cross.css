@@ -1,6 +1,14 @@
 .chosenhope-category-cross {
-  background: var(--ch-warm-white);
+  background: var(--ch-cc-bg, var(--ch-warm-white));
   padding-block: 5.5rem;
+}
+
+.chosenhope-category-cross .eyebrow {
+  color: var(--ch-cc-eyebrow-color, var(--ch-olive));
+}
+
+.chosenhope-category-cross .section-head h2 {
+  color: var(--ch-cc-heading-color, var(--ch-black));
 }
 
 .chosenhope-category-cross__desktop,
@@ -28,7 +36,7 @@
 
 .chosenhope-category-cross__desktop .chosenhope-category-cross__v,
 .chosenhope-category-cross__mobile .chosenhope-category-cross__v {
-  background-image: linear-gradient(180deg, var(--ch-gold) 0 6px, transparent 6px 16px);
+  background-image: linear-gradient(180deg, var(--ch-cc-connector-color, var(--ch-gold)) 0 6px, transparent 6px 16px);
   background-size: 1px 16px;
   justify-self: center;
   width: 1px;
@@ -37,7 +45,7 @@
 .chosenhope-category-cross__desktop .chosenhope-category-cross__h,
 .chosenhope-category-cross__mobile .chosenhope-category-cross__h {
   align-self: center;
-  background-image: linear-gradient(90deg, var(--ch-gold) 0 6px, transparent 6px 16px);
+  background-image: linear-gradient(90deg, var(--ch-cc-connector-color, var(--ch-gold)) 0 6px, transparent 6px 16px);
   background-size: 16px 1px;
   height: 1px;
 }
@@ -62,7 +70,7 @@
 
 .chosenhope-category-cross__circle {
   aspect-ratio: 1;
-  border: 3px solid var(--ch-warm-white);
+  border: 3px solid var(--ch-cc-circle-border-color, var(--ch-warm-white));
   border-radius: 50%;
   box-shadow: var(--ch-shadow-sm);
   overflow: hidden;
@@ -76,11 +84,12 @@
 }
 
 .chosenhope-category-cross__item--center .chosenhope-category-cross__circle {
-  border-color: var(--ch-gold);
-  box-shadow: 0 0 0 4px var(--ch-gold-tint), var(--ch-shadow-sm);
+  border-color: var(--ch-cc-circle-center-border-color, var(--ch-gold));
+  box-shadow: 0 0 0 4px var(--ch-cc-circle-center-glow-color, var(--ch-gold-tint)), var(--ch-shadow-sm);
 }
 
 .chosenhope-category-cross__title {
+  color: var(--ch-cc-title-color, var(--ch-black));
   font-family: var(--ch-font-body);
   font-size: 0.9375rem;
   font-weight: 600;

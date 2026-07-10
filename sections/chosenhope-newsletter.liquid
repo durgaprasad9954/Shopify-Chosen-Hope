@@ -1,7 +1,20 @@
 {{ 'chosenhope-base.css' | asset_url | stylesheet_tag }}
 {{ 'chosenhope-newsletter.css' | asset_url | stylesheet_tag }}
 
-<section class="chosenhope-home-scope chosenhope-newsletter" aria-labelledby="chosenhope-newsletter-{{ section.id }}">
+<section
+  class="chosenhope-home-scope chosenhope-newsletter"
+  aria-labelledby="chosenhope-newsletter-{{ section.id }}"
+  style="
+    --ch-nl-bg: {{ section.settings.section_background_color }};
+    --ch-nl-panel-bg: {{ section.settings.panel_background_color }};
+    --ch-nl-heading-color: {{ section.settings.heading_color }};
+    --ch-nl-text-color: {{ section.settings.text_color }};
+    --ch-nl-input-border-color: {{ section.settings.input_border_color }};
+    --ch-nl-note-color: {{ section.settings.note_color }};
+    --ch-nl-success-color: {{ section.settings.success_color }};
+    --ch-nl-error-color: {{ section.settings.error_color }};
+  "
+>
   <div class="container">
     <div class="chosenhope-newsletter__split">
       <div class="chosenhope-newsletter__photo">
@@ -49,7 +62,16 @@
     { "type": "text", "id": "heading", "label": "Heading", "default": "Stay close to the story" },
     { "type": "textarea", "id": "text", "label": "Text", "default": "New arrivals, quiet reflections, and early access — once a month, nothing more." },
     { "type": "text", "id": "button_label", "label": "Button label", "default": "Subscribe" },
-    { "type": "text", "id": "privacy_text", "label": "Privacy text", "default": "We respect your inbox. Unsubscribe anytime." }
+    { "type": "text", "id": "privacy_text", "label": "Privacy text", "default": "We respect your inbox. Unsubscribe anytime." },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "section_background_color", "label": "Section background", "default": "#f9f8f4" },
+    { "type": "color", "id": "panel_background_color", "label": "Panel background", "default": "#171614" },
+    { "type": "color", "id": "heading_color", "label": "Heading text color", "default": "#f9f8f4" },
+    { "type": "color", "id": "text_color", "label": "Body text color", "default": "rgba(249, 248, 244, 0.7)" },
+    { "type": "color", "id": "input_border_color", "label": "Input border color", "default": "rgba(249, 248, 244, 0.25)" },
+    { "type": "color", "id": "note_color", "label": "Note text color", "default": "rgba(249, 248, 244, 0.72)" },
+    { "type": "color", "id": "success_color", "label": "Success message color", "default": "#f3e9d3" },
+    { "type": "color", "id": "error_color", "label": "Error message color", "default": "#ffccbe" }
   ],
   "presets": [
     { "name": "ChosenHope Newsletter" }

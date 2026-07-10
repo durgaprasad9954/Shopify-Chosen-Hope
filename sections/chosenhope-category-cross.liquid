@@ -12,7 +12,20 @@
   assign c_bottom_2 = section.settings.collection_bottom_2
 %}
 
-<section class="chosenhope-home-scope chosenhope-category-cross" aria-labelledby="chosenhope-category-cross-{{ section.id }}">
+<section
+  class="chosenhope-home-scope chosenhope-category-cross"
+  aria-labelledby="chosenhope-category-cross-{{ section.id }}"
+  style="
+    --ch-cc-bg: {{ section.settings.section_background_color }};
+    --ch-cc-eyebrow-color: {{ section.settings.eyebrow_color }};
+    --ch-cc-heading-color: {{ section.settings.heading_color }};
+    --ch-cc-connector-color: {{ section.settings.connector_line_color }};
+    --ch-cc-circle-border-color: {{ section.settings.circle_border_color }};
+    --ch-cc-circle-center-border-color: {{ section.settings.circle_center_border_color }};
+    --ch-cc-circle-center-glow-color: {{ section.settings.circle_center_glow_color }};
+    --ch-cc-title-color: {{ section.settings.title_text_color }};
+  "
+>
   <div class="container">
     <div class="section-head center">
       <span class="eyebrow">{{ section.settings.eyebrow }}</span>
@@ -67,7 +80,16 @@
     { "type": "text", "id": "title_right_outer", "label": "Right outer title", "default": "Hoodies & Tees" },
     { "type": "text", "id": "title_bottom", "label": "Bottom title", "default": "Wall Art" },
     { "type": "text", "id": "title_bottom_2", "label": "Bottom 2 title", "default": "Future Christian Products" },
-    { "type": "text", "id": "title_mobile_center", "label": "Mobile center title", "default": "Jewelry" }
+    { "type": "text", "id": "title_mobile_center", "label": "Mobile center title", "default": "Jewelry" },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "section_background_color", "label": "Section background", "default": "#f9f8f4" },
+    { "type": "color", "id": "eyebrow_color", "label": "Eyebrow text color", "default": "#6e7455" },
+    { "type": "color", "id": "heading_color", "label": "Heading text color", "default": "#111111" },
+    { "type": "color", "id": "connector_line_color", "label": "Connector line color", "default": "#c8a24a" },
+    { "type": "color", "id": "circle_border_color", "label": "Circle border color", "default": "#f9f8f4" },
+    { "type": "color", "id": "circle_center_border_color", "label": "Center circle border color", "default": "#c8a24a" },
+    { "type": "color", "id": "circle_center_glow_color", "label": "Center circle glow color", "default": "#f3e9d3" },
+    { "type": "color", "id": "title_text_color", "label": "Item title text color", "default": "#111111" }
   ],
   "presets": [
     { "name": "ChosenHope Category Cross" }

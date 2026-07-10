@@ -1,6 +1,14 @@
 .chosenhope-canvas-feature {
-  background: var(--ch-white);
+  background: var(--ch-cf-bg, var(--ch-white));
   padding-block: 5.5rem;
+}
+
+.chosenhope-canvas-feature .eyebrow {
+  color: var(--ch-cf-eyebrow-color, var(--ch-olive));
+}
+
+.chosenhope-canvas-feature__copy h2 {
+  color: var(--ch-cf-heading-color, var(--ch-black));
 }
 
 .chosenhope-canvas-feature__layout {
@@ -19,10 +27,11 @@
 }
 
 .chosenhope-canvas-feature__badge {
-  background: var(--ch-white);
+  background: var(--ch-cf-badge-bg, var(--ch-white));
   border-radius: var(--ch-radius-md);
   bottom: 1.5rem;
   box-shadow: var(--ch-shadow-md);
+  color: var(--ch-cf-badge-text, var(--ch-black));
   font-family: var(--ch-font-body);
   font-size: 0.8125rem;
   font-weight: 600;
@@ -32,6 +41,7 @@
 }
 
 .chosenhope-canvas-feature__copy p {
+  color: var(--ch-cf-text-color, var(--ch-gray));
   font-size: 1.125rem;
   margin-top: 1rem;
   max-width: 46ch;
@@ -48,7 +58,7 @@
 
 .chosenhope-canvas-feature__list li {
   align-items: center;
-  color: var(--ch-black);
+  color: var(--ch-cf-list-text-color, var(--ch-black));
   display: flex;
   font-size: 0.9375rem;
   font-weight: 500;
@@ -56,7 +66,7 @@
 }
 
 .chosenhope-canvas-feature__list svg {
-  color: var(--ch-gold-dark);
+  color: var(--ch-cf-list-icon-color, var(--ch-gold-dark));
   flex-shrink: 0;
 }
 

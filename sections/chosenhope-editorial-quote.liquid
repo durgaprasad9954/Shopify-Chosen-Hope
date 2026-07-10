@@ -1,7 +1,15 @@
 {{ 'chosenhope-base.css' | asset_url | stylesheet_tag }}
 {{ 'chosenhope-editorial-quote.css' | asset_url | stylesheet_tag }}
 
-<section class="chosenhope-home-scope chosenhope-editorial-quote" aria-labelledby="chosenhope-editorial-quote-{{ section.id }}">
+<section
+  class="chosenhope-home-scope chosenhope-editorial-quote"
+  aria-labelledby="chosenhope-editorial-quote-{{ section.id }}"
+  style="
+    --ch-eq-bg: {{ section.settings.section_background_color }};
+    --ch-eq-quote-color: {{ section.settings.quote_text_color }};
+    --ch-eq-citation-color: {{ section.settings.citation_text_color }};
+  "
+>
   <div class="chosenhope-editorial-quote__inner">
     <blockquote id="chosenhope-editorial-quote-{{ section.id }}" class="chosenhope-editorial-quote__quote">{{ section.settings.quote }}</blockquote>
     {% if section.settings.citation != blank %}
@@ -15,7 +23,11 @@
   "name": "ChosenHope Editorial Quote",
   "settings": [
     { "type": "textarea", "id": "quote", "label": "Quote", "default": "\"You did not choose me, but I chose you and appointed you.\"" },
-    { "type": "text", "id": "citation", "label": "Citation", "default": "John 15:16 — every piece we make is a small, quiet reminder of that truth." }
+    { "type": "text", "id": "citation", "label": "Citation", "default": "John 15:16 — every piece we make is a small, quiet reminder of that truth." },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "section_background_color", "label": "Section background", "default": "#c8a24a" },
+    { "type": "color", "id": "quote_text_color", "label": "Quote text color", "default": "#ffffff" },
+    { "type": "color", "id": "citation_text_color", "label": "Citation text color", "default": "rgba(17, 17, 17, 0.65)" }
   ],
   "presets": [
     { "name": "ChosenHope Editorial Quote" }

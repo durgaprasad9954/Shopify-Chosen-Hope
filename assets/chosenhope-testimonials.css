@@ -1,6 +1,14 @@
 .chosenhope-testimonials {
-  background: var(--ch-warm-white);
+  background: var(--ch-tm-bg, var(--ch-warm-white));
   padding-block: 5.5rem;
+}
+
+.chosenhope-testimonials .eyebrow {
+  color: var(--ch-tm-eyebrow-color, var(--ch-olive));
+}
+
+.chosenhope-testimonials .section-head h2 {
+  color: var(--ch-tm-heading-color, var(--ch-black));
 }
 
 .chosenhope-testimonials__marquee {
@@ -19,8 +27,8 @@
 }
 
 .chosenhope-testimonials__card {
-  background: var(--ch-white);
-  border: 1px solid var(--ch-border);
+  background: var(--ch-tm-card-bg, var(--ch-white));
+  border: 1px solid var(--ch-tm-card-border, var(--ch-border));
   border-radius: var(--ch-radius-md);
   display: flex;
   flex-direction: column;
@@ -31,18 +39,19 @@
 }
 
 .chosenhope-testimonials__stars {
-  color: var(--ch-gold-dark);
+  color: var(--ch-tm-stars-color, var(--ch-gold-dark));
   font-size: 13px;
   letter-spacing: 1px;
 }
 
 .chosenhope-testimonials__quote {
-  color: var(--ch-black);
+  color: var(--ch-tm-quote-color, var(--ch-black));
   font-size: 0.9375rem;
   font-style: italic;
 }
 
 .chosenhope-testimonials__name {
+  color: var(--ch-tm-name-color, var(--ch-black));
   font-family: var(--ch-font-body);
   font-size: 12.5px;
   font-weight: 600;

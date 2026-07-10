@@ -1,6 +1,18 @@
 .chosenhope-featured-collections {
-  background: var(--ch-warm-white);
+  background: var(--ch-fc-bg, var(--ch-warm-white));
   padding-block: 5.5rem;
+}
+
+.chosenhope-featured-collections .eyebrow {
+  color: var(--ch-fc-eyebrow-color, var(--ch-olive));
+}
+
+.chosenhope-featured-collections .section-head h2 {
+  color: var(--ch-fc-heading-color, var(--ch-black));
+}
+
+.chosenhope-featured-collections .section-head p {
+  color: var(--ch-fc-subtext-color, var(--ch-gray));
 }
 
 .chosenhope-featured-collections__grid {
@@ -27,7 +39,7 @@
 }
 
 .chosenhope-featured-collections__scrim {
-  background: linear-gradient(180deg, rgba(17, 17, 17, 0) 35%, rgba(17, 17, 17, 0.68) 100%);
+  background: linear-gradient(180deg, rgba(17, 17, 17, 0) 35%, var(--ch-fc-scrim-color, rgba(17, 17, 17, 0.68)) 100%);
   inset: 0;
   position: absolute;
 }
@@ -40,7 +52,7 @@
 }
 
 .chosenhope-featured-collections__label h3 {
-  color: var(--ch-warm-white);
+  color: var(--ch-fc-label-color, var(--ch-warm-white));
   font-size: 1.5rem;
 }
 

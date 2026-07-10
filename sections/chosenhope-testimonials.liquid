@@ -5,7 +5,20 @@
   assign reviews = section.blocks | where: 'type', 'review'
 %}
 
-<section class="chosenhope-home-scope chosenhope-testimonials" aria-labelledby="chosenhope-testimonials-{{ section.id }}">
+<section
+  class="chosenhope-home-scope chosenhope-testimonials"
+  aria-labelledby="chosenhope-testimonials-{{ section.id }}"
+  style="
+    --ch-tm-bg: {{ section.settings.section_background_color }};
+    --ch-tm-eyebrow-color: {{ section.settings.eyebrow_color }};
+    --ch-tm-heading-color: {{ section.settings.heading_color }};
+    --ch-tm-card-bg: {{ section.settings.card_background_color }};
+    --ch-tm-card-border: {{ section.settings.card_border_color }};
+    --ch-tm-stars-color: {{ section.settings.stars_color }};
+    --ch-tm-quote-color: {{ section.settings.quote_text_color }};
+    --ch-tm-name-color: {{ section.settings.name_text_color }};
+  "
+>
   <div class="container">
     <div class="section-head center">
       <span class="eyebrow">{{ section.settings.eyebrow }}</span>
@@ -33,7 +46,16 @@
   "name": "ChosenHope Testimonials",
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Loved by our community" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "What people are saying" }
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What people are saying" },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "section_background_color", "label": "Section background", "default": "#f9f8f4" },
+    { "type": "color", "id": "eyebrow_color", "label": "Eyebrow text color", "default": "#6e7455" },
+    { "type": "color", "id": "heading_color", "label": "Heading text color", "default": "#111111" },
+    { "type": "color", "id": "card_background_color", "label": "Card background", "default": "#ffffff" },
+    { "type": "color", "id": "card_border_color", "label": "Card border color", "default": "#eaeaea" },
+    { "type": "color", "id": "stars_color", "label": "Stars color", "default": "#a8853a" },
+    { "type": "color", "id": "quote_text_color", "label": "Quote text color", "default": "#111111" },
+    { "type": "color", "id": "name_text_color", "label": "Name text color", "default": "#111111" }
   ],
   "blocks": [
     {
