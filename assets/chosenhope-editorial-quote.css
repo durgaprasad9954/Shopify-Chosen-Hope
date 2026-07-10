@@ -1,0 +1,30 @@
+.chosenhope-editorial-quote {
+  background: var(--ch-gold);
+  overflow: hidden;
+  position: relative;
+}
+
+.chosenhope-editorial-quote__inner {
+  margin-inline: auto;
+  max-width: 980px;
+  padding: 6rem 2.25rem;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.chosenhope-editorial-quote__quote {
+  color: var(--ch-white);
+  font-size: clamp(1.8rem, 3.6vw, 3rem);
+  font-style: italic;
+}
+
+.chosenhope-editorial-quote__cite {
+  color: rgba(17, 17, 17, 0.65);
+  display: block;
+  font-family: var(--ch-font-body);
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  margin-top: 1rem;
+}

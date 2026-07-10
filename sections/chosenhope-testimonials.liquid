@@ -1,0 +1,60 @@
+{{ 'chosenhope-base.css' | asset_url | stylesheet_tag }}
+{{ 'chosenhope-testimonials.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign reviews = section.blocks | where: 'type', 'review'
+%}
+
+<section class="chosenhope-home-scope chosenhope-testimonials" aria-labelledby="chosenhope-testimonials-{{ section.id }}">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+      <h2 id="chosenhope-testimonials-{{ section.id }}">{{ section.settings.heading }}</h2>
+    </div>
+  </div>
+
+  <div class="chosenhope-testimonials__marquee">
+    <div class="chosenhope-testimonials__track">
+      {% for _dup in (1..2) %}
+        {% for block in reviews %}
+          <div class="chosenhope-testimonials__card" {{ block.shopify_attributes }}>
+            <div class="chosenhope-testimonials__stars">{{ block.settings.stars }}</div>
+            <p class="chosenhope-testimonials__quote">&ldquo;{{ block.settings.quote }}&rdquo;</p>
+            <p class="chosenhope-testimonials__name">{{ block.settings.name }}</p>
+          </div>
+        {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "ChosenHope Testimonials",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Loved by our community" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What people are saying" }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        { "type": "text", "id": "stars", "label": "Stars", "default": "★★★★★" },
+        { "type": "textarea", "id": "quote", "label": "Quote", "default": "The Grace necklace is beautifully made — simple, elegant, and exactly what I hoped for." },
+        { "type": "text", "id": "name", "label": "Name", "default": "Hannah R., verified buyer" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "ChosenHope Testimonials",
+      "blocks": [
+        { "type": "review" },
+        { "type": "review", "settings": { "quote": "Our Psalm 23 canvas is the first thing guests notice. The frame quality feels genuinely premium.", "name": "Daniel K., verified buyer" } },
+        { "type": "review", "settings": { "stars": "★★★★☆", "quote": "Ordered the Beloved hoodie for my son's baptism. Soft, well-stitched, and quietly meaningful.", "name": "Maria S., verified buyer" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

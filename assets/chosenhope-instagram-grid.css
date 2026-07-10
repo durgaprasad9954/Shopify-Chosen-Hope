@@ -1,0 +1,38 @@
+.chosenhope-instagram-grid {
+  background: var(--ch-white);
+  padding-block: 5.5rem;
+}
+
+.chosenhope-instagram-grid__grid {
+  display: grid;
+  gap: 14px;
+  grid-auto-flow: dense;
+  grid-auto-rows: 150px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.chosenhope-instagram-grid__item {
+  border-radius: var(--ch-radius-sm);
+  overflow: hidden;
+  position: relative;
+}
+
+.chosenhope-instagram-grid__item--big {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.chosenhope-instagram-grid__icon {
+  color: var(--ch-white);
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .chosenhope-instagram-grid__grid {
+    grid-auto-rows: 140px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

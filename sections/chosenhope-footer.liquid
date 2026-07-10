@@ -1,0 +1,59 @@
+{{ 'chosenhope-base.css' | asset_url | stylesheet_tag }}
+{{ 'chosenhope-footer.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign menu_shop = linklists[section.settings.menu_shop]
+  assign menu_support = linklists[section.settings.menu_support]
+  assign menu_company = linklists[section.settings.menu_company]
+  assign menu_legal = linklists[section.settings.menu_legal]
+%}
+
+{% capture chosenhope_logo %}
+  {% if settings.logo != blank %}
+    {{ settings.logo | image_url: width: 420 | image_tag: widths: '160,240,320,420', alt: shop.name }}
+  {% else %}
+    <h3>{{ shop.name }}</h3>
+  {% endif %}
+{% endcapture %}
+
+<footer class="chosenhope-home-scope chosenhope-footer">
+  <div class="container chosenhope-footer__grid">
+    <div>
+      <div class="chosenhope-footer__logo">{{ chosenhope_logo }}</div>
+      <p class="chosenhope-footer__brand-text">{{ section.settings.brand_text }}</p>
+      <div class="chosenhope-footer__social">
+        {% if section.settings.social_instagram != blank %}<a href="{{ section.settings.social_instagram }}" aria-label="Instagram">IG</a>{% endif %}
+        {% if section.settings.social_pinterest != blank %}<a href="{{ section.settings.social_pinterest }}" aria-label="Pinterest">P</a>{% endif %}
+        {% if section.settings.social_facebook != blank %}<a href="{{ section.settings.social_facebook }}" aria-label="Facebook">f</a>{% endif %}
+      </div>
+    </div>
+    <div class="chosenhope-footer__col"><h3>Shop</h3><ul>{% for link in menu_shop.links %}<li><a href="{{ link.url }}">{{ link.title }}</a></li>{% endfor %}</ul></div>
+    <div class="chosenhope-footer__col"><h3>Support</h3><ul>{% for link in menu_support.links %}<li><a href="{{ link.url }}">{{ link.title }}</a></li>{% endfor %}</ul></div>
+    <div class="chosenhope-footer__col"><h3>Company</h3><ul>{% for link in menu_company.links %}<li><a href="{{ link.url }}">{{ link.title }}</a></li>{% endfor %}</ul></div>
+    <div class="chosenhope-footer__col"><h3>Legal</h3><ul>{% for link in menu_legal.links %}<li><a href="{{ link.url }}">{{ link.title }}</a></li>{% endfor %}</ul></div>
+  </div>
+  <div class="container chosenhope-footer__bottom">
+    <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</p>
+    <p>{{ section.settings.bottom_text }}</p>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "ChosenHope Footer",
+  "settings": [
+    { "type": "textarea", "id": "brand_text", "label": "Brand text", "default": "A premium Christian lifestyle brand — jewelry, canvas art, and apparel made for a life set apart. You Are Chosen." },
+    { "type": "text", "id": "bottom_text", "label": "Bottom text", "default": "You Are Chosen." },
+    { "type": "link_list", "id": "menu_shop", "label": "Shop menu" },
+    { "type": "link_list", "id": "menu_support", "label": "Support menu" },
+    { "type": "link_list", "id": "menu_company", "label": "Company menu" },
+    { "type": "link_list", "id": "menu_legal", "label": "Legal menu" },
+    { "type": "url", "id": "social_instagram", "label": "Instagram URL" },
+    { "type": "url", "id": "social_pinterest", "label": "Pinterest URL" },
+    { "type": "url", "id": "social_facebook", "label": "Facebook URL" }
+  ],
+  "presets": [
+    { "name": "ChosenHope Footer" }
+  ]
+}
+{% endschema %}

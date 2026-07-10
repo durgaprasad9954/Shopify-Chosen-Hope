@@ -1,0 +1,65 @@
+{{ 'chosenhope-base.css' | asset_url | stylesheet_tag }}
+{{ 'chosenhope-editorial-products.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign featured_product = section.settings.featured_product
+  assign p1 = section.settings.product_1
+  assign p2 = section.settings.product_2
+  assign p3 = section.settings.product_3
+  assign p4 = section.settings.product_4
+%}
+
+<section class="chosenhope-home-scope chosenhope-editorial-products" aria-labelledby="chosenhope-editorial-products-{{ section.id }}">
+  <div class="container">
+    <div class="section-top">
+      <div>
+        <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+        <h2 id="chosenhope-editorial-products-{{ section.id }}">{{ section.settings.heading }}</h2>
+      </div>
+    </div>
+
+    <div class="chosenhope-editorial-products__grid">
+      <a class="chosenhope-editorial-products__feature" href="{{ featured_product.url | default: '#' }}">
+        {% if featured_product.featured_media != blank %}
+          {{ featured_product.featured_media | image_url: width: 1200 | image_tag: class: 'media-cover', widths: '480,720,960,1200', alt: featured_product.title }}
+        {% else %}
+          <div class="fallback-photo fallback-photo--sand"><span class="fallback-symbol">✦</span></div>
+        {% endif %}
+        <span class="chosenhope-editorial-products__badge">{{ section.settings.badge_text }}</span>
+        <div class="chosenhope-editorial-products__feature-copy">
+          <div>
+            <h3>{{ featured_product.title | default: 'Grace Cross Necklace' }}</h3>
+            <span class="stars">★★★★★</span>
+          </div>
+          <span class="product-price">{{ featured_product.price | money | default: '$68.00' }}</span>
+        </div>
+      </a>
+
+      <div class="chosenhope-editorial-products__list">
+        {% if p1 != blank %}<a class="chosenhope-editorial-products__row" href="{{ p1.url }}"><div class="chosenhope-editorial-products__thumb">{% if p1.featured_media != blank %}{{ p1.featured_media | image_url: width: 240 | image_tag: class: 'media-cover', widths: '120,180,240', alt: p1.title }}{% else %}<div class="fallback-photo fallback-photo--gold"><span class="fallback-symbol">+</span></div>{% endif %}</div><div><h4 class="chosenhope-editorial-products__row-title">{{ p1.title }}</h4><div class="chosenhope-editorial-products__meta"><span class="stars">★★★★★</span><span class="product-price">{{ p1.price | money }}</span></div></div></a>{% endif %}
+        {% if p2 != blank %}<a class="chosenhope-editorial-products__row" href="{{ p2.url }}"><div class="chosenhope-editorial-products__thumb">{% if p2.featured_media != blank %}{{ p2.featured_media | image_url: width: 240 | image_tag: class: 'media-cover', widths: '120,180,240', alt: p2.title }}{% else %}<div class="fallback-photo fallback-photo--olive"><span class="fallback-symbol">+</span></div>{% endif %}</div><div><h4 class="chosenhope-editorial-products__row-title">{{ p2.title }}</h4><div class="chosenhope-editorial-products__meta"><span class="stars">★★★★★</span><span class="product-price">{{ p2.price | money }}</span></div></div></a>{% endif %}
+        {% if p3 != blank %}<a class="chosenhope-editorial-products__row" href="{{ p3.url }}"><div class="chosenhope-editorial-products__thumb">{% if p3.featured_media != blank %}{{ p3.featured_media | image_url: width: 240 | image_tag: class: 'media-cover', widths: '120,180,240', alt: p3.title }}{% else %}<div class="fallback-photo fallback-photo--sand"><span class="fallback-symbol">+</span></div>{% endif %}</div><div><h4 class="chosenhope-editorial-products__row-title">{{ p3.title }}</h4><div class="chosenhope-editorial-products__meta"><span class="stars">★★★★★</span><span class="product-price">{{ p3.price | money }}</span></div></div></a>{% endif %}
+        {% if p4 != blank %}<a class="chosenhope-editorial-products__row" href="{{ p4.url }}"><div class="chosenhope-editorial-products__thumb">{% if p4.featured_media != blank %}{{ p4.featured_media | image_url: width: 240 | image_tag: class: 'media-cover', widths: '120,180,240', alt: p4.title }}{% else %}<div class="fallback-photo fallback-photo--cream"><span class="fallback-symbol">+</span></div>{% endif %}</div><div><h4 class="chosenhope-editorial-products__row-title">{{ p4.title }}</h4><div class="chosenhope-editorial-products__meta"><span class="stars">★★★★★</span><span class="product-price">{{ p4.price | money }}</span></div></div></a>{% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "ChosenHope Best Sellers",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Best sellers" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Editor’s picks" },
+    { "type": "text", "id": "badge_text", "label": "Badge text", "default": "Most loved" },
+    { "type": "product", "id": "featured_product", "label": "Featured product" },
+    { "type": "product", "id": "product_1", "label": "Product 1" },
+    { "type": "product", "id": "product_2", "label": "Product 2" },
+    { "type": "product", "id": "product_3", "label": "Product 3" },
+    { "type": "product", "id": "product_4", "label": "Product 4" }
+  ],
+  "presets": [
+    { "name": "ChosenHope Best Sellers" }
+  ]
+}
+{% endschema %}

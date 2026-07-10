@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,500&display=swap");
+
+body:has(.chosenhope-home-scope) #header-group,
+body:has(.chosenhope-home-scope) .page-wrapper > footer {
+  display: none;
+}
+
+.chosenhope-home-scope,
+.chosenhope-home-scope * {
+  box-sizing: border-box;
+}
+
+.chosenhope-home-scope {
+  --ch-gold: #c8a24a;
+  --ch-gold-dark: #a8853a;
+  --ch-gold-tint: #f3e9d3;
+  --ch-warm-white: #f9f8f4;
+  --ch-white: #ffffff;
+  --ch-olive: #6e7455;
+  --ch-olive-deep: #4b4f3a;
+  --ch-ink: #171614;
+  --ch-black: #111111;
+  --ch-gray: #666666;
+  --ch-border: #eaeaea;
+  --ch-font-display: "Playfair Display", Georgia, serif;
+  --ch-font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --ch-radius-sm: 4px;
+  --ch-radius-md: 10px;
+  --ch-radius-lg: 28px;
+  --ch-radius-pill: 999px;
+  --ch-shadow-sm: 0 2px 10px rgba(17, 17, 17, 0.06);
+  --ch-shadow-md: 0 14px 36px rgba(17, 17, 17, 0.1);
+  --ch-shadow-lg: 0 30px 70px rgba(17, 17, 17, 0.16);
+  --ch-container: 1400px;
+  --ch-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--ch-warm-white);
+  color: var(--ch-black);
+  font-family: var(--ch-font-body);
+}
+
+.chosenhope-home-scope h1,
+.chosenhope-home-scope h2,
+.chosenhope-home-scope h3,
+.chosenhope-home-scope h4,
+.chosenhope-home-scope h5,
+.chosenhope-home-scope h6 {
+  color: var(--ch-black);
+  font-family: var(--ch-font-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.chosenhope-home-scope p {
+  color: var(--ch-gray);
+  margin: 0;
+}
+
+.chosenhope-home-scope a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.chosenhope-home-scope img,
+.chosenhope-home-scope svg {
+  display: block;
+  max-width: 100%;
+}
+
+.chosenhope-home-scope .container {
+  margin-inline: auto;
+  max-width: var(--ch-container);
+  padding-inline: 2.25rem;
+}
+
+.chosenhope-home-scope .eyebrow {
+  align-items: center;
+  color: var(--ch-olive);
+  display: inline-flex;
+  font-size: 11px;
+  font-weight: 600;
+  gap: 10px;
+  letter-spacing: 0.18em;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.chosenhope-home-scope .eyebrow::before {
+  background: var(--ch-gold);
+  content: "";
+  display: inline-block;
+  height: 1px;
+  width: 22px;
+}
+
+.chosenhope-home-scope .eyebrow.on-dark {
+  color: var(--ch-gold);
+}
+
+.chosenhope-home-scope .section-head {
+  margin-bottom: 3.5rem;
+  max-width: 640px;
+}
+
+.chosenhope-home-scope .section-head.center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.chosenhope-home-scope .section-head h2 {
+  font-size: clamp(2.5rem, 1.7rem + 3vw, 4rem);
+}
+
+.chosenhope-home-scope .section-head p {
+  font-size: 1.125rem;
+  margin-top: 0.75rem;
+}
+
+.chosenhope-home-scope .section-top {
+  align-items: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: space-between;
+  margin-bottom: 3.5rem;
+}
+
+.chosenhope-home-scope .btn {
+  align-items: center;
+  border: 1.5px solid transparent;
+  border-radius: var(--ch-radius-pill);
+  display: inline-flex;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  gap: 8px;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 34px;
+  transition:
+    transform 0.3s var(--ch-ease),
+    background 0.3s var(--ch-ease),
+    border-color 0.3s var(--ch-ease),
+    color 0.3s var(--ch-ease);
+  white-space: nowrap;
+}
+
+.chosenhope-home-scope .btn:hover {
+  transform: translateY(-2px);
+}
+
+.chosenhope-home-scope .btn-gold {
+  background: var(--ch-gold);
+  box-shadow: 0 8px 24px rgba(200, 162, 74, 0.35);
+  color: var(--ch-black);
+}
+
+.chosenhope-home-scope .btn-dark {
+  background: var(--ch-black);
+  color: var(--ch-warm-white);
+}
+
+.chosenhope-home-scope .btn-outline {
+  background: transparent;
+  border-color: var(--ch-black);
+  color: var(--ch-black);
+}
+
+.chosenhope-home-scope .btn-outline:hover {
+  background: var(--ch-black);
+  color: var(--ch-warm-white);
+}
+
+.chosenhope-home-scope .btn-outline-light {
+  background: transparent;
+  border-color: rgba(249, 248, 244, 0.5);
+  color: var(--ch-warm-white);
+}
+
+.chosenhope-home-scope .btn-outline-light:hover {
+  background: var(--ch-warm-white);
+  color: var(--ch-black);
+}
+
+.chosenhope-home-scope .media-cover,
+.chosenhope-home-scope .fallback-photo {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.chosenhope-home-scope .fallback-photo {
+  align-items: center;
+  background: radial-gradient(120% 100% at 80% 0%, #2c2a25 0%, #1b1a16 55%, var(--ch-ink) 100%);
+  display: flex;
+  justify-content: center;
+}
+
+.chosenhope-home-scope .fallback-photo--sand {
+  background: radial-gradient(120% 100% at 15% 0%, #efe6d2 0%, #e4d8bc 45%, #d8c9a4 100%);
+}
+
+.chosenhope-home-scope .fallback-photo--olive {
+  background: radial-gradient(120% 100% at 20% 100%, #8b9273 0%, #6e7455 55%, #4b4f3a 100%);
+}
+
+.chosenhope-home-scope .fallback-photo--gold {
+  background: radial-gradient(120% 100% at 85% 10%, #e8ce99 0%, #c8a24a 55%, #93732f 100%);
+}
+
+.chosenhope-home-scope .fallback-photo--cream {
+  background: radial-gradient(120% 100% at 50% 0%, #fbf9f4 0%, #f2ecdd 60%, #e8dec7 100%);
+}
+
+.chosenhope-home-scope .fallback-symbol {
+  color: rgba(255, 255, 255, 0.88);
+  font-family: var(--ch-font-display);
+  font-size: clamp(2.5rem, 7vw, 6rem);
+  font-style: italic;
+}
+
+.chosenhope-home-scope .stars {
+  color: var(--ch-gold-dark);
+  letter-spacing: 1px;
+}
+
+.chosenhope-home-scope .product-price {
+  color: var(--ch-black);
+  font-size: 0.9375rem;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .chosenhope-home-scope .container {
+    padding-inline: 1.5rem;
+  }
+}

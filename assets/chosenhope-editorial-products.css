@@ -1,0 +1,107 @@
+.chosenhope-editorial-products {
+  background: var(--ch-white);
+  padding-block: 5.5rem;
+}
+
+.chosenhope-editorial-products__grid {
+  align-items: stretch;
+  display: grid;
+  gap: 2.25rem;
+  grid-template-columns: 1.3fr 1fr;
+}
+
+.chosenhope-editorial-products__feature {
+  border-radius: var(--ch-radius-lg);
+  display: block;
+  min-height: 520px;
+  overflow: hidden;
+  position: relative;
+}
+
+.chosenhope-editorial-products__feature::after {
+  background: linear-gradient(180deg, rgba(17, 17, 17, 0) 35%, rgba(17, 17, 17, 0.68) 100%);
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.chosenhope-editorial-products__badge {
+  background: var(--ch-white);
+  border-radius: var(--ch-radius-pill);
+  font-family: var(--ch-font-body);
+  font-size: 11px;
+  font-weight: 700;
+  left: 1rem;
+  letter-spacing: 0.03em;
+  padding: 7px 14px;
+  position: absolute;
+  top: 1rem;
+  z-index: 1;
+}
+
+.chosenhope-editorial-products__feature-copy {
+  align-items: flex-end;
+  backdrop-filter: blur(6px);
+  background: rgba(249, 248, 244, 0.94);
+  border-radius: var(--ch-radius-md);
+  bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  left: 1.5rem;
+  padding: 1.5rem;
+  position: absolute;
+  right: 1.5rem;
+  z-index: 1;
+}
+
+.chosenhope-editorial-products__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.chosenhope-editorial-products__row {
+  align-items: center;
+  background: var(--ch-white);
+  border: 1px solid var(--ch-border);
+  border-radius: var(--ch-radius-md);
+  display: flex;
+  gap: 1rem;
+  padding: 12px;
+  transition: box-shadow 0.3s var(--ch-ease), transform 0.3s var(--ch-ease), border-color 0.3s var(--ch-ease);
+}
+
+.chosenhope-editorial-products__row:hover {
+  border-color: var(--ch-gold);
+  box-shadow: var(--ch-shadow-sm);
+  transform: translateX(6px);
+}
+
+.chosenhope-editorial-products__thumb {
+  border-radius: var(--ch-radius-sm);
+  flex-shrink: 0;
+  height: 100px;
+  overflow: hidden;
+  width: 100px;
+}
+
+.chosenhope-editorial-products__row-title {
+  font-family: var(--ch-font-body);
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.chosenhope-editorial-products__meta {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+@media (max-width: 980px) {
+  .chosenhope-editorial-products__grid {
+    grid-template-columns: 1fr;
+  }
+}

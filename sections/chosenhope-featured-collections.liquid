@@ -1,0 +1,44 @@
+{{ 'chosenhope-base.css' | asset_url | stylesheet_tag }}
+{{ 'chosenhope-featured-collections.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign fc1 = section.settings.collection_1
+  assign fc2 = section.settings.collection_2
+  assign fc3 = section.settings.collection_3
+  assign fc4 = section.settings.collection_4
+%}
+
+<section class="chosenhope-home-scope chosenhope-featured-collections" aria-labelledby="chosenhope-featured-collections-{{ section.id }}">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+      <h2 id="chosenhope-featured-collections-{{ section.id }}">{{ section.settings.heading }}</h2>
+      <p>{{ section.settings.subtext }}</p>
+    </div>
+
+    <div class="chosenhope-featured-collections__grid">
+      {% if fc1 != blank %}<a class="chosenhope-featured-collections__item" href="{{ fc1.url }}">{% if fc1.featured_image != blank %}{{ fc1.featured_image | image_url: width: 1200 | image_tag: class: 'media-cover', widths: '400,600,900,1200', alt: fc1.title }}{% else %}<div class="fallback-photo fallback-photo--olive"><span class="fallback-symbol">+</span></div>{% endif %}<div class="chosenhope-featured-collections__scrim"></div><div class="chosenhope-featured-collections__label"><h3>{{ fc1.title }}</h3></div></a>{% endif %}
+      {% if fc2 != blank %}<a class="chosenhope-featured-collections__item" href="{{ fc2.url }}">{% if fc2.featured_image != blank %}{{ fc2.featured_image | image_url: width: 1200 | image_tag: class: 'media-cover', widths: '400,600,900,1200', alt: fc2.title }}{% else %}<div class="fallback-photo fallback-photo--sand"><span class="fallback-symbol">+</span></div>{% endif %}<div class="chosenhope-featured-collections__scrim"></div><div class="chosenhope-featured-collections__label"><h3>{{ fc2.title }}</h3></div></a>{% endif %}
+      {% if fc3 != blank %}<a class="chosenhope-featured-collections__item" href="{{ fc3.url }}">{% if fc3.featured_image != blank %}{{ fc3.featured_image | image_url: width: 1200 | image_tag: class: 'media-cover', widths: '400,600,900,1200', alt: fc3.title }}{% else %}<div class="fallback-photo fallback-photo--gold"><span class="fallback-symbol">+</span></div>{% endif %}<div class="chosenhope-featured-collections__scrim"></div><div class="chosenhope-featured-collections__label"><h3>{{ fc3.title }}</h3></div></a>{% endif %}
+      {% if fc4 != blank %}<a class="chosenhope-featured-collections__item" href="{{ fc4.url }}">{% if fc4.featured_image != blank %}{{ fc4.featured_image | image_url: width: 1200 | image_tag: class: 'media-cover', widths: '400,600,900,1200', alt: fc4.title }}{% else %}<div class="fallback-photo fallback-photo--cream"><span class="fallback-symbol">+</span></div>{% endif %}<div class="chosenhope-featured-collections__scrim"></div><div class="chosenhope-featured-collections__label"><h3>{{ fc4.title }}</h3></div></a>{% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "ChosenHope Collections",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Shop by collection" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Designed with meaning" },
+    { "type": "textarea", "id": "subtext", "label": "Subtext", "default": "Jewelry, canvas, and apparel collections arranged to mirror the reference layout." },
+    { "type": "collection", "id": "collection_1", "label": "Collection 1" },
+    { "type": "collection", "id": "collection_2", "label": "Collection 2" },
+    { "type": "collection", "id": "collection_3", "label": "Collection 3" },
+    { "type": "collection", "id": "collection_4", "label": "Collection 4" }
+  ],
+  "presets": [
+    { "name": "ChosenHope Collections" }
+  ]
+}
+{% endschema %}

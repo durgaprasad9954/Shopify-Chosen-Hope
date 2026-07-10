@@ -6,10 +6,39 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */
+{
   "sections": {
-    "chosenhope_home": {
-      "type": "chosenhope-home",
+    "chosenhope_hero": {
+      "type": "chosenhope-hero",
+      "settings": {}
+    },
+    "chosenhope_collections": {
+      "type": "chosenhope-featured-collections",
+      "settings": {}
+    },
+    "chosenhope_best_sellers": {
+      "type": "chosenhope-editorial-products",
+      "settings": {}
+    },
+    "chosenhope_categories": {
+      "type": "chosenhope-category-cross",
+      "settings": {}
+    },
+    "chosenhope_canvas": {
+      "type": "chosenhope-canvas-feature",
+      "settings": {}
+    },
+    "chosenhope_new_arrivals": {
+      "type": "chosenhope-new-arrivals",
+      "settings": {}
+    },
+    "chosenhope_quote": {
+      "type": "chosenhope-editorial-quote",
+      "settings": {}
+    },
+    "chosenhope_testimonials": {
+      "type": "chosenhope-testimonials",
       "blocks": {
         "review_1": {
           "type": "review",
@@ -34,42 +63,53 @@
             "quote": "Ordered the Beloved hoodie for my son's baptism. Soft, well-stitched, and quietly meaningful.",
             "name": "Maria S., verified buyer"
           }
-        },
-        "instagram_1": {
-          "type": "instagram_tile",
-          "settings": {}
-        },
-        "instagram_2": {
-          "type": "instagram_tile",
-          "settings": {}
-        },
-        "instagram_3": {
-          "type": "instagram_tile",
-          "settings": {}
-        },
-        "instagram_4": {
-          "type": "instagram_tile",
-          "settings": {}
-        },
-        "instagram_5": {
-          "type": "instagram_tile",
-          "settings": {}
         }
       },
       "block_order": [
         "review_1",
         "review_2",
-        "review_3",
-        "instagram_1",
-        "instagram_2",
-        "instagram_3",
-        "instagram_4",
-        "instagram_5"
+        "review_3"
       ],
+      "settings": {}
+    },
+    "chosenhope_instagram": {
+      "type": "chosenhope-instagram-grid",
+      "blocks": {
+        "tile_1": { "type": "tile", "settings": {} },
+        "tile_2": { "type": "tile", "settings": {} },
+        "tile_3": { "type": "tile", "settings": {} },
+        "tile_4": { "type": "tile", "settings": {} },
+        "tile_5": { "type": "tile", "settings": {} }
+      },
+      "block_order": [
+        "tile_1",
+        "tile_2",
+        "tile_3",
+        "tile_4",
+        "tile_5"
+      ],
+      "settings": {}
+    },
+    "chosenhope_newsletter": {
+      "type": "chosenhope-newsletter",
+      "settings": {}
+    },
+    "chosenhope_footer": {
+      "type": "chosenhope-footer",
       "settings": {}
     }
   },
   "order": [
-    "chosenhope_home"
+    "chosenhope_hero",
+    "chosenhope_collections",
+    "chosenhope_best_sellers",
+    "chosenhope_categories",
+    "chosenhope_canvas",
+    "chosenhope_new_arrivals",
+    "chosenhope_quote",
+    "chosenhope_testimonials",
+    "chosenhope_instagram",
+    "chosenhope_newsletter",
+    "chosenhope_footer"
   ]
 }

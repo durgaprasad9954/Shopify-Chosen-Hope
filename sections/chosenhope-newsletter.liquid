@@ -1,0 +1,58 @@
+{{ 'chosenhope-base.css' | asset_url | stylesheet_tag }}
+{{ 'chosenhope-newsletter.css' | asset_url | stylesheet_tag }}
+
+<section class="chosenhope-home-scope chosenhope-newsletter" aria-labelledby="chosenhope-newsletter-{{ section.id }}">
+  <div class="container">
+    <div class="chosenhope-newsletter__split">
+      <div class="chosenhope-newsletter__photo">
+        {% if section.settings.image != blank %}
+          {{ section.settings.image | image_url: width: 1200 | image_tag: class: 'media-cover', widths: '420,720,960,1200', alt: section.settings.heading }}
+        {% else %}
+          <div class="fallback-photo fallback-photo--olive"><span class="fallback-symbol">✚</span></div>
+        {% endif %}
+      </div>
+
+      <div class="chosenhope-newsletter__panel">
+        <h2 id="chosenhope-newsletter-{{ section.id }}" class="chosenhope-newsletter__heading">{{ section.settings.heading }}</h2>
+        <p class="chosenhope-newsletter__text">{{ section.settings.text }}</p>
+
+        {% form 'customer', class: 'chosenhope-newsletter__form' %}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <div class="chosenhope-newsletter__field">
+            <label for="chosenhope-newsletter-input-{{ section.id }}">Email address</label>
+            <input id="chosenhope-newsletter-input-{{ section.id }}" type="email" name="contact[email]" value="{{ form.email }}" placeholder="you@example.com" required>
+          </div>
+          <button class="btn btn-gold" type="submit" style="align-self:flex-end;">{{ section.settings.button_label }}</button>
+          {% if form.posted_successfully? %}
+            <p class="chosenhope-newsletter__note chosenhope-newsletter__success">Thanks for subscribing.</p>
+          {% endif %}
+          {% if form.errors %}
+            <ul class="chosenhope-newsletter__errors">
+              {% for field in form.errors %}
+                <li>{{ form.errors.messages[field] }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endform %}
+
+        <p class="chosenhope-newsletter__note">{{ section.settings.privacy_text }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "ChosenHope Newsletter",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Stay close to the story" },
+    { "type": "textarea", "id": "text", "label": "Text", "default": "New arrivals, quiet reflections, and early access — once a month, nothing more." },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Subscribe" },
+    { "type": "text", "id": "privacy_text", "label": "Privacy text", "default": "We respect your inbox. Unsubscribe anytime." }
+  ],
+  "presets": [
+    { "name": "ChosenHope Newsletter" }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,50 @@
+{{ 'chosenhope-base.css' | asset_url | stylesheet_tag }}
+{{ 'chosenhope-new-arrivals.css' | asset_url | stylesheet_tag }}
+
+<section class="chosenhope-home-scope chosenhope-new-arrivals" aria-labelledby="chosenhope-new-arrivals-{{ section.id }}">
+  <div class="container">
+    <div class="section-top">
+      <div>
+        <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+        <h2 id="chosenhope-new-arrivals-{{ section.id }}">{{ section.settings.heading }}</h2>
+      </div>
+    </div>
+
+    <div class="chosenhope-new-arrivals__track">
+      {% if section.settings.collection != blank %}
+        {% for product in section.settings.collection.products limit: section.settings.limit %}
+          <article class="chosenhope-new-arrivals__card">
+            <div class="chosenhope-new-arrivals__media">
+              <span class="chosenhope-new-arrivals__badge">{{ section.settings.badge_text }}</span>
+              {% if product.featured_media != blank %}
+                {{ product.featured_media | image_url: width: 700 | image_tag: class: 'media-cover', widths: '320,500,700', alt: product.title }}
+              {% else %}
+                <div class="fallback-photo fallback-photo--sand"><span class="fallback-symbol">+</span></div>
+              {% endif %}
+            </div>
+            <div class="chosenhope-new-arrivals__info">
+              <h4>{{ product.title }}</h4>
+              <span class="product-price">{{ product.price | money }}</span>
+            </div>
+          </article>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "ChosenHope New Arrivals",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Just added" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "New arrivals" },
+    { "type": "text", "id": "badge_text", "label": "Badge text", "default": "New" },
+    { "type": "collection", "id": "collection", "label": "Collection" },
+    { "type": "range", "id": "limit", "label": "Products to show", "min": 3, "max": 8, "step": 1, "default": 5 }
+  ],
+  "presets": [
+    { "name": "ChosenHope New Arrivals" }
+  ]
+}
+{% endschema %}

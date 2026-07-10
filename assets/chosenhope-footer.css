@@ -1,0 +1,88 @@
+.chosenhope-footer {
+  background: var(--ch-warm-white);
+  border-top: 1px solid var(--ch-border);
+  margin-top: 2.5rem;
+}
+
+.chosenhope-footer__grid {
+  display: grid;
+  gap: 2.25rem;
+  grid-template-columns: 1.4fr repeat(4, 1fr);
+  padding-block: 5.5rem;
+}
+
+.chosenhope-footer__logo img {
+  max-height: 70px;
+  width: 210px;
+}
+
+.chosenhope-footer__brand-text {
+  font-size: 0.9375rem;
+  margin-top: 1rem;
+  max-width: 32ch;
+}
+
+.chosenhope-footer__social {
+  display: flex;
+  gap: 10px;
+  margin-top: 1.5rem;
+}
+
+.chosenhope-footer__social a {
+  align-items: center;
+  border: 1px solid var(--ch-border);
+  border-radius: 50%;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  width: 40px;
+}
+
+.chosenhope-footer__col h3 {
+  color: var(--ch-black);
+  font-family: var(--ch-font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.chosenhope-footer__col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chosenhope-footer__col a {
+  color: var(--ch-gray);
+  font-family: var(--ch-font-body);
+  font-size: 0.9375rem;
+}
+
+.chosenhope-footer__bottom {
+  border-top: 1px solid var(--ch-border);
+  color: var(--ch-gray);
+  display: flex;
+  flex-wrap: wrap;
+  font-family: var(--ch-font-body);
+  font-size: 12px;
+  gap: 10px;
+  justify-content: space-between;
+  padding-block: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .chosenhope-footer__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .chosenhope-footer__grid {
+    grid-template-columns: 1fr;
+  }
+}

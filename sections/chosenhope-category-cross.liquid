@@ -1,0 +1,76 @@
+{{ 'chosenhope-base.css' | asset_url | stylesheet_tag }}
+{{ 'chosenhope-category-cross.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign c_top = section.settings.collection_top
+  assign c_left_outer = section.settings.collection_left_outer
+  assign c_left_inner = section.settings.collection_left_inner
+  assign c_center = section.settings.collection_center
+  assign c_right_inner = section.settings.collection_right_inner
+  assign c_right_outer = section.settings.collection_right_outer
+  assign c_bottom = section.settings.collection_bottom
+  assign c_bottom_2 = section.settings.collection_bottom_2
+%}
+
+<section class="chosenhope-home-scope chosenhope-category-cross" aria-labelledby="chosenhope-category-cross-{{ section.id }}">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+      <h2 id="chosenhope-category-cross-{{ section.id }}">{{ section.settings.heading }}</h2>
+    </div>
+
+    <div class="chosenhope-category-cross__desktop">
+      <div class="chosenhope-category-cross__v" aria-hidden="true"></div>
+      <div class="chosenhope-category-cross__h" aria-hidden="true"></div>
+      <a class="chosenhope-category-cross__item pos-top" href="{{ c_top.url | default: '#' }}"><div class="chosenhope-category-cross__circle">{% if c_top.featured_image != blank %}{{ c_top.featured_image | image_url: width: 480 | image_tag: class: 'media-cover', widths: '240,360,480', alt: section.settings.title_top }}{% else %}<div class="fallback-photo fallback-photo--olive"><span class="fallback-symbol">+</span></div>{% endif %}</div><h3 class="chosenhope-category-cross__title">{{ section.settings.title_top }}</h3></a>
+      <a class="chosenhope-category-cross__item pos-left-outer" href="{{ c_left_outer.url | default: '#' }}"><div class="chosenhope-category-cross__circle">{% if c_left_outer.featured_image != blank %}{{ c_left_outer.featured_image | image_url: width: 480 | image_tag: class: 'media-cover', widths: '240,360,480', alt: section.settings.title_left_outer }}{% else %}<div class="fallback-photo fallback-photo--cream"><span class="fallback-symbol">+</span></div>{% endif %}</div><h3 class="chosenhope-category-cross__title">{{ section.settings.title_left_outer }}</h3></a>
+      <a class="chosenhope-category-cross__item pos-left-inner" href="{{ c_left_inner.url | default: '#' }}"><div class="chosenhope-category-cross__circle">{% if c_left_inner.featured_image != blank %}{{ c_left_inner.featured_image | image_url: width: 480 | image_tag: class: 'media-cover', widths: '240,360,480', alt: section.settings.title_left_inner }}{% else %}<div class="fallback-photo fallback-photo--olive"><span class="fallback-symbol">+</span></div>{% endif %}</div><h3 class="chosenhope-category-cross__title">{{ section.settings.title_left_inner }}</h3></a>
+      <a class="chosenhope-category-cross__item chosenhope-category-cross__item--center pos-center" href="{{ c_center.url | default: '#' }}"><div class="chosenhope-category-cross__circle">{% if c_center.featured_image != blank %}{{ c_center.featured_image | image_url: width: 480 | image_tag: class: 'media-cover', widths: '240,360,480', alt: section.settings.title_center }}{% else %}<div class="fallback-photo fallback-photo--sand"><span class="fallback-symbol">+</span></div>{% endif %}</div><h3 class="chosenhope-category-cross__title">{{ section.settings.title_center }}</h3></a>
+      <a class="chosenhope-category-cross__item pos-right-inner" href="{{ c_right_inner.url | default: '#' }}"><div class="chosenhope-category-cross__circle">{% if c_right_inner.featured_image != blank %}{{ c_right_inner.featured_image | image_url: width: 480 | image_tag: class: 'media-cover', widths: '240,360,480', alt: section.settings.title_right_inner }}{% else %}<div class="fallback-photo fallback-photo--gold"><span class="fallback-symbol">+</span></div>{% endif %}</div><h3 class="chosenhope-category-cross__title">{{ section.settings.title_right_inner }}</h3></a>
+      <a class="chosenhope-category-cross__item pos-right-outer" href="{{ c_right_outer.url | default: '#' }}"><div class="chosenhope-category-cross__circle">{% if c_right_outer.featured_image != blank %}{{ c_right_outer.featured_image | image_url: width: 480 | image_tag: class: 'media-cover', widths: '240,360,480', alt: section.settings.title_right_outer }}{% else %}<div class="fallback-photo"><span class="fallback-symbol">+</span></div>{% endif %}</div><h3 class="chosenhope-category-cross__title">{{ section.settings.title_right_outer }}</h3></a>
+      <a class="chosenhope-category-cross__item pos-bottom" href="{{ c_bottom.url | default: '#' }}"><div class="chosenhope-category-cross__circle">{% if c_bottom.featured_image != blank %}{{ c_bottom.featured_image | image_url: width: 480 | image_tag: class: 'media-cover', widths: '240,360,480', alt: section.settings.title_bottom }}{% else %}<div class="fallback-photo"><span class="fallback-symbol">+</span></div>{% endif %}</div><h3 class="chosenhope-category-cross__title">{{ section.settings.title_bottom }}</h3></a>
+      <a class="chosenhope-category-cross__item pos-bottom-2" href="{{ c_bottom_2.url | default: '#' }}"><div class="chosenhope-category-cross__circle">{% if c_bottom_2.featured_image != blank %}{{ c_bottom_2.featured_image | image_url: width: 480 | image_tag: class: 'media-cover', widths: '240,360,480', alt: section.settings.title_bottom_2 }}{% else %}<div class="fallback-photo fallback-photo--cream"><span class="fallback-symbol">+</span></div>{% endif %}</div><h3 class="chosenhope-category-cross__title">{{ section.settings.title_bottom_2 }}</h3></a>
+    </div>
+
+    <div class="chosenhope-category-cross__mobile">
+      <div class="chosenhope-category-cross__v" aria-hidden="true"></div>
+      <div class="chosenhope-category-cross__h" aria-hidden="true"></div>
+      <a class="chosenhope-category-cross__item pos-top" href="{{ c_top.url | default: '#' }}"><div class="chosenhope-category-cross__circle">{% if c_top.featured_image != blank %}{{ c_top.featured_image | image_url: width: 480 | image_tag: class: 'media-cover', widths: '240,360,480', alt: section.settings.title_top }}{% else %}<div class="fallback-photo fallback-photo--olive"><span class="fallback-symbol">+</span></div>{% endif %}</div><h3 class="chosenhope-category-cross__title">{{ section.settings.title_top }}</h3></a>
+      <a class="chosenhope-category-cross__item pos-left" href="{{ c_left_outer.url | default: '#' }}"><div class="chosenhope-category-cross__circle">{% if c_left_outer.featured_image != blank %}{{ c_left_outer.featured_image | image_url: width: 480 | image_tag: class: 'media-cover', widths: '240,360,480', alt: section.settings.title_left_outer }}{% else %}<div class="fallback-photo fallback-photo--cream"><span class="fallback-symbol">+</span></div>{% endif %}</div><h3 class="chosenhope-category-cross__title">{{ section.settings.title_left_outer }}</h3></a>
+      <a class="chosenhope-category-cross__item chosenhope-category-cross__item--center pos-center" href="{{ c_center.url | default: '#' }}"><div class="chosenhope-category-cross__circle">{% if c_center.featured_image != blank %}{{ c_center.featured_image | image_url: width: 480 | image_tag: class: 'media-cover', widths: '240,360,480', alt: section.settings.title_mobile_center }}{% else %}<div class="fallback-photo fallback-photo--sand"><span class="fallback-symbol">+</span></div>{% endif %}</div><h3 class="chosenhope-category-cross__title">{{ section.settings.title_mobile_center }}</h3></a>
+      <a class="chosenhope-category-cross__item pos-right" href="{{ c_right_outer.url | default: '#' }}"><div class="chosenhope-category-cross__circle">{% if c_right_outer.featured_image != blank %}{{ c_right_outer.featured_image | image_url: width: 480 | image_tag: class: 'media-cover', widths: '240,360,480', alt: section.settings.title_right_outer }}{% else %}<div class="fallback-photo"><span class="fallback-symbol">+</span></div>{% endif %}</div><h3 class="chosenhope-category-cross__title">{{ section.settings.title_right_outer }}</h3></a>
+      <a class="chosenhope-category-cross__item pos-below" href="{{ c_bottom.url | default: '#' }}"><div class="chosenhope-category-cross__circle">{% if c_bottom.featured_image != blank %}{{ c_bottom.featured_image | image_url: width: 480 | image_tag: class: 'media-cover', widths: '240,360,480', alt: section.settings.title_bottom }}{% else %}<div class="fallback-photo"><span class="fallback-symbol">+</span></div>{% endif %}</div><h3 class="chosenhope-category-cross__title">{{ section.settings.title_bottom }}</h3></a>
+      <a class="chosenhope-category-cross__item pos-bottom" href="{{ c_bottom_2.url | default: '#' }}"><div class="chosenhope-category-cross__circle">{% if c_bottom_2.featured_image != blank %}{{ c_bottom_2.featured_image | image_url: width: 480 | image_tag: class: 'media-cover', widths: '240,360,480', alt: section.settings.title_bottom_2 }}{% else %}<div class="fallback-photo fallback-photo--cream"><span class="fallback-symbol">+</span></div>{% endif %}</div><h3 class="chosenhope-category-cross__title">{{ section.settings.title_bottom_2 }}</h3></a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "ChosenHope Category Cross",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Shop by category" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Every piece, one purpose" },
+    { "type": "collection", "id": "collection_top", "label": "Top collection" },
+    { "type": "collection", "id": "collection_left_outer", "label": "Left outer collection" },
+    { "type": "collection", "id": "collection_left_inner", "label": "Left inner collection" },
+    { "type": "collection", "id": "collection_center", "label": "Center collection" },
+    { "type": "collection", "id": "collection_right_inner", "label": "Right inner collection" },
+    { "type": "collection", "id": "collection_right_outer", "label": "Right outer collection" },
+    { "type": "collection", "id": "collection_bottom", "label": "Bottom collection" },
+    { "type": "collection", "id": "collection_bottom_2", "label": "Bottom 2 collection" },
+    { "type": "text", "id": "title_top", "label": "Top title", "default": "Canvas Prints" },
+    { "type": "text", "id": "title_left_outer", "label": "Left outer title", "default": "Caps" },
+    { "type": "text", "id": "title_left_inner", "label": "Left inner title", "default": "Rings" },
+    { "type": "text", "id": "title_center", "label": "Center title", "default": "Necklaces" },
+    { "type": "text", "id": "title_right_inner", "label": "Right inner title", "default": "Bracelets" },
+    { "type": "text", "id": "title_right_outer", "label": "Right outer title", "default": "Hoodies & Tees" },
+    { "type": "text", "id": "title_bottom", "label": "Bottom title", "default": "Wall Art" },
+    { "type": "text", "id": "title_bottom_2", "label": "Bottom 2 title", "default": "Future Christian Products" },
+    { "type": "text", "id": "title_mobile_center", "label": "Mobile center title", "default": "Jewelry" }
+  ],
+  "presets": [
+    { "name": "ChosenHope Category Cross" }
+  ]
+}
+{% endschema %}

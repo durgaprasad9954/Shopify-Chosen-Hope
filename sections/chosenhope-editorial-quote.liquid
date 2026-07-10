@@ -1,0 +1,24 @@
+{{ 'chosenhope-base.css' | asset_url | stylesheet_tag }}
+{{ 'chosenhope-editorial-quote.css' | asset_url | stylesheet_tag }}
+
+<section class="chosenhope-home-scope chosenhope-editorial-quote" aria-labelledby="chosenhope-editorial-quote-{{ section.id }}">
+  <div class="chosenhope-editorial-quote__inner">
+    <blockquote id="chosenhope-editorial-quote-{{ section.id }}" class="chosenhope-editorial-quote__quote">{{ section.settings.quote }}</blockquote>
+    {% if section.settings.citation != blank %}
+      <cite class="chosenhope-editorial-quote__cite">{{ section.settings.citation }}</cite>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "ChosenHope Editorial Quote",
+  "settings": [
+    { "type": "textarea", "id": "quote", "label": "Quote", "default": "\"You did not choose me, but I chose you and appointed you.\"" },
+    { "type": "text", "id": "citation", "label": "Citation", "default": "John 15:16 — every piece we make is a small, quiet reminder of that truth." }
+  ],
+  "presets": [
+    { "name": "ChosenHope Editorial Quote" }
+  ]
+}
+{% endschema %}
