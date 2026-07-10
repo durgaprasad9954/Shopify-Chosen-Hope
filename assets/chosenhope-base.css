@@ -43,7 +43,7 @@ body:has(.chosenhope-home-scope) .page-wrapper > footer {
 .chosenhope-home-scope h4,
 .chosenhope-home-scope h5,
 .chosenhope-home-scope h6 {
-  color: var(--ch-black);
+  color: #fff;
   font-family: var(--ch-font-display);
   font-weight: 500;
   letter-spacing: -0.01em;
