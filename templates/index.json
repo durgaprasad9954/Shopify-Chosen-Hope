@@ -13,16 +13,14 @@
       "type": "chosenhope-hero",
       "name": "ChosenHope Hero",
       "settings": {
-        "header_menu": "main-menu",
-        "announcement_text": "Complimentary shipping over $75",
-        "announcement_emphasis": "You Are Chosen.",
         "hero_eyebrow": "ChosenHope collection",
         "hero_heading": "You Are Chosen.",
         "hero_subtext": "Cross necklaces, faith jewelry, canvas art, and apparel — made with quiet quality for a life set apart.",
         "hero_primary_label": "Shop collection",
         "hero_primary_url": "",
         "hero_secondary_label": "Our story",
-        "hero_secondary_url": ""
+        "hero_secondary_url": "",
+        "hero_image": "shopify://shop_images/christian_jewelley_3.jpg"
       }
     },
     "chosenhope_featured_collections_k68KNp": {
@@ -32,10 +30,10 @@
         "eyebrow": "Shop by collection",
         "heading": "Designed with meaning",
         "subtext": "Jewelry, canvas, and apparel collections arranged to mirror the reference layout.",
-        "collection_1": "",
-        "collection_2": "",
-        "collection_3": "",
-        "collection_4": ""
+        "collection_1": "jewelley",
+        "collection_2": "jewellery",
+        "collection_3": "jewellery-2",
+        "collection_4": "jewellery-1"
       }
     },
     "chosenhope_editorial_products_wamRWT": {
@@ -45,8 +43,8 @@
         "eyebrow": "Best sellers",
         "heading": "Editor’s picks",
         "badge_text": "Most loved",
-        "featured_product": "",
-        "product_1": "",
+        "featured_product": "jewelley",
+        "product_1": "jewellery",
         "product_2": "",
         "product_3": "",
         "product_4": ""
@@ -60,8 +58,8 @@
         "heading": "Every piece, one purpose",
         "collection_top": "",
         "collection_left_outer": "",
-        "collection_left_inner": "",
-        "collection_center": "",
+        "collection_left_inner": "rings",
+        "collection_center": "jewelley",
         "collection_right_inner": "",
         "collection_right_outer": "",
         "collection_bottom": "",
