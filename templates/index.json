@@ -1,0 +1,75 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */{
+  "sections": {
+    "chosenhope_home": {
+      "type": "chosenhope-home",
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "stars": "★★★★★",
+            "quote": "The Grace necklace is beautifully made — simple, elegant, and exactly what I hoped for.",
+            "name": "Hannah R., verified buyer"
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "stars": "★★★★★",
+            "quote": "Our Psalm 23 canvas is the first thing guests notice. The frame quality feels genuinely premium.",
+            "name": "Daniel K., verified buyer"
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "stars": "★★★★☆",
+            "quote": "Ordered the Beloved hoodie for my son's baptism. Soft, well-stitched, and quietly meaningful.",
+            "name": "Maria S., verified buyer"
+          }
+        },
+        "instagram_1": {
+          "type": "instagram_tile",
+          "settings": {}
+        },
+        "instagram_2": {
+          "type": "instagram_tile",
+          "settings": {}
+        },
+        "instagram_3": {
+          "type": "instagram_tile",
+          "settings": {}
+        },
+        "instagram_4": {
+          "type": "instagram_tile",
+          "settings": {}
+        },
+        "instagram_5": {
+          "type": "instagram_tile",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3",
+        "instagram_1",
+        "instagram_2",
+        "instagram_3",
+        "instagram_4",
+        "instagram_5"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "chosenhope_home"
+  ]
+}
