@@ -1,7 +1,74 @@
 {{ 'chosenhope-base.css' | asset_url | stylesheet_tag }}
 {{ 'chosenhope-hero.css' | asset_url | stylesheet_tag }}
 
-<section>
+{% liquid
+  assign header_menu = linklists[section.settings.header_menu]
+%}
+
+{% capture chosenhope_logo %}
+  {% if settings.logo != blank %}
+    {{ settings.logo | image_url: width: 420 | image_tag: widths: '160,240,320,420', alt: shop.name }}
+  {% else %}
+    <h3>{{ shop.name }}</h3>
+  {% endif %}
+{% endcapture %}
+
+<section class="chosenhope-home-scope chosenhope-hero" aria-labelledby="chosenhope-hero-heading-{{ section.id }}">
+  <div class="chosenhope-hero__announce" role="note">
+    {{ section.settings.announcement_text }}
+    {% if section.settings.announcement_emphasis != blank %}
+      &nbsp;&middot;&nbsp; <strong>{{ section.settings.announcement_emphasis }}</strong>
+    {% endif %}
+  </div>
+
+  <header class="chosenhope-hero__header">
+    <div class="container chosenhope-hero__header-row">
+      <a class="chosenhope-hero__logo" href="{{ routes.root_url }}" aria-label="{{ shop.name }}, home">
+        {{ chosenhope_logo }}
+      </a>
+
+      <nav class="chosenhope-hero__nav" aria-label="Primary">
+        <ul class="chosenhope-hero__nav-list">
+          {% for link in header_menu.links %}
+            <li class="chosenhope-hero__nav-item">
+              <a class="chosenhope-hero__nav-link" href="{{ link.url }}">{{ link.title }}</a>
+              {% if link.links != blank %}
+                <div class="chosenhope-hero__mega">
+                  <div class="chosenhope-hero__mega-head">{{ link.title }}</div>
+                  {% for child in link.links %}
+                    <a href="{{ child.url }}">{{ child.title }}</a>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+
+      <div class="chosenhope-hero__actions">
+        <details class="chosenhope-hero__mobile-wrap chosenhope-hero__mobile-toggle">
+          <summary class="chosenhope-hero__icon" aria-label="Open menu">☰</summary>
+          <nav class="chosenhope-hero__mobile-nav" aria-label="Mobile">
+            {% for link in header_menu.links %}
+              <a href="{{ link.url }}">{{ link.title }}</a>
+              {% for child in link.links %}
+                <a href="{{ child.url }}">{{ child.title }}</a>
+              {% endfor %}
+            {% endfor %}
+          </nav>
+        </details>
+        <a class="chosenhope-hero__icon" href="{{ routes.search_url }}" aria-label="Search">⌕</a>
+        <a class="chosenhope-hero__icon" href="{{ routes.account_url }}" aria-label="Account">◌</a>
+        <a class="chosenhope-hero__icon" href="{{ routes.cart_url }}" aria-label="Cart">
+          ◧
+          {% if cart.item_count > 0 %}
+            <span class="chosenhope-hero__cart-badge">{{ cart.item_count }}</span>
+          {% endif %}
+        </a>
+      </div>
+    </div>
+  </header>
+
   <div class="chosenhope-hero__media">
     {% if section.settings.hero_image != blank %}
       <div class="chosenhope-hero__image-wrap">
