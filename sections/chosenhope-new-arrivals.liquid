@@ -28,7 +28,7 @@
             <div class="chosenhope-new-arrivals__media">
               <span class="chosenhope-new-arrivals__badge">{{ section.settings.badge_text }}</span>
               {% if product.featured_media != blank %}
-                {{ product.featured_media | image_url: width: 700 | image_tag: class: 'media-cover', widths: '320,500,700', alt: product.title }}
+                {{ product.featured_media | image_url: width: 200 | image_tag: class: 'media-cover', widths: '320,500,700', alt: product.title }}
               {% else %}
                 <div class="fallback-photo fallback-photo--sand"><span class="fallback-symbol">+</span></div>
               {% endif %}
