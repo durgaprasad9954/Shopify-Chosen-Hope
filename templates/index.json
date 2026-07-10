@@ -9,38 +9,156 @@
  */
 {
   "sections": {
-    "chosenhope_hero": {
+    "chosenhope_hero_77JftE": {
       "type": "chosenhope-hero",
-      "settings": {}
+      "name": "ChosenHope Hero",
+      "settings": {
+        "header_menu": "main-menu",
+        "announcement_text": "Complimentary shipping over $75",
+        "announcement_emphasis": "You Are Chosen.",
+        "hero_eyebrow": "ChosenHope collection",
+        "hero_heading": "You Are Chosen.",
+        "hero_subtext": "Cross necklaces, faith jewelry, canvas art, and apparel — made with quiet quality for a life set apart.",
+        "hero_primary_label": "Shop collection",
+        "hero_primary_url": "",
+        "hero_secondary_label": "Our story",
+        "hero_secondary_url": ""
+      }
     },
-    "chosenhope_collections": {
+    "chosenhope_featured_collections_k68KNp": {
       "type": "chosenhope-featured-collections",
-      "settings": {}
+      "name": "ChosenHope Collections",
+      "settings": {
+        "eyebrow": "Shop by collection",
+        "heading": "Designed with meaning",
+        "subtext": "Jewelry, canvas, and apparel collections arranged to mirror the reference layout.",
+        "collection_1": "",
+        "collection_2": "",
+        "collection_3": "",
+        "collection_4": ""
+      }
     },
-    "chosenhope_best_sellers": {
+    "chosenhope_editorial_products_wamRWT": {
       "type": "chosenhope-editorial-products",
-      "settings": {}
+      "name": "ChosenHope Best Sellers",
+      "settings": {
+        "eyebrow": "Best sellers",
+        "heading": "Editor’s picks",
+        "badge_text": "Most loved",
+        "featured_product": "",
+        "product_1": "",
+        "product_2": "",
+        "product_3": "",
+        "product_4": ""
+      }
     },
-    "chosenhope_categories": {
+    "chosenhope_category_cross_rmTqH7": {
       "type": "chosenhope-category-cross",
-      "settings": {}
+      "name": "ChosenHope Category Cross",
+      "settings": {
+        "eyebrow": "Shop by category",
+        "heading": "Every piece, one purpose",
+        "collection_top": "",
+        "collection_left_outer": "",
+        "collection_left_inner": "",
+        "collection_center": "",
+        "collection_right_inner": "",
+        "collection_right_outer": "",
+        "collection_bottom": "",
+        "collection_bottom_2": "",
+        "title_top": "Canvas Prints",
+        "title_left_outer": "Caps",
+        "title_left_inner": "Rings",
+        "title_center": "Necklaces",
+        "title_right_inner": "Bracelets",
+        "title_right_outer": "Hoodies & Tees",
+        "title_bottom": "Wall Art",
+        "title_bottom_2": "Future Christian Products",
+        "title_mobile_center": "Jewelry"
+      }
     },
-    "chosenhope_canvas": {
+    "chosenhope_canvas_feature_Hzpan9": {
       "type": "chosenhope-canvas-feature",
-      "settings": {}
+      "name": "ChosenHope Canvas Feature",
+      "settings": {
+        "badge_text": "Oak · Walnut · Black frames",
+        "eyebrow": "New from the studio",
+        "heading": "Scripture, framed for a modern home",
+        "text": "Each canvas is printed on museum-grade material and finished by hand — a quiet reminder for the wall you look at every day.",
+        "feature_1": "Room mockup preview before you buy",
+        "feature_2": "Three frame finishes, five sizes",
+        "feature_3": "Archival ink, fade-resistant for decades",
+        "button_label": "Shop Canvas Collection",
+        "button_url": ""
+      }
     },
-    "chosenhope_new_arrivals": {
+    "chosenhope_new_arrivals_P4UPHt": {
       "type": "chosenhope-new-arrivals",
-      "settings": {}
+      "name": "ChosenHope New Arrivals",
+      "settings": {
+        "eyebrow": "Just added",
+        "heading": "New arrivals",
+        "badge_text": "New",
+        "collection": "",
+        "limit": 5
+      }
     },
-    "chosenhope_quote": {
-      "type": "chosenhope-editorial-quote",
-      "settings": {}
+    "chosenhope_instagram_grid_9Hdayr": {
+      "type": "chosenhope-instagram-grid",
+      "blocks": {
+        "tile_wLzWMC": {
+          "type": "tile",
+          "settings": {
+            "link": "",
+            "alt_text": ""
+          }
+        },
+        "tile_rh7CUN": {
+          "type": "tile",
+          "settings": {
+            "link": "",
+            "alt_text": ""
+          }
+        },
+        "tile_fkJR7t": {
+          "type": "tile",
+          "settings": {
+            "link": "",
+            "alt_text": ""
+          }
+        },
+        "tile_zgXd9K": {
+          "type": "tile",
+          "settings": {
+            "link": "",
+            "alt_text": ""
+          }
+        },
+        "tile_xNkKqf": {
+          "type": "tile",
+          "settings": {
+            "link": "",
+            "alt_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "tile_wLzWMC",
+        "tile_rh7CUN",
+        "tile_fkJR7t",
+        "tile_zgXd9K",
+        "tile_xNkKqf"
+      ],
+      "name": "ChosenHope Instagram",
+      "settings": {
+        "eyebrow": "@chosenhope",
+        "heading": "Follow along"
+      }
     },
-    "chosenhope_testimonials": {
+    "chosenhope_testimonials_t6qbRU": {
       "type": "chosenhope-testimonials",
       "blocks": {
-        "review_1": {
+        "review_WHjUb4": {
           "type": "review",
           "settings": {
             "stars": "★★★★★",
@@ -48,7 +166,7 @@
             "name": "Hannah R., verified buyer"
           }
         },
-        "review_2": {
+        "review_yftFxR": {
           "type": "review",
           "settings": {
             "stars": "★★★★★",
@@ -56,7 +174,7 @@
             "name": "Daniel K., verified buyer"
           }
         },
-        "review_3": {
+        "review_d9tYHE": {
           "type": "review",
           "settings": {
             "stars": "★★★★☆",
@@ -66,50 +184,36 @@
         }
       },
       "block_order": [
-        "review_1",
-        "review_2",
-        "review_3"
+        "review_WHjUb4",
+        "review_yftFxR",
+        "review_d9tYHE"
       ],
-      "settings": {}
+      "name": "ChosenHope Testimonials",
+      "settings": {
+        "eyebrow": "Loved by our community",
+        "heading": "What people are saying"
+      }
     },
-    "chosenhope_instagram": {
-      "type": "chosenhope-instagram-grid",
-      "blocks": {
-        "tile_1": { "type": "tile", "settings": {} },
-        "tile_2": { "type": "tile", "settings": {} },
-        "tile_3": { "type": "tile", "settings": {} },
-        "tile_4": { "type": "tile", "settings": {} },
-        "tile_5": { "type": "tile", "settings": {} }
-      },
-      "block_order": [
-        "tile_1",
-        "tile_2",
-        "tile_3",
-        "tile_4",
-        "tile_5"
-      ],
-      "settings": {}
-    },
-    "chosenhope_newsletter": {
+    "chosenhope_newsletter_pB7QWM": {
       "type": "chosenhope-newsletter",
-      "settings": {}
-    },
-    "chosenhope_footer": {
-      "type": "chosenhope-footer",
-      "settings": {}
+      "name": "ChosenHope Newsletter",
+      "settings": {
+        "heading": "Stay close to the story",
+        "text": "New arrivals, quiet reflections, and early access — once a month, nothing more.",
+        "button_label": "Subscribe",
+        "privacy_text": "We respect your inbox. Unsubscribe anytime."
+      }
     }
   },
   "order": [
-    "chosenhope_hero",
-    "chosenhope_collections",
-    "chosenhope_best_sellers",
-    "chosenhope_categories",
-    "chosenhope_canvas",
-    "chosenhope_new_arrivals",
-    "chosenhope_quote",
-    "chosenhope_testimonials",
-    "chosenhope_instagram",
-    "chosenhope_newsletter",
-    "chosenhope_footer"
+    "chosenhope_hero_77JftE",
+    "chosenhope_featured_collections_k68KNp",
+    "chosenhope_editorial_products_wamRWT",
+    "chosenhope_category_cross_rmTqH7",
+    "chosenhope_canvas_feature_Hzpan9",
+    "chosenhope_new_arrivals_P4UPHt",
+    "chosenhope_instagram_grid_9Hdayr",
+    "chosenhope_testimonials_t6qbRU",
+    "chosenhope_newsletter_pB7QWM"
   ]
 }
