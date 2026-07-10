@@ -2,200 +2,8 @@
   background: var(--ch-warm-white);
 }
 
-.chosenhope-hero__announce {
-  background: var(--ch-ink);
-  color: var(--ch-warm-white);
-  font-size: 12px;
-  letter-spacing: 0.05em;
-  padding: 11px 1rem;
-  text-align: center;
-}
-
-.chosenhope-hero__announce strong {
-  color: var(--ch-gold);
-}
-
-.chosenhope-hero__header {
-  backdrop-filter: blur(12px);
-  background: rgba(249, 248, 244, 0.92);
-  border-bottom: 1px solid var(--ch-border);
-  position: sticky;
-  top: 0;
-  z-index: 40;
-}
-
-.chosenhope-hero__header-row {
-  align-items: center;
-  display: flex;
-  gap: 3.5rem;
-  justify-content: space-between;
-  padding-block: 22px;
-}
-
-.chosenhope-hero__logo {
-  align-items: center;
-  display: flex;
-}
-
-.chosenhope-hero__logo img {
-  max-height: 60px;
-  width: auto;
-}
-
-.chosenhope-hero__nav {
-  display: flex;
-  flex: 1;
-  justify-content: center;
-}
-
-.chosenhope-hero__nav-list {
-  align-items: center;
-  display: flex;
-  gap: 2.75rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.chosenhope-hero__nav-item {
-  position: relative;
-}
-
-.chosenhope-hero__nav-link {
-  align-items: center;
-  display: inline-flex;
-  font-size: 0.9375rem;
-  font-weight: 500;
-  gap: 5px;
-  padding: 10px 2px;
-}
-
-.chosenhope-hero__nav-link:hover {
-  color: var(--ch-gold-dark);
-}
-
-.chosenhope-hero__mega {
-  background: var(--ch-white);
-  border: 1px solid var(--ch-border);
-  border-radius: var(--ch-radius-md);
-  box-shadow: var(--ch-shadow-lg);
-  display: grid;
-  gap: 0.75rem;
-  grid-template-columns: 1fr 1fr;
-  left: 50%;
-  opacity: 0;
-  padding: 1.5rem;
-  position: absolute;
-  top: 100%;
-  transform: translate(-50%, 8px);
-  transition: opacity 0.2s var(--ch-ease), transform 0.2s var(--ch-ease);
-  visibility: hidden;
-  width: 520px;
-}
-
-.chosenhope-hero__nav-item:hover .chosenhope-hero__mega,
-.chosenhope-hero__nav-item:focus-within .chosenhope-hero__mega {
-  opacity: 1;
-  transform: translate(-50%, 0);
-  visibility: visible;
-}
-
-.chosenhope-hero__mega-head {
-  border-bottom: 1px solid var(--ch-border);
-  color: var(--ch-gray);
-  font-family: var(--ch-font-body);
-  font-size: 11px;
-  font-weight: 700;
-  grid-column: 1 / -1;
-  letter-spacing: 0.12em;
-  margin-bottom: 4px;
-  padding: 4px 12px 8px;
-  text-transform: uppercase;
-}
-
-.chosenhope-hero__mega a {
-  border-radius: var(--ch-radius-sm);
-  padding: 10px 12px;
-}
-
-.chosenhope-hero__mega a:hover {
-  background: var(--ch-warm-white);
-}
-
-.chosenhope-hero__actions {
-  align-items: center;
-  display: flex;
-  gap: 4px;
-}
-
-.chosenhope-hero__icon {
-  align-items: center;
-  background: none;
-  border: none;
-  border-radius: 50%;
-  color: var(--ch-black);
-  display: inline-flex;
-  font-size: 1rem;
-  height: 44px;
-  justify-content: center;
-  position: relative;
-  width: 44px;
-}
-
-.chosenhope-hero__icon:hover {
-  background: var(--ch-gold-tint);
-}
-
-.chosenhope-hero__cart-badge {
-  align-items: center;
-  background: var(--ch-gold-dark);
-  border-radius: 999px;
-  color: var(--ch-white);
-  display: flex;
-  font-size: 9.5px;
-  font-weight: 700;
-  height: 15px;
-  justify-content: center;
-  min-width: 15px;
-  padding: 0 3px;
-  position: absolute;
-  right: 5px;
-  top: 5px;
-}
-
-.chosenhope-hero__mobile-toggle {
-  display: none;
-}
-
-.chosenhope-hero__mobile-nav {
-  background: var(--ch-warm-white);
-  border-top: 1px solid var(--ch-border);
-  display: none;
-  flex-direction: column;
-  padding: 1rem 2.25rem 1.5rem;
-}
-
-.chosenhope-hero__mobile-wrap[open] .chosenhope-hero__mobile-nav {
-  display: flex;
-}
-
-.chosenhope-hero__mobile-wrap summary {
-  list-style: none;
-}
-
-.chosenhope-hero__mobile-wrap summary::-webkit-details-marker {
-  display: none;
-}
-
-.chosenhope-hero__mobile-nav a {
-  border-bottom: 1px solid var(--ch-border);
-  font-size: 0.9375rem;
-  font-weight: 500;
-  min-height: 44px;
-  padding: 14px 2px;
-}
-
 .chosenhope-hero__media {
+  height: min(86vh, 780px);
   min-height: 520px;
   position: relative;
 }
@@ -208,7 +16,7 @@
 
 .chosenhope-hero__overlay {
   align-items: center;
-  background: linear-gradient(160deg, rgba(23, 22, 20, 0.7) 0%, rgba(23, 22, 20, 0.4) 45%, rgba(200, 162, 74, 0.2) 100%);
+  background: linear-gradient(160deg, rgba(23, 22, 20, 0.82) 0%, rgba(23, 22, 20, 0.55) 45%, rgba(200, 162, 74, 0.28) 100%);
   display: flex;
   inset: 0;
   position: absolute;
@@ -248,22 +56,8 @@
   margin-top: 2.25rem;
 }
 
-@media (max-width: 1100px) {
-  .chosenhope-hero__nav {
-    display: none;
-  }
-
-  .chosenhope-hero__mobile-toggle {
-    display: inline-flex;
-  }
-}
-
 @media (max-width: 640px) {
   .chosenhope-hero__copy {
-    padding-inline: 1.5rem;
-  }
-
-  .chosenhope-hero__mobile-nav {
     padding-inline: 1.5rem;
   }
 }
