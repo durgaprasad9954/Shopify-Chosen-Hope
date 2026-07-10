@@ -8,6 +8,9 @@
     --ch-eq-bg: {{ section.settings.section_background_color }};
     --ch-eq-quote-color: {{ section.settings.quote_text_color }};
     --ch-eq-citation-color: {{ section.settings.citation_text_color }};
+    {% if section.settings.quote_font_size != blank %}--ch-eq-quote-size: {{ section.settings.quote_font_size }};{% endif %}
+    {% if section.settings.quote_font_weight != blank %}--ch-eq-quote-weight: {{ section.settings.quote_font_weight }};{% endif %}
+    {% if section.settings.citation_font_size != blank %}--ch-eq-citation-size: {{ section.settings.citation_font_size }};{% endif %}
   "
 >
   <div class="chosenhope-editorial-quote__inner">
@@ -20,14 +23,53 @@
 
 {% schema %}
 {
-  "name": "ChosenHope Editorial Quote",
+  "name": "ChosenHope Quote",
   "settings": [
     { "type": "textarea", "id": "quote", "label": "Quote", "default": "\"You did not choose me, but I chose you and appointed you.\"" },
     { "type": "text", "id": "citation", "label": "Citation", "default": "John 15:16 — every piece we make is a small, quiet reminder of that truth." },
     { "type": "header", "content": "Colors" },
     { "type": "color", "id": "section_background_color", "label": "Section background", "default": "#c8a24a" },
     { "type": "color", "id": "quote_text_color", "label": "Quote text color", "default": "#ffffff" },
-    { "type": "color", "id": "citation_text_color", "label": "Citation text color", "default": "rgba(17, 17, 17, 0.65)" }
+    { "type": "color", "id": "citation_text_color", "label": "Citation text color", "default": "rgba(17, 17, 17, 0.65)" },
+    { "type": "header", "content": "Typography" },
+    {
+      "type": "select",
+      "id": "quote_font_size",
+      "label": "Quote size",
+      "options": [
+        { "value": "", "label": "Default (responsive)" },
+        { "value": "1.5rem", "label": "Small" },
+        { "value": "2rem", "label": "Medium" },
+        { "value": "2.5rem", "label": "Large" },
+        { "value": "3rem", "label": "X-Large" }
+      ],
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "quote_font_weight",
+      "label": "Quote weight",
+      "options": [
+        { "value": "", "label": "Default" },
+        { "value": "400", "label": "Regular" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semibold" },
+        { "value": "700", "label": "Bold" }
+      ],
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "citation_font_size",
+      "label": "Citation size",
+      "options": [
+        { "value": "", "label": "Default" },
+        { "value": "0.75rem", "label": "Small" },
+        { "value": "0.875rem", "label": "Medium" },
+        { "value": "1rem", "label": "Large" }
+      ],
+      "default": ""
+    }
   ],
   "presets": [
     { "name": "ChosenHope Editorial Quote" }

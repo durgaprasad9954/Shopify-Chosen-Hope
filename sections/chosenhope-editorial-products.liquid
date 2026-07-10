@@ -22,6 +22,8 @@
     --ch-ep-row-bg: {{ section.settings.row_background_color }};
     --ch-ep-row-border: {{ section.settings.row_border_color }};
     --ch-ep-row-title: {{ section.settings.row_title_color }};
+    {% if section.settings.heading_font_size != blank %}--ch-ep-heading-size: {{ section.settings.heading_font_size }};{% endif %}
+    {% if section.settings.heading_font_weight != blank %}--ch-ep-heading-weight: {{ section.settings.heading_font_weight }};{% endif %}
   "
 >
   <div class="container">
@@ -80,7 +82,34 @@
     { "type": "color", "id": "feature_overlay_color", "label": "Featured image overlay", "default": "rgba(17, 17, 17, 0.68)" },
     { "type": "color", "id": "row_background_color", "label": "Product row background", "default": "#ffffff" },
     { "type": "color", "id": "row_border_color", "label": "Product row border", "default": "#eaeaea" },
-    { "type": "color", "id": "row_title_color", "label": "Product row title color", "default": "#111111" }
+    { "type": "color", "id": "row_title_color", "label": "Product row title color", "default": "#111111" },
+    { "type": "header", "content": "Typography" },
+    {
+      "type": "select",
+      "id": "heading_font_size",
+      "label": "Heading size",
+      "options": [
+        { "value": "", "label": "Default (responsive)" },
+        { "value": "1.75rem", "label": "Small" },
+        { "value": "2.5rem", "label": "Medium" },
+        { "value": "3.25rem", "label": "Large" },
+        { "value": "4rem", "label": "X-Large" }
+      ],
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "heading_font_weight",
+      "label": "Heading weight",
+      "options": [
+        { "value": "", "label": "Default" },
+        { "value": "400", "label": "Regular" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semibold" },
+        { "value": "700", "label": "Bold" }
+      ],
+      "default": ""
+    }
   ],
   "presets": [
     { "name": "ChosenHope Best Sellers" }

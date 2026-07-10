@@ -17,7 +17,8 @@
 }
 
 .chosenhope-footer__brand-text {
-  color: var(--ch-footer-brand-text, var(--ch-gray));
+  /* stylelint-disable-next-line declaration-no-important -- must beat base.css's tag-qualified p rule */
+  color: var(--ch-footer-brand-text, var(--ch-gray)) !important;
   font-size: 0.9375rem;
   margin-top: 1rem;
   max-width: 32ch;
@@ -66,7 +67,6 @@
 
 .chosenhope-footer__bottom {
   border-top: 1px solid var(--ch-footer-border, var(--ch-border));
-  color: var(--ch-footer-bottom-text, var(--ch-gray));
   display: flex;
   flex-wrap: wrap;
   font-family: var(--ch-font-body);
@@ -74,6 +74,11 @@
   gap: 10px;
   justify-content: space-between;
   padding-block: 1.5rem;
+}
+
+.chosenhope-footer__bottom p {
+  /* stylelint-disable-next-line declaration-no-important -- the text lives in <p> children, which have their own direct rule from base.css that beats inheriting from this container */
+  color: var(--ch-footer-bottom-text, var(--ch-gray)) !important;
 }
 
 @media (max-width: 900px) {

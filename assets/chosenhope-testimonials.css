@@ -45,13 +45,15 @@
 }
 
 .chosenhope-testimonials__quote {
-  color: var(--ch-tm-quote-color, var(--ch-black));
+  /* stylelint-disable-next-line declaration-no-important -- must beat base.css's tag-qualified p rule */
+  color: var(--ch-tm-quote-color, var(--ch-black)) !important;
   font-size: 0.9375rem;
   font-style: italic;
 }
 
 .chosenhope-testimonials__name {
-  color: var(--ch-tm-name-color, var(--ch-black));
+  /* stylelint-disable-next-line declaration-no-important -- must beat base.css's tag-qualified p rule */
+  color: var(--ch-tm-name-color, var(--ch-black)) !important;
   font-family: var(--ch-font-body);
   font-size: 12.5px;
   font-weight: 600;
