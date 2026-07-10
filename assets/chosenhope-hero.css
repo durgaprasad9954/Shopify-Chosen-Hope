@@ -35,7 +35,7 @@
 }
 
 .chosenhope-hero__heading {
-  color: var(--ch-warm-white);
+  color: white;
   font-size: clamp(2.75rem, 2rem + 3.4vw, 4.75rem);
   font-style: italic;
 }
