@@ -1,0 +1,21 @@
+{
+  "sections": {
+    "chosenhope_jewelry_hero": {
+      "type": "chosenhope-jewelry-hero",
+      "name": "ChosenHope Jewelry Hero"
+    },
+    "chosenhope_jewelry_grid": {
+      "type": "chosenhope-jewelry-grid",
+      "name": "ChosenHope Jewelry Grid"
+    },
+    "chosenhope_footer": {
+      "type": "chosenhope-footer",
+      "name": "ChosenHope Footer"
+    }
+  },
+  "order": [
+    "chosenhope_jewelry_hero",
+    "chosenhope_jewelry_grid",
+    "chosenhope_footer"
+  ]
+}

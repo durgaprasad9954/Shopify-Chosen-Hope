@@ -1,0 +1,21 @@
+{
+  "sections": {
+    "chosenhope_apparel_hero": {
+      "type": "chosenhope-apparel-hero",
+      "name": "ChosenHope Apparel Hero"
+    },
+    "chosenhope_apparel_grid": {
+      "type": "chosenhope-apparel-grid",
+      "name": "ChosenHope Apparel Grid"
+    },
+    "chosenhope_footer": {
+      "type": "chosenhope-footer",
+      "name": "ChosenHope Footer"
+    }
+  },
+  "order": [
+    "chosenhope_apparel_hero",
+    "chosenhope_apparel_grid",
+    "chosenhope_footer"
+  ]
+}

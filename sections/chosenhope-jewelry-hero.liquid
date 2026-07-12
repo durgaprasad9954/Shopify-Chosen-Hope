@@ -1,0 +1,41 @@
+{{ 'chosenhope-base.css' | asset_url | stylesheet_tag }}
+{{ 'chosenhope-shop-hero.css' | asset_url | stylesheet_tag }}
+
+{% render 'chosenhope-shop-hero-content', section: section %}
+
+{% schema %}
+{
+  "name": "ChosenHope Jewelry Hero",
+  "settings": [
+    { "type": "text", "id": "breadcrumb_label", "label": "Breadcrumb / page label", "default": "Jewelry" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Wear it close" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Faith Jewelry" },
+    { "type": "textarea", "id": "subtext", "label": "Subtext", "default": "Rings, chains, and bracelets made to be worn every day — a quiet reminder close to the skin." },
+    {
+      "type": "select",
+      "id": "icon",
+      "label": "Decorative icon",
+      "options": [
+        { "value": "cross", "label": "Cross" },
+        { "value": "star", "label": "Star" },
+        { "value": "canvas", "label": "Framed canvas" },
+        { "value": "apparel", "label": "Hoodie" },
+        { "value": "crosshair", "label": "Crosshair" }
+      ],
+      "default": "cross"
+    },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "gradient_start_color", "label": "Gradient start", "default": "#f3e9d3" },
+    { "type": "color", "id": "gradient_end_color", "label": "Gradient end", "default": "#f9f8f4" },
+    { "type": "color", "id": "eyebrow_color", "label": "Eyebrow color", "default": "#6e7455" },
+    { "type": "color", "id": "heading_color", "label": "Heading color", "default": "#111111" },
+    { "type": "color", "id": "text_color", "label": "Subtext color", "default": "#666666" }
+  ],
+  "enabled_on": {
+    "templates": ["page", "collection"]
+  },
+  "presets": [
+    { "name": "ChosenHope Jewelry Hero" }
+  ]
+}
+{% endschema %}

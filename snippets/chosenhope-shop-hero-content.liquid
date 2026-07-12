@@ -1,5 +1,12 @@
-{{ 'chosenhope-base.css' | asset_url | stylesheet_tag }}
-{{ 'chosenhope-shop-hero.css' | asset_url | stylesheet_tag }}
+{%- doc -%}
+  Shared markup for a ChosenHope shop-page hero (breadcrumb + banner).
+  Rendered by each page-specific hero section (chosenhope-jewelry-hero,
+  chosenhope-canvas-hero, chosenhope-apparel-hero, chosenhope-best-sellers-hero,
+  chosenhope-collections-hero) so the visual design stays identical while each
+  page keeps its own dedicated, individually-named section file.
+
+  @param {object} section - The calling section (for id/settings)
+{%- enddoc -%}
 
 <div
   class="chosenhope-home-scope chosenhope-shop-hero"
@@ -45,40 +52,3 @@
     </section>
   </div>
 </div>
-
-{% schema %}
-{
-  "name": "ChosenHope Shop Hero",
-  "settings": [
-    { "type": "text", "id": "breadcrumb_label", "label": "Breadcrumb / page label", "default": "Shop" },
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Wear it close" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Faith Jewelry" },
-    { "type": "textarea", "id": "subtext", "label": "Subtext", "default": "Rings, chains, and bracelets made to be worn every day — a quiet reminder close to the skin." },
-    {
-      "type": "select",
-      "id": "icon",
-      "label": "Decorative icon",
-      "options": [
-        { "value": "cross", "label": "Cross (Jewelry)" },
-        { "value": "star", "label": "Star (Best Sellers)" },
-        { "value": "canvas", "label": "Framed canvas (Canvas)" },
-        { "value": "apparel", "label": "Hoodie (Apparel)" },
-        { "value": "crosshair", "label": "Crosshair (Collections)" }
-      ],
-      "default": "cross"
-    },
-    { "type": "header", "content": "Colors" },
-    { "type": "color", "id": "gradient_start_color", "label": "Gradient start", "default": "#f3e9d3" },
-    { "type": "color", "id": "gradient_end_color", "label": "Gradient end", "default": "#f9f8f4" },
-    { "type": "color", "id": "eyebrow_color", "label": "Eyebrow color", "default": "#6e7455" },
-    { "type": "color", "id": "heading_color", "label": "Heading color", "default": "#111111" },
-    { "type": "color", "id": "text_color", "label": "Subtext color", "default": "#666666" }
-  ],
-  "enabled_on": {
-    "templates": ["collection"]
-  },
-  "presets": [
-    { "name": "ChosenHope Shop Hero" }
-  ]
-}
-{% endschema %}
