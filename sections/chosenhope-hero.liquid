@@ -1,7 +1,19 @@
 {{ 'chosenhope-base.css' | asset_url | stylesheet_tag }}
 {{ 'chosenhope-hero.css' | asset_url | stylesheet_tag }}
 
-<section class="chosenhope-home-scope chosenhope-hero" aria-labelledby="chosenhope-hero-heading-{{ section.id }}">
+<section
+  class="chosenhope-home-scope chosenhope-hero"
+  aria-labelledby="chosenhope-hero-heading-{{ section.id }}"
+  style="
+    --ch-hero-bg: {{ section.settings.section_background_color }};
+    --ch-hero-overlay-start: {{ section.settings.overlay_color_start }};
+    --ch-hero-overlay-mid: {{ section.settings.overlay_color_mid }};
+    --ch-hero-overlay-end: {{ section.settings.overlay_color_end }};
+    --ch-hero-eyebrow-color: {{ section.settings.eyebrow_color }};
+    --ch-hero-heading-color: {{ section.settings.heading_color }};
+    --ch-hero-subtext-color: {{ section.settings.subtext_color }};
+  "
+>
   <div class="chosenhope-hero__media">
     {% if section.settings.hero_image != blank %}
       <div class="chosenhope-hero__image-wrap">
@@ -42,7 +54,15 @@
     { "type": "url", "id": "hero_primary_url", "label": "Primary button link" },
     { "type": "text", "id": "hero_secondary_label", "label": "Secondary button label", "default": "Our story" },
     { "type": "url", "id": "hero_secondary_url", "label": "Secondary button link" },
-    { "type": "image_picker", "id": "hero_image", "label": "Hero image" }
+    { "type": "image_picker", "id": "hero_image", "label": "Hero image" },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "section_background_color", "label": "Section background", "default": "#f9f8f4" },
+    { "type": "color", "id": "overlay_color_start", "label": "Overlay color (top)", "default": "rgba(23, 22, 20, 0.82)" },
+    { "type": "color", "id": "overlay_color_mid", "label": "Overlay color (middle)", "default": "rgba(23, 22, 20, 0.55)" },
+    { "type": "color", "id": "overlay_color_end", "label": "Overlay color (bottom accent)", "default": "rgba(200, 162, 74, 0.28)" },
+    { "type": "color", "id": "eyebrow_color", "label": "Eyebrow text color", "default": "#c8a24a" },
+    { "type": "color", "id": "heading_color", "label": "Heading text color", "default": "#f9f8f4" },
+    { "type": "color", "id": "subtext_color", "label": "Subtext color", "default": "rgba(249, 248, 244, 0.86)" }
   ],
   "presets": [
     { "name": "ChosenHope Hero" }

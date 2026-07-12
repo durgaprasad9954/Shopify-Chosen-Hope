@@ -16,7 +16,17 @@
   {% endif %}
 {% endcapture %}
 
-<footer class="chosenhope-home-scope chosenhope-footer">
+<footer
+  class="chosenhope-home-scope chosenhope-footer"
+  style="
+    --ch-footer-bg: {{ section.settings.background_color }};
+    --ch-footer-border: {{ section.settings.border_color }};
+    --ch-footer-brand-text: {{ section.settings.brand_text_color }};
+    --ch-footer-heading: {{ section.settings.heading_color }};
+    --ch-footer-link: {{ section.settings.link_text_color }};
+    --ch-footer-bottom-text: {{ section.settings.bottom_text_color }};
+  "
+>
   <div class="container chosenhope-footer__grid">
     <div>
       <div class="chosenhope-footer__logo">{{ chosenhope_logo }}</div>
@@ -50,7 +60,14 @@
     { "type": "link_list", "id": "menu_legal", "label": "Legal menu" },
     { "type": "url", "id": "social_instagram", "label": "Instagram URL" },
     { "type": "url", "id": "social_pinterest", "label": "Pinterest URL" },
-    { "type": "url", "id": "social_facebook", "label": "Facebook URL" }
+    { "type": "url", "id": "social_facebook", "label": "Facebook URL" },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "background_color", "label": "Footer background", "default": "#f9f8f4" },
+    { "type": "color", "id": "border_color", "label": "Border color", "default": "#eaeaea" },
+    { "type": "color", "id": "brand_text_color", "label": "Brand text color", "default": "#666666" },
+    { "type": "color", "id": "heading_color", "label": "Column heading color", "default": "#111111" },
+    { "type": "color", "id": "link_text_color", "label": "Link text color", "default": "#666666" },
+    { "type": "color", "id": "bottom_text_color", "label": "Bottom bar text color", "default": "#666666" }
   ],
   "presets": [
     { "name": "ChosenHope Footer" }

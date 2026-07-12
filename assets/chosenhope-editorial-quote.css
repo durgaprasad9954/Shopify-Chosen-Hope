@@ -1,5 +1,5 @@
 .chosenhope-editorial-quote {
-  background: var(--ch-gold);
+  background: var(--ch-eq-bg, var(--ch-gold));
   overflow: hidden;
   position: relative;
 }
@@ -14,13 +14,13 @@
 }
 
 .chosenhope-editorial-quote__quote {
-  color: var(--ch-white);
+  color: var(--ch-eq-quote-color, var(--ch-white));
   font-size: clamp(1.8rem, 3.6vw, 3rem);
   font-style: italic;
 }
 
 .chosenhope-editorial-quote__cite {
-  color: rgba(17, 17, 17, 0.65);
+  color: var(--ch-eq-citation-color, rgba(17, 17, 17, 0.65));
   display: block;
   font-family: var(--ch-font-body);
   font-size: 0.875rem;

@@ -1,6 +1,14 @@
 .chosenhope-editorial-products {
-  background: var(--ch-white);
+  background: var(--ch-ep-bg, var(--ch-white));
   padding-block: 5.5rem;
+}
+
+.chosenhope-editorial-products .eyebrow {
+  color: var(--ch-ep-eyebrow-color, var(--ch-olive));
+}
+
+.chosenhope-editorial-products h2 {
+  color: var(--ch-ep-heading-color, var(--ch-black));
 }
 
 .chosenhope-editorial-products__grid {
@@ -19,15 +27,16 @@
 }
 
 .chosenhope-editorial-products__feature::after {
-  background: linear-gradient(180deg, rgba(17, 17, 17, 0) 35%, rgba(17, 17, 17, 0.68) 100%);
+  background: linear-gradient(180deg, rgba(17, 17, 17, 0) 35%, var(--ch-ep-feature-overlay, rgba(17, 17, 17, 0.68)) 100%);
   content: "";
   inset: 0;
   position: absolute;
 }
 
 .chosenhope-editorial-products__badge {
-  background: var(--ch-white);
+  background: var(--ch-ep-badge-bg, var(--ch-white));
   border-radius: var(--ch-radius-pill);
+  color: var(--ch-ep-badge-text, var(--ch-black));
   font-family: var(--ch-font-body);
   font-size: 11px;
   font-weight: 700;
@@ -64,8 +73,8 @@
 
 .chosenhope-editorial-products__row {
   align-items: center;
-  background: var(--ch-white);
-  border: 1px solid var(--ch-border);
+  background: var(--ch-ep-row-bg, var(--ch-white));
+  border: 1px solid var(--ch-ep-row-border, var(--ch-border));
   border-radius: var(--ch-radius-md);
   display: flex;
   gap: 1rem;
@@ -88,6 +97,7 @@
 }
 
 .chosenhope-editorial-products__row-title {
+  color: var(--ch-ep-row-title, var(--ch-black));
   font-family: var(--ch-font-body);
   font-size: 0.9375rem;
   font-weight: 600;

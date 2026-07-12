@@ -8,7 +8,18 @@
   assign fc4 = section.settings.collection_4
 %}
 
-<section class="chosenhope-home-scope chosenhope-featured-collections" aria-labelledby="chosenhope-featured-collections-{{ section.id }}">
+<section
+  class="chosenhope-home-scope chosenhope-featured-collections"
+  aria-labelledby="chosenhope-featured-collections-{{ section.id }}"
+  style="
+    --ch-fc-bg: {{ section.settings.section_background_color }};
+    --ch-fc-eyebrow-color: {{ section.settings.eyebrow_color }};
+    --ch-fc-heading-color: {{ section.settings.heading_color }};
+    --ch-fc-subtext-color: {{ section.settings.subtext_color }};
+    --ch-fc-scrim-color: {{ section.settings.scrim_color }};
+    --ch-fc-label-color: {{ section.settings.label_text_color }};
+  "
+>
   <div class="container">
     <div class="section-head center">
       <span class="eyebrow">{{ section.settings.eyebrow }}</span>
@@ -35,7 +46,14 @@
     { "type": "collection", "id": "collection_1", "label": "Collection 1" },
     { "type": "collection", "id": "collection_2", "label": "Collection 2" },
     { "type": "collection", "id": "collection_3", "label": "Collection 3" },
-    { "type": "collection", "id": "collection_4", "label": "Collection 4" }
+    { "type": "collection", "id": "collection_4", "label": "Collection 4" },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "section_background_color", "label": "Section background", "default": "#f9f8f4" },
+    { "type": "color", "id": "eyebrow_color", "label": "Eyebrow text color", "default": "#6e7455" },
+    { "type": "color", "id": "heading_color", "label": "Heading text color", "default": "#111111" },
+    { "type": "color", "id": "subtext_color", "label": "Subtext color", "default": "#666666" },
+    { "type": "color", "id": "scrim_color", "label": "Image overlay color", "default": "rgba(17, 17, 17, 0.68)" },
+    { "type": "color", "id": "label_text_color", "label": "Collection label text color", "default": "#f9f8f4" }
   ],
   "presets": [
     { "name": "ChosenHope Collections" }

@@ -1,5 +1,5 @@
 .chosenhope-hero {
-  background: var(--ch-warm-white);
+  background: var(--ch-hero-bg, var(--ch-warm-white));
 }
 
 .chosenhope-hero__media {
@@ -16,7 +16,12 @@
 
 .chosenhope-hero__overlay {
   align-items: center;
-  background: linear-gradient(160deg, rgba(23, 22, 20, 0.82) 0%, rgba(23, 22, 20, 0.55) 45%, rgba(200, 162, 74, 0.28) 100%);
+  background: linear-gradient(
+    160deg,
+    var(--ch-hero-overlay-start, rgba(23, 22, 20, 0.82)) 0%,
+    var(--ch-hero-overlay-mid, rgba(23, 22, 20, 0.55)) 45%,
+    var(--ch-hero-overlay-end, rgba(200, 162, 74, 0.28)) 100%
+  );
   display: flex;
   inset: 0;
   position: absolute;
@@ -31,17 +36,18 @@
 }
 
 .chosenhope-hero__copy .eyebrow {
+  color: var(--ch-hero-eyebrow-color, var(--ch-gold));
   justify-content: center;
 }
 
 .chosenhope-hero__heading {
-  color: #fff;
+  color: var(--ch-hero-heading-color, var(--ch-warm-white));
   font-size: clamp(2.75rem, 2rem + 3.4vw, 4.75rem);
   font-style: italic;
 }
 
 .chosenhope-hero__subtext {
-  color: #fff;
+  color: var(--ch-hero-subtext-color, rgba(249, 248, 244, 0.86));
   font-size: 1.125rem;
   margin-inline: auto;
   margin-top: 1rem;

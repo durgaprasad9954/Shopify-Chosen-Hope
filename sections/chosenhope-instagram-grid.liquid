@@ -1,7 +1,16 @@
 {{ 'chosenhope-base.css' | asset_url | stylesheet_tag }}
 {{ 'chosenhope-instagram-grid.css' | asset_url | stylesheet_tag }}
 
-<section class="chosenhope-home-scope chosenhope-instagram-grid" aria-labelledby="chosenhope-instagram-grid-{{ section.id }}">
+<section
+  class="chosenhope-home-scope chosenhope-instagram-grid"
+  aria-labelledby="chosenhope-instagram-grid-{{ section.id }}"
+  style="
+    --ch-ig-bg: {{ section.settings.section_background_color }};
+    --ch-ig-eyebrow-color: {{ section.settings.eyebrow_color }};
+    --ch-ig-heading-color: {{ section.settings.heading_color }};
+    --ch-ig-icon-color: {{ section.settings.icon_color }};
+  "
+>
   <div class="container">
     <div class="section-head center">
       <span class="eyebrow">{{ section.settings.eyebrow }}</span>
@@ -28,7 +37,12 @@
   "name": "ChosenHope Instagram",
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "@chosenhope" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Follow along" }
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Follow along" },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "section_background_color", "label": "Section background", "default": "#ffffff" },
+    { "type": "color", "id": "eyebrow_color", "label": "Eyebrow text color", "default": "#6e7455" },
+    { "type": "color", "id": "heading_color", "label": "Heading text color", "default": "#111111" },
+    { "type": "color", "id": "icon_color", "label": "Overlay icon color", "default": "#ffffff" }
   ],
   "blocks": [
     {

@@ -9,7 +9,21 @@
   assign p4 = section.settings.product_4
 %}
 
-<section class="chosenhope-home-scope chosenhope-editorial-products" aria-labelledby="chosenhope-editorial-products-{{ section.id }}">
+<section
+  class="chosenhope-home-scope chosenhope-editorial-products"
+  aria-labelledby="chosenhope-editorial-products-{{ section.id }}"
+  style="
+    --ch-ep-bg: {{ section.settings.section_background_color }};
+    --ch-ep-eyebrow-color: {{ section.settings.eyebrow_color }};
+    --ch-ep-heading-color: {{ section.settings.heading_color }};
+    --ch-ep-badge-bg: {{ section.settings.badge_background_color }};
+    --ch-ep-badge-text: {{ section.settings.badge_text_color }};
+    --ch-ep-feature-overlay: {{ section.settings.feature_overlay_color }};
+    --ch-ep-row-bg: {{ section.settings.row_background_color }};
+    --ch-ep-row-border: {{ section.settings.row_border_color }};
+    --ch-ep-row-title: {{ section.settings.row_title_color }};
+  "
+>
   <div class="container">
     <div class="section-top">
       <div>
@@ -56,7 +70,17 @@
     { "type": "product", "id": "product_1", "label": "Product 1" },
     { "type": "product", "id": "product_2", "label": "Product 2" },
     { "type": "product", "id": "product_3", "label": "Product 3" },
-    { "type": "product", "id": "product_4", "label": "Product 4" }
+    { "type": "product", "id": "product_4", "label": "Product 4" },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "section_background_color", "label": "Section background", "default": "#ffffff" },
+    { "type": "color", "id": "eyebrow_color", "label": "Eyebrow text color", "default": "#6e7455" },
+    { "type": "color", "id": "heading_color", "label": "Heading text color", "default": "#111111" },
+    { "type": "color", "id": "badge_background_color", "label": "Badge background", "default": "#ffffff" },
+    { "type": "color", "id": "badge_text_color", "label": "Badge text color", "default": "#111111" },
+    { "type": "color", "id": "feature_overlay_color", "label": "Featured image overlay", "default": "rgba(17, 17, 17, 0.68)" },
+    { "type": "color", "id": "row_background_color", "label": "Product row background", "default": "#ffffff" },
+    { "type": "color", "id": "row_border_color", "label": "Product row border", "default": "#eaeaea" },
+    { "type": "color", "id": "row_title_color", "label": "Product row title color", "default": "#111111" }
   ],
   "presets": [
     { "name": "ChosenHope Best Sellers" }

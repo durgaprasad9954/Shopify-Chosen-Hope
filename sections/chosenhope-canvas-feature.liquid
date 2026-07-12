@@ -1,7 +1,20 @@
 {{ 'chosenhope-base.css' | asset_url | stylesheet_tag }}
 {{ 'chosenhope-canvas-feature.css' | asset_url | stylesheet_tag }}
 
-<section class="chosenhope-home-scope chosenhope-canvas-feature" aria-labelledby="chosenhope-canvas-feature-{{ section.id }}">
+<section
+  class="chosenhope-home-scope chosenhope-canvas-feature"
+  aria-labelledby="chosenhope-canvas-feature-{{ section.id }}"
+  style="
+    --ch-cf-bg: {{ section.settings.section_background_color }};
+    --ch-cf-eyebrow-color: {{ section.settings.eyebrow_color }};
+    --ch-cf-heading-color: {{ section.settings.heading_color }};
+    --ch-cf-text-color: {{ section.settings.text_color }};
+    --ch-cf-list-text-color: {{ section.settings.list_text_color }};
+    --ch-cf-list-icon-color: {{ section.settings.list_icon_color }};
+    --ch-cf-badge-bg: {{ section.settings.badge_background_color }};
+    --ch-cf-badge-text: {{ section.settings.badge_text_color }};
+  "
+>
   <div class="container chosenhope-canvas-feature__layout">
     <div class="chosenhope-canvas-feature__media">
       {% if section.settings.image != blank %}
@@ -41,7 +54,16 @@
     { "type": "text", "id": "feature_2", "label": "Feature 2", "default": "Three frame finishes, five sizes" },
     { "type": "text", "id": "feature_3", "label": "Feature 3", "default": "Archival ink, fade-resistant for decades" },
     { "type": "text", "id": "button_label", "label": "Button label", "default": "Shop Canvas Collection" },
-    { "type": "url", "id": "button_url", "label": "Button link" }
+    { "type": "url", "id": "button_url", "label": "Button link" },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "section_background_color", "label": "Section background", "default": "#ffffff" },
+    { "type": "color", "id": "eyebrow_color", "label": "Eyebrow text color", "default": "#6e7455" },
+    { "type": "color", "id": "heading_color", "label": "Heading text color", "default": "#111111" },
+    { "type": "color", "id": "text_color", "label": "Body text color", "default": "#666666" },
+    { "type": "color", "id": "list_text_color", "label": "Feature list text color", "default": "#111111" },
+    { "type": "color", "id": "list_icon_color", "label": "Feature list icon color", "default": "#a8853a" },
+    { "type": "color", "id": "badge_background_color", "label": "Badge background", "default": "#ffffff" },
+    { "type": "color", "id": "badge_text_color", "label": "Badge text color", "default": "#111111" }
   ],
   "presets": [
     { "name": "ChosenHope Canvas Feature" }
