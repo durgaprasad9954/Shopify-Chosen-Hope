@@ -1,0 +1,36 @@
+{
+  "sections": {
+    "chosenhope_shop_hero": {
+      "type": "chosenhope-shop-hero",
+      "name": "ChosenHope Shop Hero",
+      "settings": {
+        "breadcrumb_label": "Apparel",
+        "eyebrow": "Wear the message",
+        "heading": "Apparel",
+        "subtext": "Hoodies, tees, and caps carrying a quiet message — soft, well-made, and built for everyday wear.",
+        "icon": "apparel"
+      }
+    },
+    "chosenhope_shop_grid": {
+      "type": "chosenhope-shop-grid",
+      "name": "ChosenHope Shop Grid",
+      "settings": {
+        "show_filters": true,
+        "result_noun": "items",
+        "products_per_page": 12,
+        "best_seller_tag": "best-seller",
+        "new_tag": "new",
+        "empty_state_text": "No apparel found"
+      }
+    },
+    "chosenhope_footer": {
+      "type": "chosenhope-footer",
+      "name": "ChosenHope Footer"
+    }
+  },
+  "order": [
+    "chosenhope_shop_hero",
+    "chosenhope_shop_grid",
+    "chosenhope_footer"
+  ]
+}

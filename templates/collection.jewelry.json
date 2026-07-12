@@ -1,0 +1,36 @@
+{
+  "sections": {
+    "chosenhope_shop_hero": {
+      "type": "chosenhope-shop-hero",
+      "name": "ChosenHope Shop Hero",
+      "settings": {
+        "breadcrumb_label": "Jewelry",
+        "eyebrow": "Wear it close",
+        "heading": "Faith Jewelry",
+        "subtext": "Rings, chains, and bracelets made to be worn every day — a quiet reminder close to the skin.",
+        "icon": "cross"
+      }
+    },
+    "chosenhope_shop_grid": {
+      "type": "chosenhope-shop-grid",
+      "name": "ChosenHope Shop Grid",
+      "settings": {
+        "show_filters": true,
+        "result_noun": "pieces",
+        "products_per_page": 12,
+        "best_seller_tag": "best-seller",
+        "new_tag": "new",
+        "empty_state_text": "No jewelry found"
+      }
+    },
+    "chosenhope_footer": {
+      "type": "chosenhope-footer",
+      "name": "ChosenHope Footer"
+    }
+  },
+  "order": [
+    "chosenhope_shop_hero",
+    "chosenhope_shop_grid",
+    "chosenhope_footer"
+  ]
+}

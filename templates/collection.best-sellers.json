@@ -1,0 +1,36 @@
+{
+  "sections": {
+    "chosenhope_shop_hero": {
+      "type": "chosenhope-shop-hero",
+      "name": "ChosenHope Shop Hero",
+      "settings": {
+        "breadcrumb_label": "Best Sellers",
+        "eyebrow": "Most loved",
+        "heading": "Best Sellers",
+        "subtext": "The pieces our community keeps coming back for — across jewelry, canvas, and apparel.",
+        "icon": "star"
+      }
+    },
+    "chosenhope_shop_grid": {
+      "type": "chosenhope-shop-grid",
+      "name": "ChosenHope Shop Grid",
+      "settings": {
+        "show_filters": false,
+        "result_noun": "best sellers",
+        "products_per_page": 12,
+        "best_seller_tag": "best-seller",
+        "new_tag": "new",
+        "empty_state_text": "No best sellers found"
+      }
+    },
+    "chosenhope_footer": {
+      "type": "chosenhope-footer",
+      "name": "ChosenHope Footer"
+    }
+  },
+  "order": [
+    "chosenhope_shop_hero",
+    "chosenhope_shop_grid",
+    "chosenhope_footer"
+  ]
+}
