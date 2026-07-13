@@ -1,0 +1,21 @@
+{
+  "sections": {
+    "chosenhope_collections_hero": {
+      "type": "chosenhope-collections-hero",
+      "name": "CH Collections Hero"
+    },
+    "chosenhope_collections_grid": {
+      "type": "chosenhope-collections-grid",
+      "name": "CH Collections Grid"
+    },
+    "chosenhope_footer": {
+      "type": "chosenhope-footer",
+      "name": "ChosenHope Footer"
+    }
+  },
+  "order": [
+    "chosenhope_collections_hero",
+    "chosenhope_collections_grid",
+    "chosenhope_footer"
+  ]
+}

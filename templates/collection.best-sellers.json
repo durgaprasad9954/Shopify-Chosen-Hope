@@ -1,0 +1,21 @@
+{
+  "sections": {
+    "chosenhope_best_sellers_hero": {
+      "type": "chosenhope-best-sellers-hero",
+      "name": "CH Best Sellers Hero"
+    },
+    "chosenhope_best_sellers_grid": {
+      "type": "chosenhope-best-sellers-grid",
+      "name": "CH Best Sellers Grid"
+    },
+    "chosenhope_footer": {
+      "type": "chosenhope-footer",
+      "name": "ChosenHope Footer"
+    }
+  },
+  "order": [
+    "chosenhope_best_sellers_hero",
+    "chosenhope_best_sellers_grid",
+    "chosenhope_footer"
+  ]
+}

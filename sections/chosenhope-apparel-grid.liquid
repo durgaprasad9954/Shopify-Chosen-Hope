@@ -2,7 +2,10 @@
 {{ 'chosenhope-shop-grid.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'chosenhope-shop.js' | asset_url }}" defer="defer"></script>
 
-{% render 'chosenhope-shop-grid-content', section: section, collection: section.settings.collection %}
+{% liquid
+  assign resolved_collection = section.settings.collection | default: collection
+%}
+{% render 'chosenhope-shop-grid-content', section: section, collection: resolved_collection %}
 
 {% schema %}
 {

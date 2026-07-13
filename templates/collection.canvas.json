@@ -1,0 +1,21 @@
+{
+  "sections": {
+    "chosenhope_canvas_hero": {
+      "type": "chosenhope-canvas-hero",
+      "name": "ChosenHope Canvas Hero"
+    },
+    "chosenhope_canvas_grid": {
+      "type": "chosenhope-canvas-grid",
+      "name": "ChosenHope Canvas Grid"
+    },
+    "chosenhope_footer": {
+      "type": "chosenhope-footer",
+      "name": "ChosenHope Footer"
+    }
+  },
+  "order": [
+    "chosenhope_canvas_hero",
+    "chosenhope_canvas_grid",
+    "chosenhope_footer"
+  ]
+}
