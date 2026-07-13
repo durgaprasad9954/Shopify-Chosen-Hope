@@ -38,8 +38,13 @@
             "compare_at_price_formatted": null,
           {% endif %}
           {% assign v_image = variant.featured_image %}
-          "featured_image_url": {{ v_image | image_url: width: 1200 | json }},
-          "featured_image_alt": {{ v_image.alt | json }}
+          {% if v_image != blank %}
+            "featured_image_url": {{ v_image | image_url: width: 1200 | json }},
+            "featured_image_alt": {{ v_image.alt | json }}
+          {% else %}
+            "featured_image_url": null,
+            "featured_image_alt": null
+          {% endif %}
         }{% unless forloop.last %},{% endunless %}
       {% endfor %}
     ]
