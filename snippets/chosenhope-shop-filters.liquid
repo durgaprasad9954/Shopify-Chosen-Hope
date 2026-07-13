@@ -1,0 +1,67 @@
+{%- doc -%}
+  Renders the ChosenHope filter accordion groups for a collection, bound to the
+  collection's real Shopify filters (tags, product options, price, availability).
+
+  @param {object} collection - The collection whose filters should render
+  @param {string} id_prefix - Unique prefix so ids don't collide between sidebar and drawer
+{%- enddoc -%}
+
+{% for filter in collection.filters %}
+  <details class="filter-group" {% if forloop.index <= 2 %}open{% endif %}>
+    <summary>
+      {{ filter.label }}
+      <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </summary>
+    <div class="filter-options">
+      {% case filter.type %}
+        {% when 'list_tag' or 'list' or 'boolean' %}
+          {% for value in filter.values %}
+            {% liquid
+              assign option_id = id_prefix | append: '-' | append: filter.param_name | append: '-' | append: forloop.index | replace: '.', '-'
+              assign is_disabled = false
+              if value.count == 0 and value.active == false
+                assign is_disabled = true
+              endif
+            %}
+            <label class="filter-option" for="{{ option_id }}">
+              <input
+                type="checkbox"
+                id="{{ option_id }}"
+                name="{{ value.param_name }}"
+                value="{{ value.value }}"
+                {% if value.active %}checked{% endif %}
+                {% if is_disabled %}disabled{% endif %}
+              >
+              {{ value.label }}
+              <span class="count">({{ value.count }})</span>
+            </label>
+          {% endfor %}
+        {% when 'price_range' %}
+          <div class="price-range-fields">
+            <div class="field-group">
+              <label for="{{ id_prefix }}-{{ filter.param_name }}-min">Min</label>
+              <input
+                type="number"
+                id="{{ id_prefix }}-{{ filter.param_name }}-min"
+                min="0"
+                name="{{ filter.min_value.param_name }}"
+                value="{{ filter.min_value.value | money_without_currency }}"
+                placeholder="{{ 0 | money_without_currency }}"
+              >
+            </div>
+            <div class="field-group">
+              <label for="{{ id_prefix }}-{{ filter.param_name }}-max">Max</label>
+              <input
+                type="number"
+                id="{{ id_prefix }}-{{ filter.param_name }}-max"
+                min="0"
+                name="{{ filter.max_value.param_name }}"
+                value="{{ filter.max_value.value | money_without_currency }}"
+                placeholder="{{ filter.range_max | money_without_currency }}"
+              >
+            </div>
+          </div>
+      {% endcase %}
+    </div>
+  </details>
+{% endfor %}

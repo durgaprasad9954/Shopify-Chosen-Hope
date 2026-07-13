@@ -8,11 +8,15 @@
 }
 
 .chosenhope-featured-collections .section-head h2 {
-  color: var(--ch-fc-heading-color, var(--ch-black));
+  color: var(--ch-fc-heading-color, var(--ch-black)) !important;
+  font-size: var(--ch-fc-heading-size, clamp(2.5rem, 1.7rem + 3vw, 4rem)) !important;
+  font-weight: var(--ch-fc-heading-weight, 500) !important;
 }
 
 .chosenhope-featured-collections .section-head p {
-  color: var(--ch-fc-subtext-color, var(--ch-gray));
+  color: var(--ch-fc-subtext-color, var(--ch-gray)) !important;
+  font-size: var(--ch-fc-subtext-size, 1.125rem) !important;
+  font-weight: var(--ch-fc-subtext-weight, 400) !important;
 }
 
 .chosenhope-featured-collections__grid {

@@ -18,6 +18,10 @@
     --ch-fc-subtext-color: {{ section.settings.subtext_color }};
     --ch-fc-scrim-color: {{ section.settings.scrim_color }};
     --ch-fc-label-color: {{ section.settings.label_text_color }};
+    {% if section.settings.heading_font_size != blank %}--ch-fc-heading-size: {{ section.settings.heading_font_size }};{% endif %}
+    {% if section.settings.heading_font_weight != blank %}--ch-fc-heading-weight: {{ section.settings.heading_font_weight }};{% endif %}
+    {% if section.settings.subtext_font_size != blank %}--ch-fc-subtext-size: {{ section.settings.subtext_font_size }};{% endif %}
+    {% if section.settings.subtext_font_weight != blank %}--ch-fc-subtext-weight: {{ section.settings.subtext_font_weight }};{% endif %}
   "
 >
   <div class="container">
@@ -53,7 +57,60 @@
     { "type": "color", "id": "heading_color", "label": "Heading text color", "default": "#111111" },
     { "type": "color", "id": "subtext_color", "label": "Subtext color", "default": "#666666" },
     { "type": "color", "id": "scrim_color", "label": "Image overlay color", "default": "rgba(17, 17, 17, 0.68)" },
-    { "type": "color", "id": "label_text_color", "label": "Collection label text color", "default": "#f9f8f4" }
+    { "type": "color", "id": "label_text_color", "label": "Collection label text color", "default": "#f9f8f4" },
+    { "type": "header", "content": "Typography" },
+    {
+      "type": "select",
+      "id": "heading_font_size",
+      "label": "Heading size",
+      "options": [
+        { "value": "", "label": "Default (responsive)" },
+        { "value": "1.75rem", "label": "Small" },
+        { "value": "2.5rem", "label": "Medium" },
+        { "value": "3.25rem", "label": "Large" },
+        { "value": "4rem", "label": "X-Large" }
+      ],
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "heading_font_weight",
+      "label": "Heading weight",
+      "options": [
+        { "value": "", "label": "Default" },
+        { "value": "400", "label": "Regular" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semibold" },
+        { "value": "700", "label": "Bold" }
+      ],
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "subtext_font_size",
+      "label": "Subtext size",
+      "options": [
+        { "value": "", "label": "Default" },
+        { "value": "0.875rem", "label": "Small" },
+        { "value": "1rem", "label": "Medium" },
+        { "value": "1.125rem", "label": "Large" },
+        { "value": "1.25rem", "label": "X-Large" }
+      ],
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "subtext_font_weight",
+      "label": "Subtext weight",
+      "options": [
+        { "value": "", "label": "Default" },
+        { "value": "400", "label": "Regular" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semibold" },
+        { "value": "700", "label": "Bold" }
+      ],
+      "default": ""
+    }
   ],
   "presets": [
     { "name": "ChosenHope Collections" }

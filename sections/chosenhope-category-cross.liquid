@@ -24,6 +24,8 @@
     --ch-cc-circle-center-border-color: {{ section.settings.circle_center_border_color }};
     --ch-cc-circle-center-glow-color: {{ section.settings.circle_center_glow_color }};
     --ch-cc-title-color: {{ section.settings.title_text_color }};
+    {% if section.settings.heading_font_size != blank %}--ch-cc-heading-size: {{ section.settings.heading_font_size }};{% endif %}
+    {% if section.settings.heading_font_weight != blank %}--ch-cc-heading-weight: {{ section.settings.heading_font_weight }};{% endif %}
   "
 >
   <div class="container">
@@ -89,7 +91,34 @@
     { "type": "color", "id": "circle_border_color", "label": "Circle border color", "default": "#f9f8f4" },
     { "type": "color", "id": "circle_center_border_color", "label": "Center circle border color", "default": "#c8a24a" },
     { "type": "color", "id": "circle_center_glow_color", "label": "Center circle glow color", "default": "#f3e9d3" },
-    { "type": "color", "id": "title_text_color", "label": "Item title text color", "default": "#111111" }
+    { "type": "color", "id": "title_text_color", "label": "Item title text color", "default": "#111111" },
+    { "type": "header", "content": "Typography" },
+    {
+      "type": "select",
+      "id": "heading_font_size",
+      "label": "Heading size",
+      "options": [
+        { "value": "", "label": "Default (responsive)" },
+        { "value": "1.75rem", "label": "Small" },
+        { "value": "2.5rem", "label": "Medium" },
+        { "value": "3.25rem", "label": "Large" },
+        { "value": "4rem", "label": "X-Large" }
+      ],
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "heading_font_weight",
+      "label": "Heading weight",
+      "options": [
+        { "value": "", "label": "Default" },
+        { "value": "400", "label": "Regular" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semibold" },
+        { "value": "700", "label": "Bold" }
+      ],
+      "default": ""
+    }
   ],
   "presets": [
     { "name": "ChosenHope Category Cross" }

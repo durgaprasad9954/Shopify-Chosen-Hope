@@ -36,19 +36,24 @@
 }
 
 .chosenhope-hero__copy .eyebrow {
-  color: var(--ch-hero-eyebrow-color, var(--ch-gold));
+  /* stylelint-disable-next-line declaration-no-important -- must beat base.css's more specific .eyebrow.on-dark rule */
+  color: var(--ch-hero-eyebrow-color, var(--ch-gold)) !important;
   justify-content: center;
 }
 
 .chosenhope-hero__heading {
-  color: var(--ch-hero-heading-color, var(--ch-warm-white));
-  font-size: clamp(2.75rem, 2rem + 3.4vw, 4.75rem);
+  /* stylelint-disable-next-line declaration-no-important -- must beat base.css's tag-qualified h1 rule */
+  color: var(--ch-hero-heading-color, var(--ch-warm-white)) !important;
+  font-size: var(--ch-hero-heading-size, clamp(2.75rem, 2rem + 3.4vw, 4.75rem)) !important;
   font-style: italic;
+  font-weight: var(--ch-hero-heading-weight, 500) !important;
 }
 
 .chosenhope-hero__subtext {
-  color: var(--ch-hero-subtext-color, rgba(249, 248, 244, 0.86));
-  font-size: 1.125rem;
+  /* stylelint-disable-next-line declaration-no-important -- must beat base.css's tag-qualified p rule */
+  color: var(--ch-hero-subtext-color, rgba(249, 248, 244, 0.86)) !important;
+  font-size: var(--ch-hero-subtext-size, 1.125rem) !important;
+  font-weight: var(--ch-hero-subtext-weight, 400) !important;
   margin-inline: auto;
   margin-top: 1rem;
   max-width: 46ch;

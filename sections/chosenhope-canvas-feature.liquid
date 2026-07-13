@@ -13,6 +13,10 @@
     --ch-cf-list-icon-color: {{ section.settings.list_icon_color }};
     --ch-cf-badge-bg: {{ section.settings.badge_background_color }};
     --ch-cf-badge-text: {{ section.settings.badge_text_color }};
+    {% if section.settings.heading_font_size != blank %}--ch-cf-heading-size: {{ section.settings.heading_font_size }};{% endif %}
+    {% if section.settings.heading_font_weight != blank %}--ch-cf-heading-weight: {{ section.settings.heading_font_weight }};{% endif %}
+    {% if section.settings.text_font_size != blank %}--ch-cf-text-size: {{ section.settings.text_font_size }};{% endif %}
+    {% if section.settings.text_font_weight != blank %}--ch-cf-text-weight: {{ section.settings.text_font_weight }};{% endif %}
   "
 >
   <div class="container chosenhope-canvas-feature__layout">
@@ -63,7 +67,61 @@
     { "type": "color", "id": "list_text_color", "label": "Feature list text color", "default": "#111111" },
     { "type": "color", "id": "list_icon_color", "label": "Feature list icon color", "default": "#a8853a" },
     { "type": "color", "id": "badge_background_color", "label": "Badge background", "default": "#ffffff" },
-    { "type": "color", "id": "badge_text_color", "label": "Badge text color", "default": "#111111" }
+    { "type": "color", "id": "badge_text_color", "label": "Badge text color", "default": "#111111" },
+    { "type": "header", "content": "Typography" },
+    {
+      "type": "select",
+      "id": "heading_font_size",
+      "label": "Heading size",
+      "options": [
+        { "value": "", "label": "Default (responsive)" },
+        { "value": "1.75rem", "label": "Small" },
+        { "value": "2.5rem", "label": "Medium" },
+        { "value": "3.25rem", "label": "Large" },
+        { "value": "4rem", "label": "X-Large" },
+        { "value": "4.75rem", "label": "XX-Large" }
+      ],
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "heading_font_weight",
+      "label": "Heading weight",
+      "options": [
+        { "value": "", "label": "Default" },
+        { "value": "400", "label": "Regular" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semibold" },
+        { "value": "700", "label": "Bold" }
+      ],
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "text_font_size",
+      "label": "Body text size",
+      "options": [
+        { "value": "", "label": "Default" },
+        { "value": "0.875rem", "label": "Small" },
+        { "value": "1rem", "label": "Medium" },
+        { "value": "1.125rem", "label": "Large" },
+        { "value": "1.25rem", "label": "X-Large" }
+      ],
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "text_font_weight",
+      "label": "Body text weight",
+      "options": [
+        { "value": "", "label": "Default" },
+        { "value": "400", "label": "Regular" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semibold" },
+        { "value": "700", "label": "Bold" }
+      ],
+      "default": ""
+    }
   ],
   "presets": [
     { "name": "ChosenHope Canvas Feature" }

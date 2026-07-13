@@ -37,12 +37,14 @@
 }
 
 .chosenhope-newsletter__heading {
-  color: var(--ch-nl-heading-color, var(--ch-warm-white));
+  /* stylelint-disable-next-line declaration-no-important -- must beat base.css's tag-qualified h2 rule */
+  color: var(--ch-nl-heading-color, var(--ch-warm-white)) !important;
   font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
 }
 
 .chosenhope-newsletter__text {
-  color: var(--ch-nl-text-color, rgba(249, 248, 244, 0.7));
+  /* stylelint-disable-next-line declaration-no-important -- must beat base.css's tag-qualified p rule */
+  color: var(--ch-nl-text-color, rgba(249, 248, 244, 0.7)) !important;
   font-size: 0.9375rem;
   margin-top: 8px;
 }
@@ -86,18 +88,21 @@
 
 .chosenhope-newsletter__note,
 .chosenhope-newsletter__errors {
-  color: var(--ch-nl-note-color, rgba(249, 248, 244, 0.72));
+  /* stylelint-disable-next-line declaration-no-important -- must beat base.css's tag-qualified p rule */
+  color: var(--ch-nl-note-color, rgba(249, 248, 244, 0.72)) !important;
   font-family: var(--ch-font-body);
   font-size: 12px;
   margin-top: 1rem;
 }
 
 .chosenhope-newsletter__success {
-  color: var(--ch-nl-success-color, var(--ch-gold-tint));
+  /* stylelint-disable-next-line declaration-no-important -- must beat base.css's tag-qualified p rule */
+  color: var(--ch-nl-success-color, var(--ch-gold-tint)) !important;
 }
 
 .chosenhope-newsletter__errors {
-  color: var(--ch-nl-error-color, #ffccbe);
+  /* stylelint-disable-next-line declaration-no-important -- must beat base.css's tag-qualified p rule */
+  color: var(--ch-nl-error-color, #ffccbe) !important;
 }
 
 @media (max-width: 820px) {
