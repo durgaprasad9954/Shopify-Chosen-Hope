@@ -9,13 +9,9 @@
   assign initial_image = initial_variant.featured_image | default: product.featured_image
   assign gallery_images = product.images
 
-  assign has_rating = false
-  if product.metafields.reviews.rating.value != blank and product.metafields.reviews.rating_count.value != blank
-    assign has_rating = true
-    assign rating_value = product.metafields.reviews.rating.value
-    assign rating_count = product.metafields.reviews.rating_count.value
-    assign full_stars = rating_value | round
-  endif
+  assign rating_value = product.metafields.reviews.rating.value | default: section.settings.fallback_rating
+  assign rating_count = product.metafields.reviews.rating_count.value | default: section.settings.fallback_review_count
+  assign full_stars = rating_value | round
 
   assign swatch_option_names = section.settings.swatch_option_names | downcase | split: ','
 %}
@@ -99,12 +95,10 @@
           <div class="pdp-desc">{{ product.description }}</div>
         {% endif %}
 
-        {% if has_rating %}
-          <div class="pdp-rating">
-            <span class="stars" aria-hidden="true">{% for i in (1..5) %}{% if i <= full_stars %}★{% else %}☆{% endif %}{% endfor %}</span>
-            <span>{{ rating_value }} · <a href="#chosenhope-reviews">{{ rating_count }} reviews</a></span>
-          </div>
-        {% endif %}
+        <div class="pdp-rating">
+          <span class="stars" aria-hidden="true">{% for i in (1..5) %}{% if i <= full_stars %}★{% else %}☆{% endif %}{% endfor %}</span>
+          <span>{{ rating_value }} · <a href="#chosenhope-reviews">{{ rating_count }} reviews</a></span>
+        </div>
 
         <div class="pdp-price" id="chosenhope-pdp-price">
           <span>{{ initial_variant.price | money }}</span>
@@ -203,9 +197,12 @@
           <p id="chosenhope-pdp-unavailable" class="pdp-unavailable" {% if initial_variant.available %}hidden{% endif %}>This combination is currently unavailable.</p>
 
           {% if section.settings.show_buy_now %}
-            <div class="pdp-buy-now">
-              {{ form | payment_button }}
-            </div>
+            <button
+              type="submit"
+              name="checkout"
+              class="btn btn-dark pdp-buy-now"
+              {% unless initial_variant.available %}disabled{% endunless %}
+            >Buy It Now</button>
           {% endif %}
         {% endform %}
 
@@ -225,13 +222,23 @@
       </div>
     </div>
   </div>
-</div>
 
-<div id="chosenhope-lightbox-backdrop" class="chosenhope-home-scope lightbox-backdrop">
-  <button type="button" class="lightbox-close" data-lightbox-close aria-label="Close zoomed image">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-  </button>
-  <div id="chosenhope-lightbox-media" class="lightbox-image"></div>
+  <div id="chosenhope-lightbox-backdrop" class="lightbox-backdrop" role="dialog" aria-modal="true" aria-label="Zoomed product image" aria-hidden="true">
+    <button type="button" class="lightbox-close" data-lightbox-close aria-label="Close zoomed image">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    {% if gallery_images.size > 1 %}
+      <button type="button" class="lightbox-nav lightbox-prev" data-lightbox-prev aria-label="Previous image">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    {% endif %}
+    <div id="chosenhope-lightbox-media" class="lightbox-image"></div>
+    {% if gallery_images.size > 1 %}
+      <button type="button" class="lightbox-nav lightbox-next" data-lightbox-next aria-label="Next image">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    {% endif %}
+  </div>
 </div>
 
 {% render 'chosenhope-overlays', section: section %}
@@ -256,7 +263,11 @@
     { "type": "header", "content": "Info panel" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "info": "e.g. \"Signature · Cross Collection\". Leave blank to hide." },
     { "type": "text", "id": "swatch_option_names", "label": "Swatch-style option names", "default": "color,metal", "info": "Comma-separated, lowercase. Product options matching these names render as circular color swatches; all other options render as pill buttons." },
-    { "type": "checkbox", "id": "show_buy_now", "label": "Show \"Buy it now\" dynamic checkout button", "default": true },
+    { "type": "checkbox", "id": "show_buy_now", "label": "Show \"Buy It Now\" button", "default": true },
+    { "type": "header", "content": "Rating" },
+    { "type": "paragraph", "content": "If the product has review metafields, those are used automatically. Otherwise these fallback values show instead, so every product page has a consistent rating row." },
+    { "type": "text", "id": "fallback_rating", "label": "Fallback rating", "default": "4.9" },
+    { "type": "text", "id": "fallback_review_count", "label": "Fallback review count", "default": "128" },
     { "type": "header", "content": "Trust badges" },
     { "type": "text", "id": "trust_1", "label": "Badge 1", "default": "Secure checkout" },
     { "type": "text", "id": "trust_2", "label": "Badge 2", "default": "Ships within 24 hours" },

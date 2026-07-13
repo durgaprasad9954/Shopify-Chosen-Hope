@@ -139,21 +139,44 @@
   renderQty();
 
   /* ---------------------------------------------------------------------
-     Gallery — thumbnail click swaps the main image; click on the main
-     image opens the lightbox with the same media.
+     Gallery — thumbnail click swaps the main image and scrolls itself
+     into view; the main image and lightbox share one "current index"
+     into the thumbnail list so prev/next navigation stays in sync.
   --------------------------------------------------------------------- */
+  let currentGalleryIndex = 0;
+
+  function galleryThumbs() {
+    return Array.from(root.querySelectorAll('.pdp-thumb'));
+  }
+
   function setMainImage(url, alt) {
     const mediaWrap = document.getElementById('chosenhope-pdp-main-media');
     if (!mediaWrap) return;
-    mediaWrap.innerHTML = `<img src="${url}" alt="${alt.replace(/"/g, '&quot;')}" loading="eager">`;
+    mediaWrap.innerHTML = `<img src="${url}" alt="${(alt || '').replace(/"/g, '&quot;')}" loading="eager">`;
+  }
+
+  function showGalleryIndex(index) {
+    const thumbs = galleryThumbs();
+    if (thumbs.length === 0) return;
+    currentGalleryIndex = (index + thumbs.length) % thumbs.length;
+    const thumb = thumbs[currentGalleryIndex];
+
+    thumbs.forEach((t) => t.classList.remove('active'));
+    thumb.classList.add('active');
+    thumb.scrollIntoView({ behavior: 'smooth', inline: 'nearest', block: 'nearest' });
+
+    setMainImage(thumb.getAttribute('data-image'), thumb.getAttribute('data-alt') || '');
+
+    const backdrop = document.getElementById('chosenhope-lightbox-backdrop');
+    if (backdrop && backdrop.classList.contains('open')) {
+      renderLightboxMedia();
+    }
   }
 
   root.addEventListener('click', (event) => {
     const thumb = event.target.closest('.pdp-thumb');
     if (thumb) {
-      root.querySelectorAll('.pdp-thumb').forEach((t) => t.classList.remove('active'));
-      thumb.classList.add('active');
-      setMainImage(thumb.getAttribute('data-image'), thumb.getAttribute('data-alt') || '');
+      showGalleryIndex(galleryThumbs().indexOf(thumb));
       return;
     }
 
@@ -163,13 +186,19 @@
     }
   });
 
-  function openLightbox() {
-    const backdrop = document.getElementById('chosenhope-lightbox-backdrop');
+  function renderLightboxMedia() {
     const mediaWrap = document.getElementById('chosenhope-pdp-main-media');
     const lightboxMedia = document.getElementById('chosenhope-lightbox-media');
-    if (!backdrop || !mediaWrap || !lightboxMedia) return;
+    if (!mediaWrap || !lightboxMedia) return;
     lightboxMedia.innerHTML = mediaWrap.innerHTML;
+  }
+
+  function openLightbox() {
+    const backdrop = document.getElementById('chosenhope-lightbox-backdrop');
+    if (!backdrop) return;
+    renderLightboxMedia();
     backdrop.classList.add('open');
+    backdrop.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
   }
 
@@ -177,6 +206,7 @@
     const backdrop = document.getElementById('chosenhope-lightbox-backdrop');
     if (!backdrop) return;
     backdrop.classList.remove('open');
+    backdrop.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
   }
 
@@ -185,14 +215,33 @@
       closeLightbox();
       return;
     }
+    if (event.target.closest('[data-lightbox-prev]')) {
+      showGalleryIndex(currentGalleryIndex - 1);
+      return;
+    }
+    if (event.target.closest('[data-lightbox-next]')) {
+      showGalleryIndex(currentGalleryIndex + 1);
+      return;
+    }
     if (event.target.id === 'chosenhope-lightbox-backdrop') {
       closeLightbox();
     }
   });
 
   root.addEventListener('keydown', (event) => {
+    const backdrop = document.getElementById('chosenhope-lightbox-backdrop');
+    const isOpen = backdrop && backdrop.classList.contains('open');
+
     if (event.key === 'Escape') {
       closeLightbox();
+      return;
+    }
+    if (isOpen && event.key === 'ArrowLeft') {
+      showGalleryIndex(currentGalleryIndex - 1);
+      return;
+    }
+    if (isOpen && event.key === 'ArrowRight') {
+      showGalleryIndex(currentGalleryIndex + 1);
       return;
     }
     if ((event.key === 'Enter' || event.key === ' ') && event.target.id === 'chosenhope-pdp-main-image') {
@@ -275,8 +324,10 @@
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             stickyBar.classList.remove('show');
+            stickyBar.setAttribute('aria-hidden', 'true');
           } else if (entry.boundingClientRect.top < 0) {
             stickyBar.classList.add('show');
+            stickyBar.setAttribute('aria-hidden', 'false');
           }
         });
       },
