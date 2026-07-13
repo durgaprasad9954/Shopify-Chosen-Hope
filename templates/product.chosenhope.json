@@ -1,32 +1,48 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "chosenhope_product_breadcrumb": {
       "type": "chosenhope-product-breadcrumb",
-      "name": "ChosenHope Product Breadcrumb"
+      "name": "ChosenHope Product Breadcrumb",
+      "settings": {}
     },
     "chosenhope_product_main": {
       "type": "chosenhope-product-main",
-      "name": "ChosenHope Product Main"
+      "name": "ChosenHope Product Main",
+      "settings": {}
     },
     "chosenhope_product_reviews": {
       "type": "chosenhope-product-reviews",
-      "name": "ChosenHope Product Reviews"
+      "name": "ChosenHope Product Reviews",
+      "settings": {}
     },
     "chosenhope_product_related": {
       "type": "chosenhope-product-related",
-      "name": "ChosenHope Product Related"
+      "name": "ChosenHope Product Related",
+      "settings": {}
     },
     "chosenhope_product_recently_viewed": {
       "type": "chosenhope-product-recently-viewed",
-      "name": "ChosenHope Product Recently Viewed"
+      "name": "ChosenHope Product Recently Viewed",
+      "settings": {}
     },
     "chosenhope_product_sticky_bar": {
       "type": "chosenhope-product-sticky-bar",
-      "name": "ChosenHope Product Sticky Bar"
+      "name": "ChosenHope Product Sticky Bar",
+      "settings": {}
     },
     "chosenhope_footer": {
       "type": "chosenhope-footer",
-      "name": "ChosenHope Footer"
+      "name": "ChosenHope Footer",
+      "settings": {}
     }
   },
   "order": [
