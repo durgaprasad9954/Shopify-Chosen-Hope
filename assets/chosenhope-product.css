@@ -12,8 +12,8 @@
 .chosenhope-home-scope .btn-sm { min-height: 44px; padding: 0 24px; font-size: 0.8125rem; }
 
 /* ---------- PDP layout ---------- */
-.chosenhope-home-scope .pdp-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; }
-@media (max-width: 900px) { .chosenhope-home-scope .pdp-layout { grid-template-columns: 1fr; } }
+.chosenhope-home-scope .pdp-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3.5rem; align-items: start; }
+@media (max-width: 900px) { .chosenhope-home-scope .pdp-layout { grid-template-columns: minmax(0, 1fr); } }
 
 /* ---------- Gallery ---------- */
 .chosenhope-home-scope .pdp-gallery { position: sticky; top: 96px; }
