@@ -12,13 +12,13 @@
 .chosenhope-home-scope .btn-sm { min-height: 44px; padding: 0 24px; font-size: 0.8125rem; }
 
 /* ---------- PDP layout ---------- */
-.chosenhope-home-scope .pdp-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; }
-@media (max-width: 900px) { .chosenhope-home-scope .pdp-layout { grid-template-columns: 1fr; } }
+.chosenhope-home-scope .pdp-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3.5rem; align-items: start; }
+@media (max-width: 900px) { .chosenhope-home-scope .pdp-layout { grid-template-columns: minmax(0, 1fr); } }
 
 /* ---------- Gallery ---------- */
-.chosenhope-home-scope .pdp-gallery { position: sticky; top: 96px; }
+.chosenhope-home-scope .pdp-gallery { position: sticky; top: 96px; min-width: 0; max-width: 100%; }
 @media (max-width: 900px) { .chosenhope-home-scope .pdp-gallery { position: static; } }
-.chosenhope-home-scope .pdp-main-image { aspect-ratio: 1 / 1; border-radius: var(--ch-radius-lg); overflow: hidden; position: relative; cursor: zoom-in; }
+.chosenhope-home-scope .pdp-main-image { width: 100%; aspect-ratio: 1 / 1; border-radius: var(--ch-radius-lg); overflow: hidden; position: relative; cursor: zoom-in; }
 .chosenhope-home-scope .pdp-main-image img,
 .chosenhope-home-scope .pdp-main-image .fallback-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .chosenhope-home-scope .pdp-zoom-hint {
