@@ -1,0 +1,89 @@
+{{ 'chosenhope-base.css' | asset_url | stylesheet_tag }}
+{{ 'chosenhope-product.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign avg_rating = product.metafields.reviews.rating.value | default: section.settings.average_rating
+  assign review_count = product.metafields.reviews.rating_count.value | default: section.settings.review_count
+  assign full_stars = avg_rating | round
+%}
+
+<section id="chosenhope-reviews" class="chosenhope-home-scope" aria-labelledby="chosenhope-reviews-heading" style="padding-block: 3.5rem;">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+      <h2 id="chosenhope-reviews-heading" style="font-size: clamp(2rem, 1.5rem + 2vw, 3rem);">{{ section.settings.heading }}</h2>
+    </div>
+
+    {% if avg_rating != blank and review_count != blank %}
+      <div class="review-summary">
+        <div class="review-score">
+          {{ avg_rating }}
+          <span class="stars" aria-hidden="true">{% for i in (1..5) %}{% if i <= full_stars %}★{% else %}☆{% endif %}{% endfor %}</span>
+          <span class="count">{{ review_count }} reviews</span>
+        </div>
+        <div class="review-bars">
+          <div class="review-bar-row"><span>5 star</span><div class="review-bar-track"><div class="review-bar-fill" style="width: {{ section.settings.pct_5 }}%;"></div></div><span>{{ section.settings.pct_5 }}%</span></div>
+          <div class="review-bar-row"><span>4 star</span><div class="review-bar-track"><div class="review-bar-fill" style="width: {{ section.settings.pct_4 }}%;"></div></div><span>{{ section.settings.pct_4 }}%</span></div>
+          <div class="review-bar-row"><span>3 star</span><div class="review-bar-track"><div class="review-bar-fill" style="width: {{ section.settings.pct_3 }}%;"></div></div><span>{{ section.settings.pct_3 }}%</span></div>
+          <div class="review-bar-row"><span>2 star</span><div class="review-bar-track"><div class="review-bar-fill" style="width: {{ section.settings.pct_2 }}%;"></div></div><span>{{ section.settings.pct_2 }}%</span></div>
+          <div class="review-bar-row"><span>1 star</span><div class="review-bar-track"><div class="review-bar-fill" style="width: {{ section.settings.pct_1 }}%;"></div></div><span>{{ section.settings.pct_1 }}%</span></div>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <div class="testi-grid">
+        {% for block in section.blocks %}
+          <div class="testi-card" {{ block.shopify_attributes }}>
+            <div class="testi-stars" aria-hidden="true">{% for i in (1..5) %}{% if i <= block.settings.stars %}★{% else %}☆{% endif %}{% endfor %}</div>
+            <p class="testi-quote">"{{ block.settings.quote }}"</p>
+            <p class="testi-name">{{ block.settings.name }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CH Product Reviews",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Customer reviews" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "What people are saying" },
+    { "type": "header", "content": "Rating summary" },
+    { "type": "paragraph", "content": "If the product has review metafields, those are used automatically. Otherwise these manual values show instead." },
+    { "type": "text", "id": "average_rating", "label": "Average rating", "default": "4.9" },
+    { "type": "text", "id": "review_count", "label": "Total review count", "default": "214" },
+    { "type": "range", "id": "pct_5", "label": "5 star %", "min": 0, "max": 100, "step": 1, "default": 88 },
+    { "type": "range", "id": "pct_4", "label": "4 star %", "min": 0, "max": 100, "step": 1, "default": 9 },
+    { "type": "range", "id": "pct_3", "label": "3 star %", "min": 0, "max": 100, "step": 1, "default": 2 },
+    { "type": "range", "id": "pct_2", "label": "2 star %", "min": 0, "max": 100, "step": 1, "default": 1 },
+    { "type": "range", "id": "pct_1", "label": "1 star %", "min": 0, "max": 100, "step": 1, "default": 0 }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        { "type": "range", "id": "stars", "label": "Stars", "min": 1, "max": 5, "step": 1, "default": 5 },
+        { "type": "textarea", "id": "quote", "label": "Quote", "default": "Beautifully made — exactly what I hoped for." },
+        { "type": "text", "id": "name", "label": "Name", "default": "A verified buyer" }
+      ]
+    }
+  ],
+  "enabled_on": {
+    "templates": ["product"]
+  },
+  "presets": [
+    {
+      "name": "CH Product Reviews",
+      "blocks": [
+        { "type": "testimonial", "settings": { "stars": 5, "quote": "Beautifully made — simple, elegant, and exactly what I hoped for. The chain feels sturdy, not flimsy.", "name": "Hannah R., verified buyer" } },
+        { "type": "testimonial", "settings": { "stars": 5, "quote": "Bought this for my daughter's confirmation. It arrived boxed beautifully and she wears it every day.", "name": "Daniel K., verified buyer" } },
+        { "type": "testimonial", "settings": { "stars": 4, "quote": "Lovely piece, slightly smaller than I pictured, but the quality is genuinely premium.", "name": "Maria S., verified buyer" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

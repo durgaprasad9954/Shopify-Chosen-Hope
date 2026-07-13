@@ -1,0 +1,133 @@
+/* ChosenHope Product Page — gallery, info/variant picker, reviews, sticky bar,
+   lightbox (chosenhope-product-*.liquid sections) */
+
+/* ---------- Halo glow (behind gallery main image) ---------- */
+.chosenhope-home-scope .halo { position: relative; isolation: isolate; }
+.chosenhope-home-scope .halo::before {
+  content: ""; position: absolute; z-index: 0; inset: -10%;
+  background: radial-gradient(closest-side, rgba(200, 162, 74, 0.4), rgba(200, 162, 74, 0) 70%);
+  filter: blur(4px); pointer-events: none;
+}
+
+.chosenhope-home-scope .btn-sm { min-height: 44px; padding: 0 24px; font-size: 0.8125rem; }
+
+/* ---------- PDP layout ---------- */
+.chosenhope-home-scope .pdp-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; }
+@media (max-width: 900px) { .chosenhope-home-scope .pdp-layout { grid-template-columns: 1fr; } }
+
+/* ---------- Gallery ---------- */
+.chosenhope-home-scope .pdp-gallery { position: sticky; top: 96px; }
+@media (max-width: 900px) { .chosenhope-home-scope .pdp-gallery { position: static; } }
+.chosenhope-home-scope .pdp-main-image { aspect-ratio: 1 / 1; border-radius: var(--ch-radius-lg); overflow: hidden; position: relative; cursor: zoom-in; }
+.chosenhope-home-scope .pdp-main-image img,
+.chosenhope-home-scope .pdp-main-image .fallback-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.chosenhope-home-scope .pdp-zoom-hint {
+  position: absolute; bottom: 14px; right: 14px; z-index: 3; background: rgba(255, 255, 255, 0.9); color: var(--ch-black);
+  font-size: 11px; font-weight: 600; padding: 6px 12px; border-radius: var(--ch-radius-pill); display: flex; align-items: center; gap: 6px;
+}
+.chosenhope-home-scope .pdp-thumbs { display: flex; gap: 10px; margin-top: 1rem; flex-wrap: wrap; }
+.chosenhope-home-scope .pdp-thumb {
+  width: 78px; height: 78px; border-radius: var(--ch-radius-sm); overflow: hidden; border: 2px solid transparent;
+  cursor: pointer; position: relative; padding: 0; background: none; flex-shrink: 0;
+}
+.chosenhope-home-scope .pdp-thumb.active { border-color: var(--ch-gold); }
+.chosenhope-home-scope .pdp-thumb img,
+.chosenhope-home-scope .pdp-thumb .fallback-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- Info panel ---------- */
+.chosenhope-home-scope .pdp-info .eyebrow { margin-bottom: 0.75rem; }
+.chosenhope-home-scope .pdp-title { font-size: clamp(2.5rem, 1.7rem + 3vw, 4rem); font-style: italic; }
+.chosenhope-home-scope .pdp-desc { margin-top: 0.75rem; font-size: 1rem; max-width: 52ch; color: var(--ch-gray); }
+.chosenhope-home-scope .pdp-rating { display: flex; align-items: center; gap: 10px; margin-top: 0.75rem; font-size: 0.9375rem; color: var(--ch-gray); }
+.chosenhope-home-scope .pdp-rating .stars { letter-spacing: 2px; }
+.chosenhope-home-scope .pdp-rating a { text-decoration: underline; color: var(--ch-gray); }
+.chosenhope-home-scope .pdp-price { font-size: clamp(2rem, 1.5rem + 2vw, 3rem); font-weight: 700; color: var(--ch-black); margin-top: 1.5rem; }
+.chosenhope-home-scope .pdp-price .compare { text-decoration: line-through; color: var(--ch-gray); font-size: 1.125rem; margin-left: 12px; font-weight: 500; }
+
+.chosenhope-home-scope .variant-group { margin-top: 2.25rem; }
+.chosenhope-home-scope .variant-group h3 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ch-black); margin-bottom: 10px; font-family: var(--ch-font-body); }
+.chosenhope-home-scope .variant-group h3 span { color: var(--ch-gray); font-weight: 600; text-transform: none; letter-spacing: 0; }
+.chosenhope-home-scope .variant-options { display: flex; gap: 10px; flex-wrap: wrap; }
+.chosenhope-home-scope .variant-pill {
+  min-height: 46px; padding: 0 22px; border-radius: var(--ch-radius-pill); border: 1.5px solid var(--ch-border);
+  background: var(--ch-white); color: var(--ch-black); font-weight: 600; font-size: 0.9375rem; cursor: pointer; transition: all 0.2s var(--ch-ease);
+}
+.chosenhope-home-scope .variant-pill:hover { border-color: var(--ch-black); }
+.chosenhope-home-scope .variant-pill.active { border-color: var(--ch-black); background: var(--ch-black); color: var(--ch-warm-white); }
+.chosenhope-home-scope .variant-pill:disabled { opacity: 0.35; cursor: not-allowed; text-decoration: line-through; }
+.chosenhope-home-scope .variant-swatch { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--ch-border); cursor: pointer; position: relative; padding: 0; }
+.chosenhope-home-scope .variant-swatch.active::after { content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 2px solid var(--ch-gold); }
+
+.chosenhope-home-scope .qty-row { display: flex; align-items: center; gap: 1rem; margin-top: 2.25rem; flex-wrap: wrap; }
+.chosenhope-home-scope .qty-stepper { display: inline-flex; align-items: center; border: 1.5px solid var(--ch-border); border-radius: var(--ch-radius-pill); overflow: hidden; }
+.chosenhope-home-scope .qty-stepper button { width: 44px; height: 48px; background: var(--ch-white); border: none; font-size: 18px; color: var(--ch-black); cursor: pointer; }
+.chosenhope-home-scope .qty-stepper button:hover:not(:disabled) { background: var(--ch-gold-tint); }
+.chosenhope-home-scope .qty-stepper button:disabled { opacity: 0.4; cursor: not-allowed; }
+.chosenhope-home-scope .qty-stepper input { width: 48px; text-align: center; border: none; font-weight: 700; font-size: 0.9375rem; color: var(--ch-black); background: none; }
+
+.chosenhope-home-scope .pdp-actions { display: flex; gap: 12px; margin-top: 1.5rem; }
+.chosenhope-home-scope .pdp-actions .btn-gold,
+.chosenhope-home-scope .pdp-actions .shopify-payment-button { flex: 1; }
+.chosenhope-home-scope .pdp-actions .shopify-payment-button__button { min-height: 52px; }
+.chosenhope-home-scope .pdp-buy-now { width: 100%; margin-top: 10px; }
+.chosenhope-home-scope .pdp-wishlist-btn {
+  width: 52px; height: 52px; border-radius: 50%; border: 1.5px solid var(--ch-black); background: var(--ch-white);
+  display: flex; align-items: center; justify-content: center; color: var(--ch-black); flex-shrink: 0; transition: all 0.2s var(--ch-ease);
+}
+.chosenhope-home-scope .pdp-wishlist-btn.is-active { background: var(--ch-gold); border-color: var(--ch-gold); color: var(--ch-black); }
+.chosenhope-home-scope .pdp-unavailable { margin-top: 1rem; font-size: 0.875rem; color: var(--ch-gray); }
+
+.chosenhope-home-scope .trust-row { display: flex; gap: 2.25rem; margin-top: 2.25rem; padding-top: 1.5rem; border-top: 1px solid var(--ch-border); flex-wrap: wrap; }
+.chosenhope-home-scope .trust-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--ch-gray); font-weight: 600; }
+.chosenhope-home-scope .trust-item svg { color: var(--ch-gold-dark); flex-shrink: 0; }
+
+/* ---------- Reviews ---------- */
+.chosenhope-home-scope .review-summary {
+  display: flex; gap: 3.5rem; align-items: flex-start; padding: 2.25rem; background: var(--ch-white);
+  border: 1px solid var(--ch-border); border-radius: var(--ch-radius-md); margin-bottom: 2.25rem;
+}
+@media (max-width: 640px) { .chosenhope-home-scope .review-summary { flex-direction: column; align-items: stretch; } }
+.chosenhope-home-scope .review-score { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; font-family: var(--ch-font-display); font-size: 3rem; color: var(--ch-black); text-align: center; }
+.chosenhope-home-scope .review-score .stars { display: block; font-size: 14px; letter-spacing: 2px; margin-top: 4px; }
+.chosenhope-home-scope .review-score .count { display: block; font-size: 12px; color: var(--ch-gray); font-family: var(--ch-font-body); margin-top: 4px; }
+.chosenhope-home-scope .review-bars { flex: 1; min-width: 220px; display: flex; flex-direction: column; gap: 8px; }
+.chosenhope-home-scope .review-bar-row { display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--ch-gray); }
+.chosenhope-home-scope .review-bar-row span:first-child { width: 38px; }
+.chosenhope-home-scope .review-bar-track { width: 100%; height: 6px; background: var(--ch-border); border-radius: 999px; overflow: hidden; }
+.chosenhope-home-scope .review-bar-fill { height: 100%; background: var(--ch-gold); }
+
+.chosenhope-home-scope .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+@media (max-width: 900px) { .chosenhope-home-scope .testi-grid { grid-template-columns: 1fr; } }
+.chosenhope-home-scope .testi-card { background: var(--ch-white); border: 1px solid var(--ch-border); border-radius: var(--ch-radius-md); padding: 2.25rem; display: flex; flex-direction: column; gap: 1rem; }
+.chosenhope-home-scope .testi-stars { color: var(--ch-gold-dark); font-size: 13px; letter-spacing: 1px; }
+.chosenhope-home-scope .testi-quote { font-size: 0.9375rem; color: var(--ch-black); font-style: italic; }
+.chosenhope-home-scope .testi-name { font-size: 12.5px; color: var(--ch-gray); font-weight: 600; }
+
+/* ---------- Related / recently-viewed carousel ---------- */
+.chosenhope-home-scope .carousel-wrap { position: relative; }
+.chosenhope-home-scope .carousel-track { display: flex; gap: 1.5rem; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 6px; }
+.chosenhope-home-scope .carousel-track .product-card { min-width: 250px; scroll-snap-align: start; flex: 0 0 auto; }
+
+/* ---------- Sticky add-to-cart bar ---------- */
+.chosenhope-home-scope .sticky-atc {
+  position: fixed; bottom: 0; left: 0; right: 0; background: var(--ch-white); border-top: 1px solid var(--ch-border);
+  box-shadow: 0 -10px 28px rgba(23, 22, 20, 0.1); padding: 12px 2.25rem; z-index: 150;
+  transform: translateY(110%); transition: transform 0.3s var(--ch-ease); display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+}
+.chosenhope-home-scope .sticky-atc.show { transform: translateY(0); }
+.chosenhope-home-scope .sticky-atc-info { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.chosenhope-home-scope .sticky-atc-thumb { width: 44px; height: 44px; border-radius: var(--ch-radius-sm); flex-shrink: 0; overflow: hidden; position: relative; }
+.chosenhope-home-scope .sticky-atc-thumb img,
+.chosenhope-home-scope .sticky-atc-thumb .fallback-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.chosenhope-home-scope .sticky-atc-info h4 { font-size: 0.9375rem; font-weight: 600; color: var(--ch-black); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-family: var(--ch-font-body); }
+.chosenhope-home-scope .sticky-atc-info .product-price { font-size: 0.9375rem; }
+.chosenhope-home-scope .sticky-atc-actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+@media (max-width: 640px) { .chosenhope-home-scope .sticky-atc-info h4 { max-width: 120px; } }
+
+/* ---------- Lightbox ---------- */
+.chosenhope-home-scope .lightbox-backdrop { display: none; position: fixed; inset: 0; background: rgba(23, 22, 20, 0.85); z-index: 350; align-items: center; justify-content: center; padding: 2rem; }
+.chosenhope-home-scope .lightbox-backdrop.open { display: flex; }
+.chosenhope-home-scope .lightbox-image { max-width: 900px; width: 100%; aspect-ratio: 1 / 1; border-radius: var(--ch-radius-md); overflow: hidden; position: relative; }
+.chosenhope-home-scope .lightbox-image img,
+.chosenhope-home-scope .lightbox-image .fallback-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.chosenhope-home-scope .lightbox-close { position: absolute; top: 24px; right: 24px; width: 48px; height: 48px; border-radius: 50%; background: var(--ch-white); border: none; color: var(--ch-black); display: flex; align-items: center; justify-content: center; z-index: 2; }

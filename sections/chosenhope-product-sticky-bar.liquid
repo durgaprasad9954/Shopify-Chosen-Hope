@@ -1,0 +1,59 @@
+{{ 'chosenhope-base.css' | asset_url | stylesheet_tag }}
+{{ 'chosenhope-shop-grid.css' | asset_url | stylesheet_tag }}
+{{ 'chosenhope-product.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'chosenhope-product.js' | asset_url }}" defer="defer"></script>
+
+{% liquid
+  assign initial_variant = product.selected_or_first_available_variant
+  assign initial_image = initial_variant.featured_image | default: product.featured_image
+%}
+
+<div id="chosenhope-sticky-atc" class="chosenhope-home-scope sticky-atc" aria-hidden="true">
+  <div class="sticky-atc-info">
+    <div id="chosenhope-sticky-thumb" class="sticky-atc-thumb">
+      {% if initial_image != blank %}
+        {{ initial_image | image_url: width: 100 | image_tag: alt: '', loading: 'lazy' }}
+      {% else %}
+        <div class="fallback-photo fallback-photo--{{ section.settings.fallback_tone }}"></div>
+      {% endif %}
+    </div>
+    <div>
+      <h4>{{ product.title }}</h4>
+      <span class="product-price" id="chosenhope-sticky-price">{{ initial_variant.price | money }}</span>
+    </div>
+  </div>
+  <div class="sticky-atc-actions">
+    <div class="qty-stepper">
+      <button type="button" aria-label="Decrease quantity" data-qty-decrease>−</button>
+      <input type="text" inputmode="numeric" value="1" readonly aria-label="Quantity" data-qty-input>
+      <button type="button" aria-label="Increase quantity" data-qty-increase>+</button>
+    </div>
+    <button type="submit" form="chosenhope-product-form" name="add" class="btn btn-gold btn-sm">Add to Cart</button>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "CH Product Sticky Bar",
+  "settings": [
+    {
+      "type": "select",
+      "id": "fallback_tone",
+      "label": "Fallback color (used only when the product has no image)",
+      "options": [
+        { "value": "sand", "label": "Sand" },
+        { "value": "olive", "label": "Olive" },
+        { "value": "gold", "label": "Gold" },
+        { "value": "cream", "label": "Cream" }
+      ],
+      "default": "sand"
+    }
+  ],
+  "enabled_on": {
+    "templates": ["product"]
+  },
+  "presets": [
+    { "name": "CH Product Sticky Bar" }
+  ]
+}
+{% endschema %}
