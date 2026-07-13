@@ -25,12 +25,12 @@
         "text_color": "#666666"
       }
     },
-    "chosenhope_best_sellers_grid_wGtigq": {
+    "chosenhope_best_sellers_grid_V7D3zc": {
       "type": "chosenhope-best-sellers-grid",
       "name": "CH Best Sellers Grid",
       "settings": {
         "collection": "new-arrivals",
-        "show_filters": true,
+        "show_filters": false,
         "result_noun": "best sellers",
         "products_per_page": 12,
         "best_seller_tag": "best-seller",
@@ -62,7 +62,7 @@
   },
   "order": [
     "chosenhope_best_sellers_hero",
-    "chosenhope_best_sellers_grid_wGtigq",
+    "chosenhope_best_sellers_grid_V7D3zc",
     "chosenhope_footer"
   ]
 }
