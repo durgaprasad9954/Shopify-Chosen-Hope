@@ -1,16 +1,63 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "chosenhope_best_sellers_hero": {
       "type": "chosenhope-best-sellers-hero",
-      "name": "CH Best Sellers Hero"
+      "name": "CH Best Sellers Hero",
+      "settings": {
+        "breadcrumb_label": "Best Sellers",
+        "eyebrow": "Most loved",
+        "heading": "Best Sellers",
+        "subtext": "The pieces our community keeps coming back for — across jewelry, canvas, and apparel.",
+        "icon": "star",
+        "gradient_start_color": "#f3e9d3",
+        "gradient_end_color": "#f9f8f4",
+        "eyebrow_color": "#6e7455",
+        "heading_color": "#111111",
+        "text_color": "#666666"
+      }
     },
     "chosenhope_best_sellers_grid": {
       "type": "chosenhope-best-sellers-grid",
-      "name": "CH Best Sellers Grid"
+      "name": "CH Best Sellers Grid",
+      "settings": {
+        "collection": "new-arrivals",
+        "show_filters": true,
+        "result_noun": "best sellers",
+        "products_per_page": 12,
+        "best_seller_tag": "best-seller",
+        "new_tag": "new",
+        "empty_state_text": "No best sellers found"
+      }
     },
     "chosenhope_footer": {
       "type": "chosenhope-footer",
-      "name": "ChosenHope Footer"
+      "name": "ChosenHope Footer",
+      "settings": {
+        "brand_text": "A premium Christian lifestyle brand — jewelry, canvas art, and apparel made for a life set apart. You Are Chosen.",
+        "bottom_text": "You Are Chosen.",
+        "menu_shop": "",
+        "menu_support": "",
+        "menu_company": "",
+        "menu_legal": "",
+        "social_instagram": "",
+        "social_pinterest": "",
+        "social_facebook": "",
+        "background_color": "#f9f8f4",
+        "border_color": "#eaeaea",
+        "brand_text_color": "#666666",
+        "heading_color": "#111111",
+        "link_text_color": "#666666",
+        "bottom_text_color": "#666666"
+      }
     }
   },
   "order": [
