@@ -44,9 +44,9 @@
       "settings": {
         "brand_text": "A premium Christian lifestyle brand — jewelry, canvas art, and apparel made for a life set apart. You Are Chosen.",
         "bottom_text": "You Are Chosen.",
-        "menu_shop": "",
-        "menu_support": "",
-        "menu_company": "",
+        "menu_shop": "main-menu",
+        "menu_support": "footer",
+        "menu_company": "customer-account-main-menu",
         "menu_legal": "",
         "social_instagram": "",
         "social_pinterest": "",
