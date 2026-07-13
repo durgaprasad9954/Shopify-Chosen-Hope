@@ -32,7 +32,7 @@
         "collection": "canva",
         "show_filters": true,
         "result_noun": "prints",
-        "products_per_page": 12,
+        "products_per_page": 8,
         "best_seller_tag": "best-seller",
         "new_tag": "new",
         "empty_state_text": "No canvas prints found"
