@@ -25,7 +25,7 @@
         "text_color": "#666666"
       }
     },
-    "chosenhope_best_sellers_grid": {
+    "chosenhope_best_sellers_grid_wGtigq": {
       "type": "chosenhope-best-sellers-grid",
       "name": "CH Best Sellers Grid",
       "settings": {
@@ -62,7 +62,7 @@
   },
   "order": [
     "chosenhope_best_sellers_hero",
-    "chosenhope_best_sellers_grid",
+    "chosenhope_best_sellers_grid_wGtigq",
     "chosenhope_footer"
   ]
 }

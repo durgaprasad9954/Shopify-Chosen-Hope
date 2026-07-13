@@ -1,16 +1,28 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "chosenhope_best_sellers_hero": {
       "type": "chosenhope-best-sellers-hero",
-      "name": "CH Best Sellers Hero"
+      "name": "CH Best Sellers Hero",
+      "settings": {}
     },
     "chosenhope_best_sellers_grid": {
       "type": "chosenhope-best-sellers-grid",
-      "name": "CH Best Sellers Grid"
+      "name": "CH Best Sellers Grid",
+      "settings": {}
     },
     "chosenhope_footer": {
       "type": "chosenhope-footer",
-      "name": "ChosenHope Footer"
+      "name": "ChosenHope Footer",
+      "settings": {}
     }
   },
   "order": [
