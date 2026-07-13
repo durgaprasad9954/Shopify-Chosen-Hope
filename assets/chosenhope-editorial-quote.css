@@ -14,16 +14,17 @@
 }
 
 .chosenhope-editorial-quote__quote {
-  color: var(--ch-eq-quote-color, var(--ch-white));
-  font-size: clamp(1.8rem, 3.6vw, 3rem);
+  color: var(--ch-eq-quote-color, var(--ch-white)) !important;
+  font-size: var(--ch-eq-quote-size, clamp(1.8rem, 3.6vw, 3rem)) !important;
   font-style: italic;
+  font-weight: var(--ch-eq-quote-weight, 500) !important;
 }
 
 .chosenhope-editorial-quote__cite {
-  color: var(--ch-eq-citation-color, rgba(17, 17, 17, 0.65));
+  color: var(--ch-eq-citation-color, rgba(17, 17, 17, 0.65)) !important;
   display: block;
   font-family: var(--ch-font-body);
-  font-size: 0.875rem;
+  font-size: var(--ch-eq-citation-size, 0.875rem) !important;
   font-style: normal;
   font-weight: 600;
   margin-top: 1rem;

@@ -1,0 +1,56 @@
+{{ 'chosenhope-base.css' | asset_url | stylesheet_tag }}
+{{ 'chosenhope-shop-grid.css' | asset_url | stylesheet_tag }}
+{{ 'chosenhope-product.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'chosenhope-shop.js' | asset_url }}" defer="defer"></script>
+
+{% liquid
+  assign source_collection = section.settings.collection | default: product.collections.first
+  assign shown = 0
+%}
+
+{% if source_collection != blank %}
+  <section class="chosenhope-home-scope" aria-labelledby="chosenhope-related-heading" style="padding-block: 3.5rem;">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+        <h2 id="chosenhope-related-heading" style="font-size: clamp(2rem, 1.5rem + 2vw, 3rem);">{{ section.settings.heading }}</h2>
+      </div>
+
+      <div class="product-grid">
+        {% for related_product in source_collection.products %}
+          {% unless related_product.id == product.id %}
+            {% if shown < section.settings.products_to_show %}
+              {% render 'chosenhope-product-card',
+                product: related_product,
+                best_seller_tag: section.settings.best_seller_tag,
+                new_tag: section.settings.new_tag,
+                forloop_index0: forloop.index0
+              %}
+              {% assign shown = shown | plus: 1 %}
+            {% endif %}
+          {% endunless %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "CH Product Related",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "You may also like" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Related products" },
+    { "type": "collection", "id": "collection", "label": "Collection", "info": "Products to pull from. Leave blank to use the current product's first collection." },
+    { "type": "range", "id": "products_to_show", "label": "Products to show", "min": 2, "max": 8, "step": 1, "default": 4 },
+    { "type": "text", "id": "best_seller_tag", "label": "Best seller tag", "default": "best-seller" },
+    { "type": "text", "id": "new_tag", "label": "New tag", "default": "new" }
+  ],
+  "enabled_on": {
+    "templates": ["product"]
+  },
+  "presets": [
+    { "name": "CH Product Related" }
+  ]
+}
+{% endschema %}

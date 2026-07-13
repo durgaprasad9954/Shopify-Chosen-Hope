@@ -1,0 +1,40 @@
+{{ 'chosenhope-base.css' | asset_url | stylesheet_tag }}
+{{ 'chosenhope-shop-hero.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign display_collection = collection | default: section.settings.fallback_collection
+%}
+
+<div class="chosenhope-home-scope">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="{{ routes.root_url }}">Home</a>
+      <span aria-hidden="true">/</span>
+      {% if display_collection != blank %}
+        <a href="{{ display_collection.url }}">{{ display_collection.title }}</a>
+        <span aria-hidden="true">/</span>
+      {% endif %}
+      <span aria-current="page">{{ product.title }}</span>
+    </nav>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "CH Product Breadcrumb",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "fallback_collection",
+      "label": "Fallback collection",
+      "info": "Used when this page isn't reached from a collection (e.g. direct link). Leave blank to only show Home / Product."
+    }
+  ],
+  "enabled_on": {
+    "templates": ["product"]
+  },
+  "presets": [
+    { "name": "CH Product Breadcrumb" }
+  ]
+}
+{% endschema %}

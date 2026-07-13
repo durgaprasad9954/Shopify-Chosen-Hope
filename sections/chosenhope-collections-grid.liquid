@@ -1,0 +1,29 @@
+{{ 'chosenhope-base.css' | asset_url | stylesheet_tag }}
+{{ 'chosenhope-shop-grid.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'chosenhope-shop.js' | asset_url }}" defer="defer"></script>
+
+{% liquid
+  assign resolved_collection = section.settings.collection | default: collection
+%}
+{% render 'chosenhope-shop-grid-content', section: section, collection: resolved_collection %}
+
+{% schema %}
+{
+  "name": "CH Collections Grid",
+  "settings": [
+    { "type": "collection", "id": "collection", "label": "Collection to display", "info": "Pick the Shopify collection whose products should list here (e.g. the \"All\" collection for everything)." },
+    { "type": "checkbox", "id": "show_filters", "label": "Show filters", "default": true },
+    { "type": "text", "id": "result_noun", "label": "Result count label", "default": "products across all collections" },
+    { "type": "range", "id": "products_per_page", "label": "Products per page", "min": 4, "max": 48, "step": 4, "default": 16 },
+    { "type": "text", "id": "best_seller_tag", "label": "Best seller tag", "info": "Products with this tag show a \"Best seller\" badge.", "default": "best-seller" },
+    { "type": "text", "id": "new_tag", "label": "New tag", "info": "Products with this tag show a \"New\" badge.", "default": "new" },
+    { "type": "text", "id": "empty_state_text", "label": "Empty state message", "default": "No products found" }
+  ],
+  "enabled_on": {
+    "templates": ["page", "collection"]
+  },
+  "presets": [
+    { "name": "CH Collections Grid" }
+  ]
+}
+{% endschema %}

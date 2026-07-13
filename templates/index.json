@@ -20,7 +20,18 @@
         "hero_primary_url": "",
         "hero_secondary_label": "Our story",
         "hero_secondary_url": "",
-        "hero_image": "shopify://shop_images/Gemini_Generated_Image_ovz3n5ovz3n5ovz3.png"
+        "hero_image": "shopify://shop_images/Gemini_Generated_Image_ovz3n5ovz3n5ovz3.png",
+        "section_background_color": "#f9f8f4",
+        "overlay_color_start": "#13120e",
+        "overlay_color_mid": "#1716148c",
+        "overlay_color_end": "#c8a24a47",
+        "eyebrow_color": "#c8a24a",
+        "heading_color": "{{ settings.color_palette.background }}",
+        "subtext_color": "#f9f8f4db",
+        "heading_font_size": "",
+        "heading_font_weight": "",
+        "subtext_font_size": "",
+        "subtext_font_weight": ""
       }
     },
     "chosenhope_featured_collections_k68KNp": {
@@ -31,9 +42,19 @@
         "heading": "Designed with meaning",
         "subtext": "Jewelry, canvas, and apparel collections arranged to mirror the reference layout.",
         "collection_1": "jewelley",
-        "collection_2": "jewellery",
-        "collection_3": "jewellery-2",
-        "collection_4": "jewellery-1"
+        "collection_2": "jewellery-3",
+        "collection_3": "rings",
+        "collection_4": "jewellery",
+        "section_background_color": "#f9f8f4",
+        "eyebrow_color": "#6e7455",
+        "heading_color": "#111111",
+        "subtext_color": "#666666",
+        "scrim_color": "#111111ad",
+        "label_text_color": "#f9f8f4",
+        "heading_font_size": "",
+        "heading_font_weight": "",
+        "subtext_font_size": "",
+        "subtext_font_weight": ""
       }
     },
     "chosenhope_editorial_products_wamRWT": {
@@ -43,11 +64,22 @@
         "eyebrow": "Best sellers",
         "heading": "Editor’s picks",
         "badge_text": "Most loved",
-        "featured_product": "jewelley",
-        "product_1": "jewellery",
-        "product_2": "",
-        "product_3": "",
-        "product_4": ""
+        "featured_product": "grace-cross-necklace",
+        "product_1": "chains-jewellery-collection",
+        "product_2": "editors-chanis",
+        "product_3": "jewellery",
+        "product_4": "jewelley",
+        "section_background_color": "#ffffff",
+        "eyebrow_color": "#6e7455",
+        "heading_color": "#111111",
+        "badge_background_color": "#ffffff",
+        "badge_text_color": "#111111",
+        "feature_overlay_color": "#111111ad",
+        "row_background_color": "#ffffff",
+        "row_border_color": "#eaeaea",
+        "row_title_color": "#111111",
+        "heading_font_size": "",
+        "heading_font_weight": ""
       }
     },
     "chosenhope_category_cross_rmTqH7": {
@@ -56,14 +88,14 @@
       "settings": {
         "eyebrow": "Shop by category",
         "heading": "Every piece, one purpose",
-        "collection_top": "",
-        "collection_left_outer": "",
+        "collection_top": "canvas-prints",
+        "collection_left_outer": "jewellery",
         "collection_left_inner": "rings",
-        "collection_center": "jewelley",
-        "collection_right_inner": "",
-        "collection_right_outer": "",
-        "collection_bottom": "",
-        "collection_bottom_2": "",
+        "collection_center": "jewellery-3",
+        "collection_right_inner": "christian-braclets",
+        "collection_right_outer": "christian-hoodies",
+        "collection_bottom": "wall-arts",
+        "collection_bottom_2": "future-christian-products",
         "title_top": "Canvas Prints",
         "title_left_outer": "Caps",
         "title_left_inner": "Rings",
@@ -72,14 +104,25 @@
         "title_right_outer": "Hoodies & Tees",
         "title_bottom": "Wall Art",
         "title_bottom_2": "Future Christian Products",
-        "title_mobile_center": "Jewelry"
+        "title_mobile_center": "Jewelry",
+        "section_background_color": "#f9f8f4",
+        "eyebrow_color": "#6e7455",
+        "heading_color": "#111111",
+        "connector_line_color": "#c8a24a",
+        "circle_border_color": "#f9f8f4",
+        "circle_center_border_color": "#c8a24a",
+        "circle_center_glow_color": "#f3e9d3",
+        "title_text_color": "#111111",
+        "heading_font_size": "",
+        "heading_font_weight": ""
       }
     },
     "chosenhope_canvas_feature_Hzpan9": {
       "type": "chosenhope-canvas-feature",
       "name": "ChosenHope Canvas Feature",
       "settings": {
-        "badge_text": "Oak · Walnut · Black frames",
+        "image": "shopify://shop_images/jesus_scriptured_framed.jpg",
+        "badge_text": "",
         "eyebrow": "New from the studio",
         "heading": "Scripture, framed for a modern home",
         "text": "Each canvas is printed on museum-grade material and finished by hand — a quiet reminder for the wall you look at every day.",
@@ -87,7 +130,19 @@
         "feature_2": "Three frame finishes, five sizes",
         "feature_3": "Archival ink, fade-resistant for decades",
         "button_label": "Shop Canvas Collection",
-        "button_url": ""
+        "button_url": "",
+        "section_background_color": "#ffffff",
+        "eyebrow_color": "#6e7455",
+        "heading_color": "#111111",
+        "text_color": "#666666",
+        "list_text_color": "#111111",
+        "list_icon_color": "#a8853a",
+        "badge_background_color": "#ffffff",
+        "badge_text_color": "#111111",
+        "heading_font_size": "",
+        "heading_font_weight": "",
+        "text_font_size": "",
+        "text_font_weight": ""
       }
     },
     "chosenhope_new_arrivals_P4UPHt": {
@@ -97,8 +152,14 @@
         "eyebrow": "Just added",
         "heading": "New arrivals",
         "badge_text": "New",
-        "collection": "jewellery",
-        "limit": 5
+        "collection": "new-arrivals",
+        "limit": 5,
+        "section_background_color": "#ffffff",
+        "eyebrow_color": "#6e7455",
+        "heading_color": "#111111",
+        "badge_background_color": "#ffffff",
+        "badge_text_color": "#111111",
+        "card_title_color": "#111111"
       }
     },
     "chosenhope_instagram_grid_9Hdayr": {
@@ -107,6 +168,7 @@
         "tile_wLzWMC": {
           "type": "tile",
           "settings": {
+            "image": "shopify://shop_images/Gracecrossnecklace1.webp",
             "link": "",
             "alt_text": ""
           }
@@ -114,6 +176,7 @@
         "tile_rh7CUN": {
           "type": "tile",
           "settings": {
+            "image": "shopify://shop_images/furtue_christian_products.jpg",
             "link": "",
             "alt_text": ""
           }
@@ -121,6 +184,7 @@
         "tile_fkJR7t": {
           "type": "tile",
           "settings": {
+            "image": "shopify://shop_images/christian_bracelets_1.jpg",
             "link": "",
             "alt_text": ""
           }
@@ -128,6 +192,7 @@
         "tile_zgXd9K": {
           "type": "tile",
           "settings": {
+            "image": "shopify://shop_images/christiannecklace2.webp",
             "link": "",
             "alt_text": ""
           }
@@ -135,6 +200,7 @@
         "tile_xNkKqf": {
           "type": "tile",
           "settings": {
+            "image": "shopify://shop_images/Christian_Rings_1.avif",
             "link": "",
             "alt_text": ""
           }
@@ -150,7 +216,11 @@
       "name": "ChosenHope Instagram",
       "settings": {
         "eyebrow": "@chosenhope",
-        "heading": "Follow along"
+        "heading": "Follow along",
+        "section_background_color": "#ffffff",
+        "eyebrow_color": "#6e7455",
+        "heading_color": "#111111",
+        "icon_color": "#ffffff"
       }
     },
     "chosenhope_testimonials_t6qbRU": {
@@ -189,17 +259,585 @@
       "name": "ChosenHope Testimonials",
       "settings": {
         "eyebrow": "Loved by our community",
-        "heading": "What people are saying"
+        "heading": "What people are saying",
+        "section_background_color": "#f9f8f4",
+        "eyebrow_color": "#6e7455",
+        "heading_color": "#111111",
+        "card_background_color": "#ffffff",
+        "card_border_color": "#eaeaea",
+        "stars_color": "#a8853a",
+        "quote_text_color": "#111111",
+        "name_text_color": "#111111"
       }
     },
     "chosenhope_newsletter_pB7QWM": {
       "type": "chosenhope-newsletter",
       "name": "ChosenHope Newsletter",
       "settings": {
+        "image": "shopify://shop_images/stay_connected_image.jpg",
         "heading": "Stay close to the story",
         "text": "New arrivals, quiet reflections, and early access — once a month, nothing more.",
         "button_label": "Subscribe",
-        "privacy_text": "We respect your inbox. Unsubscribe anytime."
+        "privacy_text": "We respect your inbox. Unsubscribe anytime.",
+        "section_background_color": "#f9f8f4",
+        "panel_background_color": "#171614",
+        "heading_color": "#f9f8f4",
+        "text_color": "#f9f8f4b3",
+        "input_border_color": "#f9f8f440",
+        "note_color": "#f9f8f4b8",
+        "success_color": "#f3e9d3",
+        "error_color": "#ffccbe"
+      }
+    },
+    "section_wU9nkM": {
+      "type": "section",
+      "blocks": {
+        "group_9BhDRY": {
+          "type": "group",
+          "name": "t:names.column",
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "flex-start",
+            "gap": 8,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "background_media": "none",
+            "background_color": "",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 10,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "image_zrNgGa": {
+              "type": "image",
+              "name": "t:names.image",
+              "settings": {
+                "image": "shopify://shop_images/ChatGPT_Image_Jul_10_2026_06_58_14_PM.png",
+                "link": "",
+                "image_ratio": "adapt",
+                "width": "custom",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_3hdXrX": {
+              "type": "text",
+              "name": "t:names.description",
+              "settings": {
+                "text": "<p>A premium Christian lifestyle brand — jewelry, canvas art, and apparel made for a life set apart. You Are Chosen.</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 8,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "social_links_pw6YiQ": {
+              "type": "social-links",
+              "name": "t:names.social_media_links",
+              "settings": {
+                "icon_color": "",
+                "facebook_url": "",
+                "instagram_url": "",
+                "youtube_url": "",
+                "tiktok_url": "",
+                "twitter_url": "",
+                "threads_url": "",
+                "linkedin_url": "",
+                "bluesky_url": "",
+                "snapchat_url": "",
+                "pinterest_url": "",
+                "tumblr_url": "",
+                "vimeo_url": "",
+                "custom_url": ""
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "image_zrNgGa",
+            "text_3hdXrX",
+            "social_links_pw6YiQ"
+          ]
+        },
+        "group_LqhX8n": {
+          "type": "group",
+          "name": "t:names.column",
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "flex-start",
+            "gap": 8,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "background_media": "none",
+            "background_color": "",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 10,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "text_jgbBBB": {
+              "type": "text",
+              "name": "t:names.heading",
+              "settings": {
+                "text": "<h2><strong>SHOP</strong></h2>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h5",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_8iTWHj": {
+              "type": "text",
+              "name": "t:names.description",
+              "settings": {
+                "text": "<p>Jewelry</p><p>Canvas</p><p>Apparel</p><p>Collections</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_jgbBBB",
+            "text_8iTWHj"
+          ]
+        },
+        "group_YPX8T7": {
+          "type": "group",
+          "name": "t:names.column",
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "flex-start",
+            "gap": 8,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "background_media": "none",
+            "background_color": "",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 10,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "text_q9cxgL": {
+              "type": "text",
+              "name": "t:names.heading",
+              "settings": {
+                "text": "<h2><strong>SUPPORT</strong></h2>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h5",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_QggKcR": {
+              "type": "text",
+              "name": "t:names.description",
+              "settings": {
+                "text": "<p>Contact Us</p><p>Shipping & Returns</p><p>Size Guide</p><p>FAQ</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_q9cxgL",
+            "text_QggKcR"
+          ]
+        },
+        "group_Q9dkMR": {
+          "type": "group",
+          "name": "t:names.column",
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "flex-start",
+            "gap": 8,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "background_media": "none",
+            "background_color": "",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 10,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "text_3M9NDx": {
+              "type": "text",
+              "name": "t:names.heading",
+              "settings": {
+                "text": "<h2><strong>COMPANY</strong></h2>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h5",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_wdN9Vb": {
+              "type": "text",
+              "name": "t:names.description",
+              "settings": {
+                "text": "<p>About Us</p><p>Our Story</p><p>Wholesale</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_3M9NDx",
+            "text_wdN9Vb"
+          ]
+        },
+        "group_447f4N": {
+          "type": "group",
+          "name": "t:names.column",
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "flex-start",
+            "gap": 8,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "background_media": "none",
+            "background_color": "",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_color": "",
+            "border_radius": 0,
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 10,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "text_LpMJ6z": {
+              "type": "text",
+              "name": "t:names.heading",
+              "settings": {
+                "text": "<h2><strong>LEGAL</strong></h2>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h5",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_hRDxyF": {
+              "type": "text",
+              "name": "t:names.description",
+              "settings": {
+                "text": "<p>Privacy Policy</p><p>Terms of Service</p><p>Accessibility</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_LpMJ6z",
+            "text_hRDxyF"
+          ]
+        }
+      },
+      "block_order": [
+        "group_9BhDRY",
+        "group_LqhX8n",
+        "group_YPX8T7",
+        "group_Q9dkMR",
+        "group_447f4N"
+      ],
+      "name": "t:names.multicolumn",
+      "settings": {
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "flex-start",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 36,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "background_media": "none",
+        "background_color": "",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_color": "",
+        "border_radius": 0,
+        "padding-block-start": 48,
+        "padding-block-end": 48
       }
     }
   },
@@ -212,6 +850,7 @@
     "chosenhope_new_arrivals_P4UPHt",
     "chosenhope_instagram_grid_9Hdayr",
     "chosenhope_testimonials_t6qbRU",
-    "chosenhope_newsletter_pB7QWM"
+    "chosenhope_newsletter_pB7QWM",
+    "section_wU9nkM"
   ]
 }

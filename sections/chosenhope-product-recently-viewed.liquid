@@ -1,0 +1,42 @@
+{{ 'chosenhope-base.css' | asset_url | stylesheet_tag }}
+{{ 'chosenhope-shop-grid.css' | asset_url | stylesheet_tag }}
+{{ 'chosenhope-product.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'chosenhope-product.js' | asset_url }}" defer="defer"></script>
+
+<section class="chosenhope-home-scope chosenhope-recently-viewed-section" aria-labelledby="chosenhope-recent-heading" style="padding-block: 3.5rem 5.5rem;">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+      <h2 id="chosenhope-recent-heading" style="font-size: clamp(2rem, 1.5rem + 2vw, 3rem);">{{ section.settings.heading }}</h2>
+    </div>
+
+    <div class="carousel-wrap">
+      <div
+        id="chosenhope-recent-track"
+        class="carousel-track"
+        tabindex="0"
+        role="region"
+        aria-label="Recently viewed, scrollable"
+        data-exclude-handle="{{ product.handle }}"
+        data-limit="{{ section.settings.products_to_show }}"
+      ></div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "CH Recently Viewed",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Your history" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Recently viewed" },
+    { "type": "range", "id": "products_to_show", "label": "Products to show", "min": 2, "max": 8, "step": 1, "default": 4 }
+  ],
+  "enabled_on": {
+    "templates": ["product"]
+  },
+  "presets": [
+    { "name": "CH Recently Viewed" }
+  ]
+}
+{% endschema %}

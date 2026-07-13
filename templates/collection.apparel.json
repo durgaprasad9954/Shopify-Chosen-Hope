@@ -1,0 +1,33 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "chosenhope_apparel_hero": {
+      "type": "chosenhope-apparel-hero",
+      "name": "ChosenHope Apparel Hero",
+      "settings": {}
+    },
+    "chosenhope_apparel_grid": {
+      "type": "chosenhope-apparel-grid",
+      "name": "ChosenHope Apparel Grid",
+      "settings": {}
+    },
+    "chosenhope_footer": {
+      "type": "chosenhope-footer",
+      "name": "ChosenHope Footer",
+      "settings": {}
+    }
+  },
+  "order": [
+    "chosenhope_apparel_hero",
+    "chosenhope_apparel_grid",
+    "chosenhope_footer"
+  ]
+}

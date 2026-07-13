@@ -1,0 +1,91 @@
+{%- doc -%}
+  Renders a ChosenHope-styled product card for shop collection pages.
+
+  @param {object} product - The product to render
+  @param {string} best_seller_tag - Product tag that triggers the "Best seller" badge
+  @param {string} new_tag - Product tag that triggers the "New" badge
+  @param {number} forloop_index0 - Zero-based index used to vary the fallback art color
+{%- enddoc -%}
+
+{% liquid
+  assign fallback_variants = 'sand,olive,gold,cream' | split: ','
+  assign fallback_index = forloop_index0 | modulo: 4
+  assign fallback_variant = fallback_variants[fallback_index]
+
+  assign card_badge = blank
+  if best_seller_tag != blank and product.tags contains best_seller_tag
+    assign card_badge = 'Best seller'
+  elsif new_tag != blank and product.tags contains new_tag
+    assign card_badge = 'New'
+  endif
+
+  assign has_rating = false
+  if product.metafields.reviews.rating.value != blank and product.metafields.reviews.rating_count.value != blank
+    assign has_rating = true
+    assign rating_value = product.metafields.reviews.rating.value
+    assign rating_count = product.metafields.reviews.rating_count.value
+    assign full_stars = rating_value | round
+  endif
+
+  assign qv_description = product.description | strip_html | truncate: 140
+%}
+
+<article class="product-card">
+  <div class="product-media">
+    {% if card_badge == 'New' %}
+      <span class="product-badge product-badge--new">{{ card_badge }}</span>
+    {% elsif card_badge != blank %}
+      <span class="product-badge">{{ card_badge }}</span>
+    {% endif %}
+
+    <button
+      class="wishlist-btn"
+      type="button"
+      aria-pressed="false"
+      data-product-id="{{ product.id }}"
+      data-label="{{ product.title | escape }}"
+      aria-label="Add {{ product.title | escape }} to wishlist"
+    >
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 20s-7-4.4-9.3-8.8C1.2 8 2.6 4.8 6 4.2c2-.4 3.8.6 5 2.2 1.2-1.6 3-2.6 5-2.2 3.4.6 4.8 3.8 3.3 7C19 15.6 12 20 12 20Z" stroke="currentColor" stroke-width="1.6"/></svg>
+    </button>
+
+    <a href="{{ product.url }}" tabindex="-1" aria-hidden="true">
+      {% if product.featured_image != blank %}
+        {{ product.featured_image | image_url: width: 700 | image_tag: widths: '350,500,700', alt: product.title, loading: 'lazy' }}
+      {% else %}
+        <div class="fallback-photo fallback-photo--{{ fallback_variant }}"><span class="fallback-symbol">+</span></div>
+      {% endif %}
+    </a>
+
+    <button
+      class="quick-view-btn"
+      type="button"
+      data-qv-trigger
+      data-title="{{ product.title | escape }}"
+      data-price="{{ product.price | money }}"
+      data-desc="{{ qv_description | escape }}"
+      data-image="{{ product.featured_image | image_url: width: 700 }}"
+      data-url="{{ product.url }}"
+      data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+      {% if has_rating %}
+        data-stars="{% for i in (1..5) %}{% if i <= full_stars %}★{% else %}☆{% endif %}{% endfor %}"
+        data-reviews="{{ rating_count }} reviews"
+      {% endif %}
+    >
+      Quick view
+    </button>
+  </div>
+
+  <div class="product-info">
+    <h3><a href="{{ product.url }}">{{ product.title }}</a></h3>
+    <div class="product-meta">
+      <span class="product-price">{{ product.price | money }}</span>
+      {% if has_rating %}
+        <span class="product-rating">
+          <span class="stars" aria-hidden="true">{% for i in (1..5) %}{% if i <= full_stars %}★{% else %}☆{% endif %}{% endfor %}</span>
+          {{ rating_count }}
+        </span>
+      {% endif %}
+    </div>
+  </div>
+</article>
