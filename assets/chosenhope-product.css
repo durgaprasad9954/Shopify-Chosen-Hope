@@ -116,7 +116,7 @@
 }
 .chosenhope-home-scope .sticky-atc.show { transform: translateY(0); }
 .chosenhope-home-scope .sticky-atc-info { display: flex; align-items: center; gap: 12px; min-width: 0; }
-.chosenhope-home-scope .sticky-atc-thumb { width: 44px; height: 44px; border-radius: var(--ch-radius-sm); flex-shrink: 0; overflow: hidden; position: relative; }
+.chosenhope-home-scope .sticky-atc-thumb { width: 44px; height: 44px; border-radius: var(--ch-radius-sm); flex-shrink: 0; overflow: hidden; position: relative; justify-content:left;}
 .chosenhope-home-scope .sticky-atc-thumb img,
 .chosenhope-home-scope .sticky-atc-thumb .fallback-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .chosenhope-home-scope .sticky-atc-info h4 { font-size: 0.9375rem; font-weight: 600; color: var(--ch-black); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-family: var(--ch-font-body); }
@@ -124,7 +124,7 @@
 .chosenhope-home-scope .sticky-atc-actions { display: flex; align-items:center; gap: 12px; flex-shrink: 0; justify-content:right; }
 @media (max-width: 640px) { .chosenhope-home-scope .sticky-atc-info h4 { max-width: 120px; } }
 
-/* ---------- Lightbox ---------- */
+/* ---------- Lightbox ---------- */ 
 .chosenhope-home-scope .lightbox-backdrop { display: none; position: fixed; inset: 0; background: rgba(23, 22, 20, 0.85); z-index: 350; align-items: center; justify-content: center; padding: 2rem; }
 .chosenhope-home-scope .lightbox-backdrop.open { display: flex; }
 .chosenhope-home-scope .lightbox-image { max-width: 900px; width: 100%; aspect-ratio: 1 / 1; border-radius: var(--ch-radius-md); overflow: hidden; position: relative; }
