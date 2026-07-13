@@ -16,9 +16,9 @@
 @media (max-width: 900px) { .chosenhope-home-scope .pdp-layout { grid-template-columns: minmax(0, 1fr); } }
 
 /* ---------- Gallery ---------- */
-.chosenhope-home-scope .pdp-gallery { position: sticky; top: 96px; min-width: 0; max-width: 100%; }
-@media (max-width: 900px) { .chosenhope-home-scope .pdp-gallery { position: static; } }
-.chosenhope-home-scope .pdp-main-image { width: 100%; aspect-ratio: 1 / 1; border-radius: var(--ch-radius-lg); overflow: hidden; position: relative; cursor: zoom-in; }
+.chosenhope-home-scope .pdp-gallery { position: sticky; top: 96px; }
+@media (max-width: 900px) { .chosenhope-home-scope .pdp-gallery { position:inline-flex; } }
+.chosenhope-home-scope .pdp-main-image { aspect-ratio: 1 / 1; border-radius: var(--ch-radius-lg); overflow: hidden; position: relative; cursor: zoom-in; }
 .chosenhope-home-scope .pdp-main-image img,
 .chosenhope-home-scope .pdp-main-image .fallback-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .chosenhope-home-scope .pdp-zoom-hint {
@@ -115,14 +115,13 @@
   box-shadow: 0 -10px 28px rgba(23, 22, 20, 0.1); padding: 12px 2.25rem; z-index: 150;
   transform: translateY(110%); transition: transform 0.3s var(--ch-ease); display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
 }
-.chosenhope-home-scope .sticky-atc.show { transform: translateY(0); }
 .chosenhope-home-scope .sticky-atc-info { display: flex; align-items: center; gap: 12px; min-width: 0; }
-.chosenhope-home-scope .sticky-atc-thumb { width: 44px; height: 44px; border-radius: var(--ch-radius-sm); flex-shrink: 0; overflow: hidden; position: relative; }
+.chosenhope-home-scope .sticky-atc-thumb { width: 56px; height: 56px; border-radius: var(--ch-radius-sm); flex-shrink: 0; overflow: hidden; position: relative; justify-content:left;}
 .chosenhope-home-scope .sticky-atc-thumb img,
-.chosenhope-home-scope .sticky-atc-thumb .fallback-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.chosenhope-home-scope .sticky-atc-info h4 { font-size: 0.9375rem; font-weight: 600; color: var(--ch-black); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-family: var(--ch-font-body); }
-.chosenhope-home-scope .sticky-atc-info .product-price { font-size: 0.9375rem; }
-.chosenhope-home-scope .sticky-atc-actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.chosenhope-home-scope .sticky-atc-thumb .fallback-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;  justify-content:left;}
+.chosenhope-home-scope .sticky-atc-info h4 { font-size: 1rem; font-weight: 600; color: var(--ch-black); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-family: var(--ch-font-body); }
+.chosenhope-home-scope .sticky-atc-info .product-price { font-size: 1.2rem;  justify-content:left;}
+.chosenhope-home-scope .sticky-atc-actions { display: flex; align-items:center; gap: 12px; flex-shrink: 0; justify-content:right; }
 @media (max-width: 640px) { .chosenhope-home-scope .sticky-atc-info h4 { max-width: 120px; } }
 
 /* ---------- Lightbox ---------- */
