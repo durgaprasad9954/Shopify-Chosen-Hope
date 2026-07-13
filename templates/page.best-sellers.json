@@ -30,7 +30,7 @@
       "name": "CH Best Sellers Grid",
       "settings": {
         "collection": "new-arrivals",
-        "show_filters": false,
+        "show_filters": true,
         "result_noun": "best sellers",
         "products_per_page": 12,
         "best_seller_tag": "best-seller",
