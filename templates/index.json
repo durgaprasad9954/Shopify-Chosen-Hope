@@ -288,6 +288,27 @@
         "success_color": "#f3e9d3",
         "error_color": "#ffccbe"
       }
+    },
+    "chosenhope_footer_BFnJB7": {
+      "type": "chosenhope-footer",
+      "name": "ChosenHope Footer",
+      "settings": {
+        "brand_text": "A premium Christian lifestyle brand — jewelry, canvas art, and apparel made for a life set apart. You Are Chosen.",
+        "bottom_text": "You Are Chosen.",
+        "menu_shop": "main-menu",
+        "menu_support": "footer",
+        "menu_company": "customer-account-main-menu",
+        "menu_legal": "",
+        "social_instagram": "",
+        "social_pinterest": "",
+        "social_facebook": "",
+        "background_color": "#f9f8f4",
+        "border_color": "#eaeaea",
+        "brand_text_color": "#666666",
+        "heading_color": "#111111",
+        "link_text_color": "#666666",
+        "bottom_text_color": "#666666"
+      }
     }
   },
   "order": [
@@ -299,6 +320,7 @@
     "chosenhope_new_arrivals_P4UPHt",
     "chosenhope_instagram_grid_9Hdayr",
     "chosenhope_testimonials_t6qbRU",
-    "chosenhope_newsletter_pB7QWM"
+    "chosenhope_newsletter_pB7QWM",
+    "chosenhope_footer_BFnJB7"
   ]
 }
