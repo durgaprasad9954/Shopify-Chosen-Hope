@@ -9,46 +9,122 @@
  */
 {
   "sections": {
-    "chosenhope_product_breadcrumb": {
-      "type": "chosenhope-product-breadcrumb",
-      "name": "ChosenHope Product Breadcrumb",
-      "settings": {}
-    },
-    "chosenhope_product_main": {
-      "type": "chosenhope-product-main",
-      "name": "ChosenHope Product Main",
-      "settings": {}
-    },
-    "chosenhope_product_reviews": {
+    "chosenhope_product_reviews_t8Jnpq": {
       "type": "chosenhope-product-reviews",
-      "name": "ChosenHope Product Reviews",
-      "settings": {}
+      "blocks": {
+        "testimonial_HxNV79": {
+          "type": "testimonial",
+          "settings": {
+            "stars": 5,
+            "quote": "Beautifully made — simple, elegant, and exactly what I hoped for. The chain feels sturdy, not flimsy.",
+            "name": "Hannah R., verified buyer"
+          }
+        },
+        "testimonial_Dr9zHf": {
+          "type": "testimonial",
+          "settings": {
+            "stars": 5,
+            "quote": "Bought this for my daughter's confirmation. It arrived boxed beautifully and she wears it every day.",
+            "name": "Daniel K., verified buyer"
+          }
+        },
+        "testimonial_bicLFC": {
+          "type": "testimonial",
+          "settings": {
+            "stars": 4,
+            "quote": "Lovely piece, slightly smaller than I pictured, but the quality is genuinely premium.",
+            "name": "Maria S., verified buyer"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_HxNV79",
+        "testimonial_Dr9zHf",
+        "testimonial_bicLFC"
+      ],
+      "name": "CH Product Reviews",
+      "settings": {
+        "eyebrow": "Customer reviews",
+        "heading": "What people are saying",
+        "average_rating": "4.9",
+        "review_count": "214",
+        "pct_5": 88,
+        "pct_4": 9,
+        "pct_3": 2,
+        "pct_2": 1,
+        "pct_1": 0
+      }
     },
     "chosenhope_product_related": {
       "type": "chosenhope-product-related",
       "name": "ChosenHope Product Related",
-      "settings": {}
+      "settings": {
+        "eyebrow": "You may also like",
+        "heading": "Related products",
+        "collection": "",
+        "products_to_show": 4,
+        "best_seller_tag": "best-seller",
+        "new_tag": "new"
+      }
     },
     "chosenhope_product_recently_viewed": {
       "type": "chosenhope-product-recently-viewed",
       "name": "ChosenHope Product Recently Viewed",
-      "settings": {}
+      "settings": {
+        "eyebrow": "Your history",
+        "heading": "Recently viewed",
+        "products_to_show": 4
+      }
     },
     "chosenhope_product_sticky_bar": {
       "type": "chosenhope-product-sticky-bar",
       "name": "ChosenHope Product Sticky Bar",
-      "settings": {}
+      "settings": {
+        "fallback_tone": "sand"
+      }
     },
     "chosenhope_footer": {
       "type": "chosenhope-footer",
       "name": "ChosenHope Footer",
-      "settings": {}
+      "settings": {
+        "brand_text": "A premium Christian lifestyle brand — jewelry, canvas art, and apparel made for a life set apart. You Are Chosen.",
+        "bottom_text": "You Are Chosen.",
+        "menu_shop": "",
+        "menu_support": "",
+        "menu_company": "",
+        "menu_legal": "",
+        "social_instagram": "",
+        "social_pinterest": "",
+        "social_facebook": "",
+        "background_color": "#f9f8f4",
+        "border_color": "#eaeaea",
+        "brand_text_color": "#666666",
+        "heading_color": "#111111",
+        "link_text_color": "#666666",
+        "bottom_text_color": "#666666"
+      }
+    },
+    "chosenhope_product_main_6HBF7E": {
+      "type": "chosenhope-product-main",
+      "name": "CH Product Main",
+      "settings": {
+        "show_zoom_hint": true,
+        "fallback_tone": "sand",
+        "eyebrow": "",
+        "swatch_option_names": "color,metal",
+        "show_buy_now": true,
+        "trust_1": "Secure checkout",
+        "trust_2": "Ships within 24 hours",
+        "trust_3": "30-day easy returns",
+        "gold-vermeil": "#c8a24a",
+        "sterling-silver": "#b7b7b7",
+        "rose-gold": "#c99184"
+      }
     }
   },
   "order": [
-    "chosenhope_product_breadcrumb",
-    "chosenhope_product_main",
-    "chosenhope_product_reviews",
+    "chosenhope_product_main_6HBF7E",
+    "chosenhope_product_reviews_t8Jnpq",
     "chosenhope_product_related",
     "chosenhope_product_recently_viewed",
     "chosenhope_product_sticky_bar",
