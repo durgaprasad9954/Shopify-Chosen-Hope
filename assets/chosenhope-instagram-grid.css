@@ -19,7 +19,8 @@
 }
 
 .chosenhope-instagram-grid__item {
-  max-width:250px;
+  aspect-ratio: 1;
+  max-width:25px;
   background: var(--ch-cream, #efe6d2);
   border-radius: var(--ch-radius-sm);
   overflow: hidden;
