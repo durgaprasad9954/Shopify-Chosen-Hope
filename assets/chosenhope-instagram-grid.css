@@ -20,9 +20,15 @@
 }
 
 .chosenhope-instagram-grid__item {
+  background: var(--ch-cream, #efe6d2);
   border-radius: var(--ch-radius-sm);
   overflow: hidden;
   position: relative;
+}
+
+.chosenhope-instagram-grid__item img,
+.chosenhope-instagram-grid__item .fallback-photo {
+  object-fit: contain;
 }
 
 .chosenhope-instagram-grid__item--big {

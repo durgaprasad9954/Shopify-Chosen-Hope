@@ -21,9 +21,9 @@
 
 .chosenhope-new-arrivals__card {
   display: flex;
-  flex: 0 0 auto;
+  flex: 0 0 250px;
   flex-direction: column;
-  min-width: 250px;
+  width: 250px;
   scroll-snap-align: start;
 }
 
@@ -32,6 +32,13 @@
   border-radius: var(--ch-radius-md);
   overflow: hidden;
   position: relative;
+  width: 100%;
+}
+
+.chosenhope-new-arrivals__info h4 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .chosenhope-new-arrivals__badge {
