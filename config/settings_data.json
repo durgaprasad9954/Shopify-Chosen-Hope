@@ -150,7 +150,7 @@
   },
   "platform_customizations": {
     "custom_css": [
-      "div:has(.jdgm-cards-carousel) {background-color: #000000; padding-top:20px;}"
+      "div:has(.jdgm-cards-carousel) {background-color: #fff; padding-top: 20px;}"
     ]
   }
 }
