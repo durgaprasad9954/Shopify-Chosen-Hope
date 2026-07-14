@@ -1,6 +1,7 @@
 .chosenhope-instagram-grid {
   background: var(--ch-ig-bg, var(--ch-white));
-  padding-block: 5.5rem;
+  padding-top:64px;
+  padding-bottom:64px;
 }
 
 .chosenhope-instagram-grid .eyebrow {
@@ -14,7 +15,6 @@
 .chosenhope-instagram-grid__grid {
   display: grid;
   gap: 8px;
-  grid-auto-flow: dense;
   grid-template-columns: repeat(4, 1fr);
 }
 
