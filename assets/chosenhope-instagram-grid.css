@@ -15,7 +15,7 @@
 
 .chosenhope-instagram-grid__grid {
   align-items:center;
-  justify-content:center;
+  justify-content:middle;
   display: grid;
   gap: 8px;
   max-width:800px;
