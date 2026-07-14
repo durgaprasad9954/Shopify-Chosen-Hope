@@ -147,5 +147,10 @@
         "color2": "#DFDFDF"
       }
     }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      "div:has(.jdgm-cards-carousel) {background-color: #000000; padding-top:20px;}"
+    ]
   }
 }
