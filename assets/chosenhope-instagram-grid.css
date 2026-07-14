@@ -16,6 +16,7 @@
   gap: 8px;
   max-width:100px;
   align-items:center;
+  justify-content:center;
   grid-auto-flow: dense;
   grid-template-columns: repeat(4, 1fr);
 }
