@@ -314,6 +314,9 @@
         "group_cXLqk3",
         "group_BeR4Gn"
       ],
+      "custom_css": [
+        "div(.Multicolumn){background-color:#fff;}"
+      ],
       "name": "t:names.multicolumn",
       "settings": {
         "content_direction": "row",
