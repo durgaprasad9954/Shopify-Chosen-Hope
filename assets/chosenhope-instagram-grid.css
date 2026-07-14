@@ -28,7 +28,7 @@
 
 .chosenhope-instagram-grid__item .media-cover,
 .chosenhope-instagram-grid__item .fallback-photo {
-  object-fit:object-fit;
+  object-fit:cover;
 }
 
 .chosenhope-instagram-grid__item--big {
