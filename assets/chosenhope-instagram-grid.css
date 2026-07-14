@@ -20,6 +20,7 @@
 
 .chosenhope-instagram-grid__item {
   aspect-ratio: 1;
+  width:250px;
   background: var(--ch-cream, #efe6d2);
   border-radius: var(--ch-radius-sm);
   overflow: hidden;
