@@ -43,7 +43,9 @@
           "settings": {
             "show_sample_reviews": true,
             "reviews_selection": "all",
-            "products": [],
+            "products": [
+              "jesus-wall-arts"
+            ],
             "star_rating": "all",
             "max_reviews": 20,
             "quote_marks_size": "small",
@@ -57,7 +59,7 @@
             "corner_styling": "soft",
             "quote_marks_style": "serif",
             "card_color": "#F9F9F9",
-            "stars_and_quote_marks_color": "#108474",
+            "stars_and_quote_marks_color": "#FF7504",
             "text_color": "#000000",
             "arrows_color": "#000000",
             "show_border": false,
