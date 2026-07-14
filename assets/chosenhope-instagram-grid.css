@@ -15,15 +15,14 @@
   display: grid;
   gap: 8px;
   max-width:800px;
-
   grid-auto-flow: dense;
   grid-template-columns: repeat(4, 1fr);
 }
 
 .chosenhope-instagram-grid__item {
   aspect-ratio: 1;
-    align-items:center;
-  justify-content:center;
+  align-items:center;
+  justify-content:middle;
   background: var(--ch-cream, #efe6d2);
   border-radius: var(--ch-radius-sm);
   overflow: hidden;
