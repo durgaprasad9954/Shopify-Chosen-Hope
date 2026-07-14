@@ -15,7 +15,7 @@
 .chosenhope-instagram-grid__grid {
   display: grid;
   gap: 8px;
-  grid-template-columns: repeat(4, 1fr , minmax(0, 100px));
+  grid-template-columns: repeat(4, 1fr , minmax(0, 50px));
 }
 
 .chosenhope-instagram-grid__item {
