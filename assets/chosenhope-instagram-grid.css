@@ -14,7 +14,7 @@
 .chosenhope-instagram-grid__grid {
   display: grid;
   gap: 8px;
-  max-width:100px;
+  max-width:800px;
 
   grid-auto-flow: dense;
   grid-template-columns: repeat(4, 1fr);
