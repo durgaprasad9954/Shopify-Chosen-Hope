@@ -13,12 +13,12 @@
 
 .chosenhope-instagram-grid__grid {
   display: grid;
+  gap: 8px;
   grid-auto-flow: dense;
   grid-template-columns: repeat(4, 1fr);
 }
 
 .chosenhope-instagram-grid__item {
-  aspect-ratio: 1;
   max-width:250px;
   background: var(--ch-cream, #efe6d2);
   border-radius: var(--ch-radius-sm);
