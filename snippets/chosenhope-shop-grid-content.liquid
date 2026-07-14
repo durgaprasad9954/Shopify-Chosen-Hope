@@ -101,9 +101,9 @@
             {% if paginate.pages > 1 %}
               <nav class="pagination" aria-label="Pagination">
                 {% if paginate.previous %}
-                  <a href="{{ paginate.previous.url }}" class="nav-arrow" aria-label="Previous page"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
+                  <a href="{{ paginate.previous.url }}" class="nav-arrow nav-arrow--prev" aria-label="Previous page"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Previous</a>
                 {% else %}
-                  <span class="nav-arrow" aria-disabled="true" aria-label="Previous page"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+                  <span class="nav-arrow nav-arrow--prev" aria-disabled="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Previous</span>
                 {% endif %}
 
                 {% for part in paginate.parts %}
@@ -117,9 +117,9 @@
                 {% endfor %}
 
                 {% if paginate.next %}
-                  <a href="{{ paginate.next.url }}" class="nav-arrow" aria-label="Next page"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
+                  <a href="{{ paginate.next.url }}" class="nav-arrow nav-arrow--next" aria-label="Next page">Next <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
                 {% else %}
-                  <span class="nav-arrow" aria-disabled="true" aria-label="Next page"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+                  <span class="nav-arrow nav-arrow--next" aria-disabled="true">Next <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
                 {% endif %}
               </nav>
             {% endif %}

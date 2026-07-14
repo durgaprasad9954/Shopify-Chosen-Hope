@@ -26,7 +26,7 @@
   position: relative;
 }
 
-.chosenhope-instagram-grid__item img,
+.chosenhope-instagram-grid__item .media-cover,
 .chosenhope-instagram-grid__item .fallback-photo {
   object-fit: contain;
 }

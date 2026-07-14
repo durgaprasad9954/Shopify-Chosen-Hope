@@ -19,7 +19,6 @@
     --ch-cc-bg: {{ section.settings.section_background_color }};
     --ch-cc-eyebrow-color: {{ section.settings.eyebrow_color }};
     --ch-cc-heading-color: {{ section.settings.heading_color }};
-    --ch-cc-connector-color: {{ section.settings.connector_line_color }};
     --ch-cc-circle-border-color: {{ section.settings.circle_border_color }};
     --ch-cc-circle-center-border-color: {{ section.settings.circle_center_border_color }};
     --ch-cc-circle-center-glow-color: {{ section.settings.circle_center_glow_color }};
@@ -35,8 +34,6 @@
     </div>
 
     <div class="chosenhope-category-cross__desktop">
-      <div class="chosenhope-category-cross__v" aria-hidden="true"></div>
-      <div class="chosenhope-category-cross__h" aria-hidden="true"></div>
       <a class="chosenhope-category-cross__item pos-top" href="{{ c_top.url | default: '#' }}"><div class="chosenhope-category-cross__circle">{% if c_top.featured_image != blank %}{{ c_top.featured_image | image_url: width: 480 | image_tag: class: 'media-cover', widths: '240,360,480', alt: section.settings.title_top }}{% else %}<div class="fallback-photo fallback-photo--olive"><span class="fallback-symbol">+</span></div>{% endif %}</div><h3 class="chosenhope-category-cross__title">{{ section.settings.title_top }}</h3></a>
       <a class="chosenhope-category-cross__item pos-left-outer" href="{{ c_left_outer.url | default: '#' }}"><div class="chosenhope-category-cross__circle">{% if c_left_outer.featured_image != blank %}{{ c_left_outer.featured_image | image_url: width: 480 | image_tag: class: 'media-cover', widths: '240,360,480', alt: section.settings.title_left_outer }}{% else %}<div class="fallback-photo fallback-photo--cream"><span class="fallback-symbol">+</span></div>{% endif %}</div><h3 class="chosenhope-category-cross__title">{{ section.settings.title_left_outer }}</h3></a>
       <a class="chosenhope-category-cross__item pos-left-inner" href="{{ c_left_inner.url | default: '#' }}"><div class="chosenhope-category-cross__circle">{% if c_left_inner.featured_image != blank %}{{ c_left_inner.featured_image | image_url: width: 480 | image_tag: class: 'media-cover', widths: '240,360,480', alt: section.settings.title_left_inner }}{% else %}<div class="fallback-photo fallback-photo--olive"><span class="fallback-symbol">+</span></div>{% endif %}</div><h3 class="chosenhope-category-cross__title">{{ section.settings.title_left_inner }}</h3></a>
@@ -48,8 +45,6 @@
     </div>
 
     <div class="chosenhope-category-cross__mobile">
-      <div class="chosenhope-category-cross__v" aria-hidden="true"></div>
-      <div class="chosenhope-category-cross__h" aria-hidden="true"></div>
       <a class="chosenhope-category-cross__item pos-top" href="{{ c_top.url | default: '#' }}"><div class="chosenhope-category-cross__circle">{% if c_top.featured_image != blank %}{{ c_top.featured_image | image_url: width: 480 | image_tag: class: 'media-cover', widths: '240,360,480', alt: section.settings.title_top }}{% else %}<div class="fallback-photo fallback-photo--olive"><span class="fallback-symbol">+</span></div>{% endif %}</div><h3 class="chosenhope-category-cross__title">{{ section.settings.title_top }}</h3></a>
       <a class="chosenhope-category-cross__item pos-left" href="{{ c_left_outer.url | default: '#' }}"><div class="chosenhope-category-cross__circle">{% if c_left_outer.featured_image != blank %}{{ c_left_outer.featured_image | image_url: width: 480 | image_tag: class: 'media-cover', widths: '240,360,480', alt: section.settings.title_left_outer }}{% else %}<div class="fallback-photo fallback-photo--cream"><span class="fallback-symbol">+</span></div>{% endif %}</div><h3 class="chosenhope-category-cross__title">{{ section.settings.title_left_outer }}</h3></a>
       <a class="chosenhope-category-cross__item chosenhope-category-cross__item--center pos-center" href="{{ c_center.url | default: '#' }}"><div class="chosenhope-category-cross__circle">{% if c_center.featured_image != blank %}{{ c_center.featured_image | image_url: width: 480 | image_tag: class: 'media-cover', widths: '240,360,480', alt: section.settings.title_mobile_center }}{% else %}<div class="fallback-photo fallback-photo--sand"><span class="fallback-symbol">+</span></div>{% endif %}</div><h3 class="chosenhope-category-cross__title">{{ section.settings.title_mobile_center }}</h3></a>
@@ -87,7 +82,6 @@
     { "type": "color", "id": "section_background_color", "label": "Section background", "default": "#f9f8f4" },
     { "type": "color", "id": "eyebrow_color", "label": "Eyebrow text color", "default": "#6e7455" },
     { "type": "color", "id": "heading_color", "label": "Heading text color", "default": "#111111" },
-    { "type": "color", "id": "connector_line_color", "label": "Connector line color", "default": "#c8a24a" },
     { "type": "color", "id": "circle_border_color", "label": "Circle border color", "default": "#f9f8f4" },
     { "type": "color", "id": "circle_center_border_color", "label": "Center circle border color", "default": "#c8a24a" },
     { "type": "color", "id": "circle_center_glow_color", "label": "Center circle glow color", "default": "#f3e9d3" },

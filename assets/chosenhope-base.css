@@ -5,6 +5,15 @@
   box-sizing: border-box;
 }
 
+.chosenhope-home-scope button:not(:disabled),
+.chosenhope-home-scope a {
+  cursor: pointer;
+}
+
+.chosenhope-home-scope button:disabled {
+  cursor: not-allowed;
+}
+
 .chosenhope-home-scope {
   --ch-gold: #c8a24a;
   --ch-gold-dark: #a8853a;
@@ -125,6 +134,7 @@
   align-items: center;
   border: 1.5px solid transparent;
   border-radius: var(--ch-radius-pill);
+  cursor: pointer;
   display: inline-flex;
   font-size: 0.9375rem;
   font-weight: 600;
@@ -142,6 +152,12 @@
 
 .chosenhope-home-scope .btn:hover {
   transform: translateY(-2px);
+}
+
+.chosenhope-home-scope .btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  transform: none;
 }
 
 .chosenhope-home-scope .btn-gold {

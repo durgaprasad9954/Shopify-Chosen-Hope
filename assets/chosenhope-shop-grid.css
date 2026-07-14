@@ -84,13 +84,13 @@
 
 .chosenhope-home-scope .main-collection-grid__empty { padding-block: 4rem; text-align: center; color: var(--ch-gray); }
 
-.chosenhope-home-scope .pagination { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 3.5rem; flex-wrap: wrap; }
+.chosenhope-home-scope .pagination { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 3.5rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
 .chosenhope-home-scope .pagination a,
 .chosenhope-home-scope .pagination span.gap,
-.chosenhope-home-scope .pagination span.current { min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center; border-radius: var(--ch-radius-sm); text-decoration: none; color: var(--ch-black); font-weight: 600; font-size: 0.9375rem; border: 1.5px solid transparent; }
+.chosenhope-home-scope .pagination span.current { min-width: 40px; min-height: 40px; padding-inline: 12px; display: flex; align-items: center; justify-content: center; border-radius: var(--ch-radius-pill); text-decoration: none; color: var(--ch-black); font-weight: 600; font-size: 0.9375rem; border: 1.5px solid var(--ch-border); cursor: pointer; transition: background 0.2s var(--ch-ease), border-color 0.2s var(--ch-ease); }
 .chosenhope-home-scope .pagination a:hover { border-color: var(--ch-black); }
-.chosenhope-home-scope .pagination span.current { background: var(--ch-gold); color: var(--ch-black); }
-.chosenhope-home-scope .pagination .nav-arrow { border: 1.5px solid var(--ch-black); }
+.chosenhope-home-scope .pagination span.current { background: var(--ch-gray); border-color: var(--ch-gray); color: var(--ch-white); }
+.chosenhope-home-scope .pagination .nav-arrow { gap: 6px; font-weight: 500; }
 .chosenhope-home-scope .pagination .nav-arrow[aria-disabled="true"] { opacity: 0.35; pointer-events: none; }
 
 .chosenhope-home-scope .modal-backdrop { display: none; position: fixed; inset: 0; background: rgba(23, 22, 20, 0.55); z-index: 300; align-items: center; justify-content: center; padding: 1rem; }
