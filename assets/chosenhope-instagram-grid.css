@@ -1,6 +1,6 @@
 .chosenhope-instagram-grid {
   background: var(--ch-ig-bg, var(--ch-white));
-
+  padding-block: 5.5rem;
 }
 
 .chosenhope-instagram-grid .eyebrow {
