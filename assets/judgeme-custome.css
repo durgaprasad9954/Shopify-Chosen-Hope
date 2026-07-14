@@ -1,0 +1,133 @@
+/* ==================================================
+   CHOSEN HOPE — JUDGE.ME CUSTOM STYLING
+================================================== */
+
+/* Review carousel and widget section background */
+div:has(.jdgm-cards-carousel),
+div:has(.jdgm-rev-widg) {
+  background: #f9f8f4;
+}
+
+/* Judge.me body typography */
+.jdgm-widget,
+.jdgm-widget *,
+.jdgm-cards-carousel,
+.jdgm-cards-carousel * {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Important: preserve Judge.me star icons */
+.jdgm-star {
+  color: #c8a24a !important;
+  font-family: "JudgemeStar" !important;
+}
+
+/* Main product review widget */
+.jdgm-rev-widg {
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  padding: 40px;
+}
+
+/* Main widget heading */
+.jdgm-rev-widg__title {
+  color: #111111;
+  font-family: "Playfair Display", Georgia, serif !important;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+/* Individual review cards */
+.jdgm-rev {
+  background: #ffffff;
+  border: 1px solid #eaeaea !important;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  padding: 24px !important;
+}
+
+/* Review title */
+.jdgm-rev__title {
+  color: #111111;
+  font-family: "Playfair Display", Georgia, serif !important;
+  font-size: 19px;
+  font-weight: 500;
+}
+
+/* Review content */
+.jdgm-rev__body,
+.jdgm-rev__body p {
+  color: #666666 !important;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* Reviewer name */
+.jdgm-rev__author {
+  color: #111111 !important;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Verified buyer badge */
+.jdgm-rev__buyer-badge {
+  background: #f3e9d3 !important;
+  border-radius: 999px;
+  color: #4b4f3a !important;
+  padding: 4px 9px;
+}
+
+/* Write a review and submit buttons */
+.jdgm-write-rev-link,
+.jdgm-submit-rev {
+  background: #c8a24a !important;
+  border: 1px solid #c8a24a !important;
+  border-radius: 999px !important;
+  color: #111111 !important;
+  font-family: "Inter", sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  padding: 13px 26px !important;
+  text-decoration: none !important;
+}
+
+/* Button hover */
+.jdgm-write-rev-link:hover,
+.jdgm-submit-rev:hover {
+  background: #a8853a !important;
+  border-color: #a8853a !important;
+}
+
+/* Rating distribution bars */
+.jdgm-histogram__bar-content {
+  background: #c8a24a !important;
+}
+
+/* Pagination */
+.jdgm-paginate__page {
+  color: #666666 !important;
+}
+
+.jdgm-paginate__page.jdgm-curt {
+  color: #a8853a !important;
+  font-weight: 600;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 749px) {
+  .jdgm-rev-widg {
+    border-radius: 8px;
+    padding: 24px 18px;
+  }
+
+  .jdgm-rev {
+    padding: 18px !important;
+  }
+
+  .jdgm-rev-widg__title {
+    font-size: 34px;
+  }
+}
