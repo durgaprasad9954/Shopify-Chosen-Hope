@@ -305,12 +305,19 @@
 
 @media (max-width: 640px) {
   .chosenhope-hero__media {
-    aspect-ratio: 4 / 5;
+    aspect-ratio: auto;
     height: auto;
+    min-height: 0;
+  }
+
+  .chosenhope-hero__content {
+    height: auto;
+    inset: auto;
+    position: relative;
   }
 
   .chosenhope-hero__copy {
-    padding: 0 1.5rem;
+    padding: 3.5rem 1.5rem 3rem;
   }
 
   .chosenhope-hero__buttons .btn {
@@ -318,17 +325,12 @@
   }
 
   .chosenhope-hero__verse {
-    padding: 0.85rem;
-    width: clamp(96px, 34vw, 140px);
-  }
-
-  .chosenhope-hero__verse-text {
     display: none;
   }
 
   .chosenhope-hero__features {
     grid-template-columns: 1fr;
-    padding-inline: 1.5rem;
+    padding: 0.5rem 1.5rem 0;
   }
 
   .chosenhope-hero__feature:nth-child(-n + 3) {
