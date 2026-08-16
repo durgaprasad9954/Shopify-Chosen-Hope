@@ -32,13 +32,13 @@
     {%- render 'color-palette' -%}
 
     <style>
-      /* ChosenHope custom cursor — a small white cross (with a faint dark
-         outline for contrast on light backgrounds) replaces the default
-         pointer everywhere on the site. Links/buttons/inputs keep their own
+      /* ChosenHope custom cursor — a small white cross with a strong dark
+         outline and gold-glow tips, so it stays visible even against the
+         site's light/cream backgrounds. Links/buttons/inputs keep their own
          "pointer"/"text" cursor (set elsewhere with higher specificity), so
          clickable elements still show their normal hand-cursor affordance. */
       body {
-        cursor: url("{{ 'chosenhope-cursor-cross.png' | asset_url }}") 14 4, auto;
+        cursor: url("{{ 'chosenhope-cursor-cross.png' | asset_url }}") 10 3, auto;
       }
     </style>
 

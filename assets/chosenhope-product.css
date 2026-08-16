@@ -16,7 +16,12 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   grid-template-areas: "gallery heading" "gallery info";
-  gap: 3.5rem;
+  column-gap: 3.5rem;
+  /* Small on purpose — the heading and info areas are separate grid rows, so
+     this gap stacks on top of each element's own margin-top below. A wide
+     value here (matching the column gap) left a big empty gap under the
+     title before the rating row. */
+  row-gap: 0.5rem;
   align-items: start;
 }
 .chosenhope-home-scope .pdp-gallery { grid-area: gallery; }
@@ -62,13 +67,13 @@
 /* ---------- Info panel ---------- */
 .chosenhope-home-scope .pdp-heading .eyebrow { margin-bottom: 0.75rem; }
 .chosenhope-home-scope .pdp-title { font-size: clamp(2.5rem, 1.7rem + 3vw, 4rem); font-style: italic; }
-.chosenhope-home-scope .pdp-rating { display: flex; align-items: center; gap: 10px; margin-top: 0.75rem; font-size: 0.9375rem; color: var(--ch-gray); }
+.chosenhope-home-scope .pdp-rating { display: flex; align-items: center; gap: 10px; margin-top: 0.5rem; font-size: 0.9375rem; color: var(--ch-gray); }
 .chosenhope-home-scope .pdp-rating .stars { letter-spacing: 2px; }
 .chosenhope-home-scope .pdp-rating a { text-decoration: underline; color: var(--ch-gray); }
-.chosenhope-home-scope .pdp-price { font-size: clamp(2rem, 1.5rem + 2vw, 3rem); font-weight: 700; color: var(--ch-black); margin-top: 1.5rem; }
+.chosenhope-home-scope .pdp-price { font-size: clamp(2rem, 1.5rem + 2vw, 3rem); font-weight: 700; color: var(--ch-black); margin-top: 0.75rem; }
 .chosenhope-home-scope .pdp-price .compare { text-decoration: line-through; color: var(--ch-gray); font-size: 1.125rem; margin-left: 12px; font-weight: 500; }
 
-.chosenhope-home-scope .variant-group { margin-top: 2.25rem; }
+.chosenhope-home-scope .variant-group { margin-top: 1.5rem; }
 .chosenhope-home-scope .variant-group h3 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ch-black); margin-bottom: 10px; font-family: var(--ch-font-body); }
 .chosenhope-home-scope .variant-group h3 span { color: var(--ch-gray); font-weight: 600; text-transform: none; letter-spacing: 0; }
 .chosenhope-home-scope .variant-options { display: flex; gap: 10px; flex-wrap: wrap; }
@@ -82,7 +87,7 @@
 .chosenhope-home-scope .variant-swatch { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--ch-border); cursor: pointer; position: relative; padding: 0; }
 .chosenhope-home-scope .variant-swatch.active::after { content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 2px solid var(--ch-gold); }
 
-.chosenhope-home-scope .qty-row { display: flex; align-items: center; gap: 1rem; margin-top: 2.25rem; flex-wrap: wrap; }
+.chosenhope-home-scope .qty-row { display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap; }
 .chosenhope-home-scope .qty-stepper { display: inline-flex; align-items: center; border: 1.5px solid var(--ch-border); border-radius: var(--ch-radius-pill); overflow: hidden; }
 .chosenhope-home-scope .qty-stepper button { width: 44px; height: 48px; background: var(--ch-white); border: none; font-size: 18px; color: var(--ch-black); cursor: pointer; }
 .chosenhope-home-scope .qty-stepper button:hover:not(:disabled) { background: var(--ch-gold-tint); }
