@@ -3,9 +3,17 @@
 }
 
 .chosenhope-hero__media {
-  height: min(86vh, 780px);
-  min-height: 520px;
+  /* Wide banner crop (matches the reference photo's own proportions) instead of
+     a full-viewport-height block — a tall crop zoomed in far more than intended. */
+  aspect-ratio: 21 / 9;
+  height: auto;
   position: relative;
+}
+
+@media (max-width: 760px) {
+  .chosenhope-hero__media {
+    aspect-ratio: 4 / 5;
+  }
 }
 
 .chosenhope-hero__image-wrap,
@@ -28,43 +36,61 @@
 }
 
 .chosenhope-hero__copy {
-  margin-inline: auto;
-  max-width: 640px;
+  margin-inline: 0;
+  margin-inline-end: auto;
+  max-width: 560px;
   padding: 0 2.25rem;
-  text-align: center;
+  text-align: left;
   width: 100%;
 }
 
 .chosenhope-hero__copy .eyebrow {
   /* stylelint-disable-next-line declaration-no-important -- must beat base.css's more specific .eyebrow.on-dark rule */
   color: var(--ch-hero-eyebrow-color, var(--ch-gold)) !important;
-  justify-content: center;
+  justify-content: flex-start;
+  letter-spacing: 0.3em;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.chosenhope-hero__copy .eyebrow::before {
+  display: none;
 }
 
 .chosenhope-hero__heading {
   /* stylelint-disable-next-line declaration-no-important -- must beat base.css's tag-qualified h1 rule */
   color: var(--ch-hero-heading-color, var(--ch-warm-white)) !important;
-  font-size: var(--ch-hero-heading-size, clamp(2.75rem, 2rem + 3.4vw, 4.75rem)) !important;
-  font-style: italic;
+  font-size: var(--ch-hero-heading-size, clamp(3.25rem, 2.2rem + 4.6vw, 5.75rem)) !important;
+  font-style: normal;
   font-weight: var(--ch-hero-heading-weight, 500) !important;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
 .chosenhope-hero__subtext {
   /* stylelint-disable-next-line declaration-no-important -- must beat base.css's tag-qualified p rule */
   color: var(--ch-hero-subtext-color, rgba(249, 248, 244, 0.86)) !important;
-  font-size: var(--ch-hero-subtext-size, 1.125rem) !important;
+  font-size: var(--ch-hero-subtext-size, 1.25rem) !important;
   font-weight: var(--ch-hero-subtext-weight, 400) !important;
-  margin-inline: auto;
-  margin-top: 1rem;
+  line-height: 1.5;
+  margin-inline: 0;
+  margin-top: 1.5rem;
   max-width: 46ch;
 }
 
 .chosenhope-hero__buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  margin-top: 2.25rem;
+  gap: 1.25rem;
+  justify-content: flex-start;
+  margin-top: 3rem;
+}
+
+.chosenhope-hero__buttons .btn {
+  letter-spacing: 0.05em;
+  min-height: 58px;
+  padding-inline: 32px;
+  text-transform: uppercase;
 }
 
 @media (max-width: 640px) {

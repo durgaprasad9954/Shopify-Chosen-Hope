@@ -28,6 +28,12 @@
 .chosenhope-home-scope .coll-layout { display: grid; grid-template-columns: 250px 1fr; gap: 3.5rem; align-items: start; }
 @media (max-width: 900px) { .chosenhope-home-scope .coll-layout { grid-template-columns: 1fr; } }
 .chosenhope-home-scope .filters-panel { position: sticky; top: 96px; }
+/* On mobile the sidebar filter panel is replaced by the "Filter" pill button + slide-in
+   drawer below — without this it also rendered inline above the grid, so its sticky
+   "Apply filters" button appeared frozen in place while the page scrolled past it. */
+@media (max-width: 900px) {
+  .chosenhope-home-scope .filters-panel { display: none; }
+}
 .chosenhope-home-scope .filter-group { border-bottom: 1px solid var(--ch-border); padding-block: 1rem; }
 .chosenhope-home-scope .filter-group summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; font-weight: 600; color: var(--ch-black); font-size: 0.9375rem; padding: 6px 0; min-height: 44px; }
 .chosenhope-home-scope .filter-group summary::-webkit-details-marker { display: none; }

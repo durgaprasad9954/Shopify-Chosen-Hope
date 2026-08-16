@@ -105,18 +105,18 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "",
-                "width": "fit-content",
+                "text": "<p>Product images are for illustrative purposes only. Due to natural variation in printing, materials, and craftsmanship, the item you receive may differ slightly (up to ~30%) from the images shown.</p>",
+                "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
-                "font_size": "1rem",
+                "font_size": "0.75rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
                 "wrap": "pretty",
-                "text_color": "",
+                "text_color": "#999999",
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
@@ -231,7 +231,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>Jewelry</p><p>Canvas</p><p>Apparel</p><p>Collections</p>",
+                "text": "<p><a href=\"/pages/jewellery\">Jewelry</a></p><p><a href=\"/pages/canvas\">Canvas</a></p><p><a href=\"/pages/apperal\">Apparel</a></p><p><a href=\"/collections\">Collections</a></p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -383,7 +383,7 @@
               "type": "text",
               "name": "t:names.description",
               "settings": {
-                "text": "<p>Contact Us</p><p>Shipping & Returns</p><p>Size Guide</p><p>FAQ</p>",
+                "text": "<p><a href=\"/pages/contact\">Contact Us</a></p><p><a href=\"/pages/shipping-returns\">Shipping & Returns</a></p><p><a href=\"/pages/size-guide\">Size Guide</a></p><p><a href=\"/pages/faq\">FAQ</a></p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
@@ -481,7 +481,7 @@
               "type": "text",
               "name": "t:names.description",
               "settings": {
-                "text": "<p>About Us</p><p>Our Story</p><p>Wholesale</p>",
+                "text": "<p><a href=\"/pages/about-us\">About Us</a></p><p><a href=\"/pages/our-story\">Our Story</a></p><p><a href=\"/pages/wholesale\">Wholesale</a></p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
@@ -579,7 +579,7 @@
               "type": "text",
               "name": "t:names.description",
               "settings": {
-                "text": "<p>Privacy Policy</p><p>Terms of Service</p><p>Accessibility</p>",
+                "text": "<p><a href=\"/policies/privacy-policy\">Privacy Policy</a></p><p><a href=\"/pages/terms-of-service\">Terms of Service</a></p><p><a href=\"/pages/accessibility\">Accessibility</a></p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
@@ -616,7 +616,9 @@
         "group_LRzyQX"
       ],
       "custom_css": [
-        ".Multicolumn {background-color: #fff;}"
+        ".Multicolumn {background-color: #fff;}",
+        "@media (max-width: 749px) { .layout-panel-flex--row.mobile-column { display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 24px; row-gap: 32px; } .layout-panel-flex--row.mobile-column > .group-block:first-child { grid-column: 1 / -1; } .layout-panel-flex--row.mobile-column > .group-block:nth-child(2) { padding-inline-start: 0 !important; } }",
+        ".layout-panel-flex--row.mobile-column a { text-decoration: none; }"
       ],
       "name": "t:names.multicolumn",
       "settings": {

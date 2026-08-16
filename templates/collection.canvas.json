@@ -12,7 +12,9 @@
     "chosenhope_canvas_hero": {
       "type": "chosenhope-canvas-hero",
       "name": "ChosenHope Canvas Hero",
-      "settings": {}
+      "settings": {
+        "hero_image": "shopify://shop_images/jesusArt2.jpg"
+      }
     },
     "chosenhope_canvas_grid": {
       "type": "chosenhope-canvas-grid",

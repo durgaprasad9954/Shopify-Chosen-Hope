@@ -18,6 +18,7 @@
         "heading": "Best Sellers",
         "subtext": "The pieces our community keeps coming back for — across jewelry, canvas, and apparel.",
         "icon": "star",
+        "hero_image": "shopify://shop_images/christianjewellery1.jpg",
         "gradient_start_color": "#f3e9d3",
         "gradient_end_color": "#f9f8f4",
         "eyebrow_color": "#6e7455",

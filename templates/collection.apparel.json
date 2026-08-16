@@ -12,7 +12,9 @@
     "chosenhope_apparel_hero": {
       "type": "chosenhope-apparel-hero",
       "name": "ChosenHope Apparel Hero",
-      "settings": {}
+      "settings": {
+        "hero_image": "shopify://shop_images/christian_caps.jpg"
+      }
     },
     "chosenhope_apparel_grid": {
       "type": "chosenhope-apparel-grid",

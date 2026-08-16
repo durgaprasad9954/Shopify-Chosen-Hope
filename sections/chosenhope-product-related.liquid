@@ -16,20 +16,22 @@
         <h2 id="chosenhope-related-heading" style="font-size: clamp(2rem, 1.5rem + 2vw, 3rem);">{{ section.settings.heading }}</h2>
       </div>
 
-      <div class="product-grid">
-        {% for related_product in source_collection.products %}
-          {% unless related_product.id == product.id %}
-            {% if shown < section.settings.products_to_show %}
-              {% render 'chosenhope-product-card',
-                product: related_product,
-                best_seller_tag: section.settings.best_seller_tag,
-                new_tag: section.settings.new_tag,
-                forloop_index0: forloop.index0
-              %}
-              {% assign shown = shown | plus: 1 %}
-            {% endif %}
-          {% endunless %}
-        {% endfor %}
+      <div class="carousel-wrap">
+        <div class="carousel-track" role="region" aria-label="Related products, scrollable" tabindex="0">
+          {% for related_product in source_collection.products %}
+            {% unless related_product.id == product.id %}
+              {% if shown < section.settings.products_to_show %}
+                {% render 'chosenhope-product-card',
+                  product: related_product,
+                  best_seller_tag: section.settings.best_seller_tag,
+                  new_tag: section.settings.new_tag,
+                  forloop_index0: forloop.index0
+                %}
+                {% assign shown = shown | plus: 1 %}
+              {% endif %}
+            {% endunless %}
+          {% endfor %}
+        </div>
       </div>
     </div>
   </section>

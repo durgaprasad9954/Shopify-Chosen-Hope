@@ -12,12 +12,34 @@
 .chosenhope-home-scope .btn-sm { min-height: 44px; padding: 0 24px; font-size: 0.8125rem; }
 
 /* ---------- PDP layout ---------- */
-.chosenhope-home-scope .pdp-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3.5rem; align-items: start; }
-@media (max-width: 900px) { .chosenhope-home-scope .pdp-layout { grid-template-columns: minmax(0, 1fr); } }
+.chosenhope-home-scope .pdp-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas: "gallery heading" "gallery info";
+  gap: 3.5rem;
+  align-items: start;
+}
+.chosenhope-home-scope .pdp-gallery { grid-area: gallery; }
+.chosenhope-home-scope .pdp-heading { grid-area: heading; }
+.chosenhope-home-scope .pdp-info { grid-area: info; }
+@media (max-width: 900px) {
+  /* Mobile wants the title above the product image (client reference), while
+     desktop keeps it stacked at the top of the right-hand info column. */
+  .chosenhope-home-scope .pdp-layout {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "heading" "gallery" "info";
+    row-gap: 1.25rem;
+  }
+}
 
 /* ---------- Gallery ---------- */
 .chosenhope-home-scope .pdp-gallery { position: sticky; top: 96px; }
-@media (max-width: 900px) { .chosenhope-home-scope .pdp-gallery { position:inline-flex; } }
+@media (max-width: 900px) {
+  /* "position: inline-flex" isn't a valid CSS position value, so it was silently
+     ignored and the desktop sticky rule stayed active on mobile — the gallery froze
+     in place while the info panel scrolled up underneath it. */
+  .chosenhope-home-scope .pdp-gallery { position: static; }
+}
 .chosenhope-home-scope .pdp-main-image { aspect-ratio: 1 / 1; border-radius: var(--ch-radius-lg); overflow: hidden; position: relative; cursor: zoom-in; }
 .chosenhope-home-scope .pdp-main-image img,
 .chosenhope-home-scope .pdp-main-image .fallback-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
@@ -26,7 +48,7 @@
   font-size: 11px; font-weight: 600; padding: 6px 12px; border-radius: var(--ch-radius-pill); display: flex; align-items: center; gap: 6px;
 }
 .chosenhope-home-scope .pdp-thumbs {
-  display: flex; gap: 10px; margin-top: 1rem; flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x proximity;
+  display: flex; gap: 10px; margin-top: 1rem; flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x mandatory;
   padding-bottom: 4px; scrollbar-width: thin;
 }
 .chosenhope-home-scope .pdp-thumb {
@@ -38,9 +60,8 @@
 .chosenhope-home-scope .pdp-thumb .fallback-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 
 /* ---------- Info panel ---------- */
-.chosenhope-home-scope .pdp-info .eyebrow { margin-bottom: 0.75rem; }
+.chosenhope-home-scope .pdp-heading .eyebrow { margin-bottom: 0.75rem; }
 .chosenhope-home-scope .pdp-title { font-size: clamp(2.5rem, 1.7rem + 3vw, 4rem); font-style: italic; }
-.chosenhope-home-scope .pdp-desc { margin-top: 0.75rem; font-size: 1rem; max-width: 52ch; color: var(--ch-gray); }
 .chosenhope-home-scope .pdp-rating { display: flex; align-items: center; gap: 10px; margin-top: 0.75rem; font-size: 0.9375rem; color: var(--ch-gray); }
 .chosenhope-home-scope .pdp-rating .stars { letter-spacing: 2px; }
 .chosenhope-home-scope .pdp-rating a { text-decoration: underline; color: var(--ch-gray); }
@@ -81,6 +102,36 @@
 .chosenhope-home-scope .trust-row { display: flex; gap: 2.25rem; margin-top: 2.25rem; padding-top: 1.5rem; border-top: 1px solid var(--ch-border); flex-wrap: wrap; }
 .chosenhope-home-scope .trust-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--ch-gray); font-weight: 600; }
 .chosenhope-home-scope .trust-item svg { color: var(--ch-gold-dark); flex-shrink: 0; }
+
+/* ---------- Description dropdown ---------- */
+.chosenhope-home-scope .pdp-accordions { margin-top: 1.5rem; border-top: 1px solid var(--ch-border); }
+.chosenhope-home-scope .pdp-accordion { border-bottom: 1px solid var(--ch-border); padding-block: 1rem; }
+.chosenhope-home-scope .pdp-accordion summary {
+  list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between;
+  font-weight: 600; font-size: 0.9375rem; letter-spacing: 0.02em; text-transform: uppercase; color: var(--ch-black); min-height: 44px; padding: 6px 0;
+}
+.chosenhope-home-scope .pdp-accordion summary::-webkit-details-marker { display: none; }
+.chosenhope-home-scope .pdp-accordion summary .chevron { transition: transform 0.2s var(--ch-ease); color: var(--ch-gold-dark); flex-shrink: 0; }
+.chosenhope-home-scope .pdp-accordion[open] summary .chevron { transform: rotate(180deg); }
+.chosenhope-home-scope .pdp-accordion-content { padding-top: 0.75rem; font-size: 0.9375rem; line-height: 1.6; color: var(--ch-gray); max-width: 60ch; }
+
+/* The info column's leading margin used to sit right under the title in normal
+   document flow; now that the title lives in its own grid area (see .pdp-heading
+   above), that margin stacks on top of the grid's row-gap and doubles the space. */
+.chosenhope-home-scope .pdp-info > :first-child { margin-top: 0; }
+
+@media (max-width: 900px) {
+  /* Tighter vertical rhythm for the info column on mobile — the desktop spacing
+     (designed for a wide two-column layout) reads as large, uneven gaps once
+     everything is stacked in a single narrow column. */
+  .chosenhope-home-scope .pdp-rating { margin-top: 0.5rem; }
+  .chosenhope-home-scope .pdp-price { margin-top: 0.75rem; }
+  .chosenhope-home-scope .variant-group { margin-top: 1.25rem; }
+  .chosenhope-home-scope .qty-row { margin-top: 1.25rem; }
+  .chosenhope-home-scope .pdp-actions { margin-top: 1rem; }
+  .chosenhope-home-scope .trust-row { margin-top: 1.5rem; padding-top: 1rem; }
+  .chosenhope-home-scope .pdp-accordions { margin-top: 1rem; }
+}
 
 /* ---------- Reviews ---------- */
 .chosenhope-home-scope .review-summary {

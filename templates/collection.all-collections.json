@@ -12,7 +12,9 @@
     "chosenhope_collections_hero": {
       "type": "chosenhope-collections-hero",
       "name": "CH Collections Hero",
-      "settings": {}
+      "settings": {
+        "hero_image": "shopify://shop_images/christian_bracelets_1.jpg"
+      }
     },
     "chosenhope_collections_grid": {
       "type": "chosenhope-collections-grid",

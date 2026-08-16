@@ -113,4 +113,8 @@
   .chosenhope-newsletter__photo {
     min-height: 220px;
   }
+
+  .chosenhope-newsletter__panel {
+    justify-content: flex-start;
+  }
 }

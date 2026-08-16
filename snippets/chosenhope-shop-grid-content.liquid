@@ -140,7 +140,8 @@
           <form method="get" action="{{ collection.url }}">
             {% assign drawer_id_prefix = 'f-drawer' | append: section.id %}
             {% render 'chosenhope-shop-filters', collection: collection, id_prefix: drawer_id_prefix %}
-            <button type="submit" class="btn btn-gold filters-apply">Show results</button>
+            <button type="submit" class="btn btn-gold filters-apply">Apply filters</button>
+            <a href="{{ collection.url }}" class="filters-clear">Clear all filters</a>
           </form>
         </div>
       {% endif %}

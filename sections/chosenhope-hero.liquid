@@ -24,8 +24,13 @@
         {{ section.settings.hero_image | image_url: width: 2200 | image_tag: class: 'media-cover', widths: '750,1100,1500,1800,2200', alt: section.settings.hero_heading }}
       </div>
     {% else %}
-      <div class="chosenhope-hero__fallback-wrap">
-        <div class="fallback-photo"><span class="fallback-symbol">✦</span></div>
+      <div class="chosenhope-hero__image-wrap">
+        <img
+          class="media-cover"
+          src="{{ 'chosenhope-hero-you-are-chosen.png' | asset_url }}"
+          alt="{{ section.settings.hero_heading }}"
+          loading="eager"
+        >
       </div>
     {% endif %}
 

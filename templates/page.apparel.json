@@ -18,6 +18,7 @@
         "heading": "Apparel",
         "subtext": "Hoodies, tees, and caps carrying a quiet message — soft, well-made, and built for everyday wear.",
         "icon": "apparel",
+        "hero_image": "shopify://shop_images/christian_caps.jpg",
         "gradient_start_color": "#f3e9d3",
         "gradient_end_color": "#f9f8f4",
         "eyebrow_color": "#6e7455",

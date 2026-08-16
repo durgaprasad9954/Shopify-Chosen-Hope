@@ -50,6 +50,14 @@
 <div class="chosenhope-home-scope">
   <div class="container">
     <div class="pdp-layout">
+      <div class="pdp-heading">
+        {% if section.settings.eyebrow != blank %}
+          <span class="eyebrow">{{ section.settings.eyebrow }}</span>
+        {% endif %}
+
+        <h1 class="pdp-title">{{ product.title }}</h1>
+      </div>
+
       <div class="pdp-gallery">
         <div id="chosenhope-pdp-main-image" class="pdp-main-image halo" role="button" tabindex="0" aria-label="Click to zoom">
           <div id="chosenhope-pdp-main-media">
@@ -85,16 +93,6 @@
       </div>
 
       <div class="pdp-info">
-        {% if section.settings.eyebrow != blank %}
-          <span class="eyebrow">{{ section.settings.eyebrow }}</span>
-        {% endif %}
-
-        <h1 class="pdp-title">{{ product.title }}</h1>
-
-        {% if product.description != blank %}
-          <div class="pdp-desc">{{ product.description }}</div>
-        {% endif %}
-
         <div class="pdp-rating">
           <span class="stars" aria-hidden="true">{% for i in (1..5) %}{% if i <= full_stars %}★{% else %}☆{% endif %}{% endfor %}</span>
           <span>{{ rating_value }} · <a href="#chosenhope-reviews">{{ rating_count }} reviews</a></span>
@@ -219,6 +217,18 @@
             {% endif %}
           </div>
         {% endif %}
+
+        {% if product.description != blank %}
+          <div class="pdp-accordions">
+            <details class="pdp-accordion">
+              <summary>
+                Description
+                <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </summary>
+              <div class="pdp-accordion-content rte">{{ product.description }}</div>
+            </details>
+          </div>
+        {% endif %}
       </div>
     </div>
   </div>
@@ -271,7 +281,7 @@
     { "type": "header", "content": "Trust badges" },
     { "type": "text", "id": "trust_1", "label": "Badge 1", "default": "Secure checkout" },
     { "type": "text", "id": "trust_2", "label": "Badge 2", "default": "Ships within 24 hours" },
-    { "type": "text", "id": "trust_3", "label": "Badge 3", "default": "30-day easy returns" },
+    { "type": "text", "id": "trust_3", "label": "Badge 3", "default": "7-day easy returns" },
     { "type": "header", "content": "Swatch colors" },
     { "type": "paragraph", "content": "Optional: map specific option values to exact colors. Any value not listed here falls back to gold." },
     { "type": "color", "id": "gold-vermeil", "label": "\"Gold Vermeil\" swatch color", "default": "#c8a24a" },

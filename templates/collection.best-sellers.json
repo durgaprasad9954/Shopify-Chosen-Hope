@@ -12,7 +12,9 @@
     "chosenhope_best_sellers_hero": {
       "type": "chosenhope-best-sellers-hero",
       "name": "CH Best Sellers Hero",
-      "settings": {}
+      "settings": {
+        "hero_image": "shopify://shop_images/christianjewellery1.jpg"
+      }
     },
     "chosenhope_best_sellers_grid": {
       "type": "chosenhope-best-sellers-grid",

@@ -948,6 +948,19 @@
       "id": "drawer_dividers",
       "label": "t:settings.dividers",
       "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_home_link",
+      "label": "Show \"Home\" link in mobile menu",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "home_link_label",
+      "label": "\"Home\" link label",
+      "default": "Home",
+      "visible_if": "{{ block.settings.show_home_link }}"
     }
   ]
 }
