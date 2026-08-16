@@ -3,98 +3,335 @@
 }
 
 .chosenhope-hero__media {
-  /* Wide banner crop (matches the reference photo's own proportions) instead of
-     a full-viewport-height block — a tall crop zoomed in far more than intended. */
-  aspect-ratio: 21 / 9;
-  height: auto;
+  height: clamp(460px, 76vh, 660px);
+  overflow: hidden;
   position: relative;
 }
 
-@media (max-width: 760px) {
-  .chosenhope-hero__media {
-    aspect-ratio: 4 / 5;
-  }
-}
-
-.chosenhope-hero__image-wrap,
-.chosenhope-hero__fallback-wrap {
+.chosenhope-hero__image-wrap {
   inset: 0;
   position: absolute;
 }
 
 .chosenhope-hero__overlay {
-  align-items: center;
   background: linear-gradient(
-    160deg,
-    var(--ch-hero-overlay-start, rgba(23, 22, 20, 0.82)) 0%,
-    var(--ch-hero-overlay-mid, rgba(23, 22, 20, 0.55)) 45%,
-    var(--ch-hero-overlay-end, rgba(200, 162, 74, 0.28)) 100%
+    100deg,
+    var(--ch-hero-overlay-start, rgba(15, 13, 11, 0.94)) 0%,
+    var(--ch-hero-overlay-mid, rgba(15, 13, 11, 0.78)) 34%,
+    var(--ch-hero-overlay-end, rgba(15, 13, 11, 0.05)) 62%
   );
+  inset: 0;
+  position: absolute;
+}
+
+.chosenhope-hero__content {
+  align-items: center;
   display: flex;
+  height: 100%;
   inset: 0;
   position: absolute;
 }
 
 .chosenhope-hero__copy {
-  margin-inline: 0;
-  margin-inline-end: auto;
-  max-width: 560px;
-  padding: 0 2.25rem;
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 640px;
+  padding: 0 2rem 0 clamp(3rem, 7vw, 6rem);
   width: 100%;
 }
 
-.chosenhope-hero__copy .eyebrow {
-  /* stylelint-disable-next-line declaration-no-important -- must beat base.css's more specific .eyebrow.on-dark rule */
-  color: var(--ch-hero-eyebrow-color, var(--ch-gold)) !important;
-  justify-content: flex-start;
+.chosenhope-hero__copy > * {
+  flex: none;
+  width: 100%;
+}
+
+.chosenhope-hero__eyebrow {
+  align-items: center;
+  color: var(--ch-hero-eyebrow-color, var(--ch-gold));
+  display: flex;
+  font-size: 11px;
+  font-weight: 600;
+  gap: 10px;
   letter-spacing: 0.3em;
-  margin-bottom: 1rem;
+  margin-bottom: 0.35rem;
   text-transform: uppercase;
 }
 
-.chosenhope-hero__copy .eyebrow::before {
-  display: none;
+.chosenhope-hero__eyebrow::before {
+  background: var(--ch-hero-eyebrow-color, var(--ch-gold));
+  content: "";
+  display: inline-block;
+  height: 1px;
+  width: 22px;
 }
 
 .chosenhope-hero__heading {
-  /* stylelint-disable-next-line declaration-no-important -- must beat base.css's tag-qualified h1 rule */
-  color: var(--ch-hero-heading-color, var(--ch-warm-white)) !important;
-  font-size: var(--ch-hero-heading-size, clamp(3.25rem, 2.2rem + 4.6vw, 5.75rem)) !important;
+  background: linear-gradient(180deg, #ffffff 0%, var(--ch-hero-heading-color, #f2f0ea) 55%, #b7b3a8 100%);
+  background-clip: text;
+  color: transparent !important;
+  font-size: var(--ch-hero-heading-size, clamp(2.75rem, 1.6rem + 4.6vw, 5.25rem)) !important;
   font-style: normal;
   font-weight: var(--ch-hero-heading-weight, 500) !important;
-  line-height: 1;
+  line-height: 0.85;
+  margin-top: -0.3em;
+  text-transform: uppercase;
+  -webkit-background-clip: text;
+}
+
+.chosenhope-hero__subheading {
+  color: var(--ch-hero-subheading-color, var(--ch-gold)) !important;
+  font-family: var(--ch-font-display);
+  font-size: clamp(1.125rem, 0.9rem + 0.9vw, 1.75rem);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  margin-top: 0.5rem;
   text-transform: uppercase;
 }
 
+.chosenhope-hero__divider {
+  align-items: center;
+  color: var(--ch-hero-divider-color, var(--ch-gold));
+  display: flex;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+
+.chosenhope-hero__divider-line {
+  background: var(--ch-hero-divider-color, var(--ch-gold));
+  height: 1px;
+  opacity: 0.5;
+  width: 64px;
+}
+
+.chosenhope-hero__divider-icon {
+  align-items: center;
+  display: flex;
+}
+
 .chosenhope-hero__subtext {
-  /* stylelint-disable-next-line declaration-no-important -- must beat base.css's tag-qualified p rule */
   color: var(--ch-hero-subtext-color, rgba(249, 248, 244, 0.86)) !important;
-  font-size: var(--ch-hero-subtext-size, 1.25rem) !important;
+  font-size: var(--ch-hero-subtext-size, 1.0625rem) !important;
   font-weight: var(--ch-hero-subtext-weight, 400) !important;
-  line-height: 1.5;
+  line-height: 1.6;
   margin-inline: 0;
-  margin-top: 1.5rem;
-  max-width: 46ch;
+  max-width: 42ch;
 }
 
 .chosenhope-hero__buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.25rem;
-  justify-content: flex-start;
-  margin-top: 3rem;
+  gap: 1rem;
+  margin-top: 1.75rem;
 }
 
 .chosenhope-hero__buttons .btn {
   letter-spacing: 0.05em;
-  min-height: 58px;
-  padding-inline: 32px;
+  min-height: 56px;
+  padding-inline: 28px;
   text-transform: uppercase;
 }
 
-@media (max-width: 640px) {
+.chosenhope-hero__watch {
+  align-items: center;
+  color: var(--ch-hero-heading-color, var(--ch-warm-white));
+  display: inline-flex;
+  gap: 0.875rem;
+  margin-top: 1.75rem;
+}
+
+.chosenhope-hero__watch-icon {
+  align-items: center;
+  background: transparent;
+  border: 1.5px solid var(--ch-hero-eyebrow-color, var(--ch-gold));
+  border-radius: 50%;
+  color: var(--ch-hero-eyebrow-color, var(--ch-gold));
+  display: flex;
+  flex-shrink: 0;
+  height: 44px;
+  justify-content: center;
+  transition: background 0.3s var(--ch-ease), color 0.3s var(--ch-ease);
+  width: 44px;
+}
+
+.chosenhope-hero__watch-icon svg {
+  height: 16px;
+  width: 16px;
+}
+
+.chosenhope-hero__watch:hover .chosenhope-hero__watch-icon {
+  background: var(--ch-hero-eyebrow-color, var(--ch-gold));
+  color: var(--ch-black);
+}
+
+.chosenhope-hero__watch-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.chosenhope-hero__watch-copy strong {
+  color: var(--ch-hero-eyebrow-color, var(--ch-gold));
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.chosenhope-hero__watch-copy span {
+  color: var(--ch-hero-subtext-color, rgba(249, 248, 244, 0.86));
+  font-size: 0.875rem;
+}
+
+.chosenhope-hero__verse {
+  align-items: center;
+  aspect-ratio: 1 / 1;
+  background: rgba(15, 13, 11, 0.45);
+  backdrop-filter: blur(1px);
+  border: 1px solid rgba(200, 162, 74, 0.55);
+  border-radius: 50%;
+  color: var(--ch-hero-verse-color, var(--ch-warm-white));
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  justify-content: center;
+  padding: 1.25rem;
+  position: absolute;
+  right: 7%;
+  text-align: center;
+  top: 54%;
+  transform: translateY(-50%);
+  width: clamp(140px, 14vw, 200px);
+}
+
+.chosenhope-hero__verse-icon {
+  color: var(--ch-hero-eyebrow-color, var(--ch-gold));
+}
+
+.chosenhope-hero__verse-ref {
+  color: var(--ch-hero-eyebrow-color, var(--ch-gold));
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.chosenhope-hero__verse-text {
+  color: var(--ch-hero-verse-color, var(--ch-warm-white)) !important;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.chosenhope-hero__features {
+  background: var(--ch-hero-features-bg, #14120f);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-inline: 3rem;
+}
+
+.chosenhope-hero__feature {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  padding: 2.25rem 1.5rem;
+}
+
+.chosenhope-hero__feature-icon {
+  align-items: center;
+  color: var(--ch-hero-features-icon-color, var(--ch-gold));
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+}
+
+.chosenhope-hero__feature-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.chosenhope-hero__feature-copy strong {
+  color: var(--ch-hero-features-title-color, var(--ch-warm-white));
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.chosenhope-hero__feature-copy span {
+  color: var(--ch-hero-features-text-color, rgba(249, 248, 244, 0.7));
+  font-size: 0.8125rem;
+}
+
+@media (max-width: 980px) {
+  .chosenhope-hero__media {
+    aspect-ratio: 3 / 4;
+    height: auto;
+  }
+
+  .chosenhope-hero__overlay {
+    background: linear-gradient(
+      100deg,
+      var(--ch-hero-overlay-start, rgba(15, 13, 11, 0.94)) 0%,
+      var(--ch-hero-overlay-mid, rgba(15, 13, 11, 0.78)) 55%,
+      var(--ch-hero-overlay-end, rgba(15, 13, 11, 0.05)) 92%
+    );
+  }
+
   .chosenhope-hero__copy {
+    max-width: none;
+    padding: 0 1.75rem;
+  }
+
+  .chosenhope-hero__verse {
+    right: 6%;
+    top: auto;
+    bottom: 6%;
+    transform: none;
+    width: clamp(120px, 30vw, 170px);
+  }
+
+  .chosenhope-hero__features {
+    grid-template-columns: repeat(2, 1fr);
+    padding-inline: 1.75rem;
+  }
+
+  .chosenhope-hero__feature:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(249, 248, 244, 0.12);
+  }
+}
+
+@media (max-width: 640px) {
+  .chosenhope-hero__media {
+    aspect-ratio: 4 / 5;
+    height: auto;
+  }
+
+  .chosenhope-hero__copy {
+    padding: 0 1.5rem;
+  }
+
+  .chosenhope-hero__buttons .btn {
+    flex: 1 1 auto;
+  }
+
+  .chosenhope-hero__verse {
+    padding: 0.85rem;
+    width: clamp(96px, 34vw, 140px);
+  }
+
+  .chosenhope-hero__verse-text {
+    display: none;
+  }
+
+  .chosenhope-hero__features {
+    grid-template-columns: 1fr;
     padding-inline: 1.5rem;
+  }
+
+  .chosenhope-hero__feature:nth-child(-n + 3) {
+    border-bottom: 1px solid rgba(249, 248, 244, 0.12);
   }
 }

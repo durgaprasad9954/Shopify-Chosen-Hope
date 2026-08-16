@@ -12,22 +12,54 @@
     "chosenhope_hero_77JftE": {
       "type": "chosenhope-hero",
       "name": "ChosenHope Hero",
+      "blocks": {
+        "feature_faith": {
+          "type": "feature",
+          "settings": { "icon": "shield", "title": "Faith Inspired", "text": "Rooted in Christ-centered values" }
+        },
+        "feature_quality": {
+          "type": "feature",
+          "settings": { "icon": "leaf", "title": "Quality You Can Trust", "text": "Carefully crafted, built to last" }
+        },
+        "feature_purpose": {
+          "type": "feature",
+          "settings": { "icon": "heart", "title": "Made With Purpose", "text": "Created to uplift and encourage" }
+        },
+        "feature_gifting": {
+          "type": "feature",
+          "settings": { "icon": "gift", "title": "Perfect For Gifting", "text": "Meaningful gifts for every occasion" }
+        }
+      },
+      "block_order": ["feature_faith", "feature_quality", "feature_purpose", "feature_gifting"],
       "settings": {
         "hero_eyebrow": "You Are",
         "hero_heading": "Chosen",
+        "hero_subheading": "Loved. Called. Sent.",
         "hero_subtext": "Faith-inspired jewelry, apparel, home décor, and gifts that remind you of God’s promises every day.",
         "hero_primary_label": "Shop Collection",
         "hero_primary_url": "shopify://collections",
         "hero_secondary_label": "Our Story",
         "hero_secondary_url": "shopify://blogs/news",
         "hero_image": "",
+        "watch_label": "Watch Our Story",
+        "watch_sublabel": "Be inspired. Be reminded.",
+        "watch_url": "",
+        "verse_reference": "Romans 8:28",
+        "verse_text": "All things work together for good to those who love God.",
         "section_background_color": "#f9f8f4",
-        "overlay_color_start": "#171614d1",
-        "overlay_color_mid": "#1716148c",
-        "overlay_color_end": "#c8a24a47",
+        "overlay_color_start": "rgba(15, 13, 11, 0.94)",
+        "overlay_color_mid": "rgba(15, 13, 11, 0.78)",
+        "overlay_color_end": "rgba(15, 13, 11, 0.05)",
         "eyebrow_color": "#c8a24a",
         "heading_color": "#f9f8f4",
+        "subheading_color": "#c8a24a",
         "subtext_color": "#f9f8f4db",
+        "divider_color": "#c8a24a",
+        "verse_text_color": "#f9f8f4",
+        "features_background_color": "#14120f",
+        "features_icon_color": "#c8a24a",
+        "features_title_color": "#f9f8f4",
+        "features_text_color": "#f9f8f4b3",
         "heading_font_size": "",
         "heading_font_weight": "",
         "subtext_font_size": "",

@@ -11,7 +11,14 @@
     --ch-hero-overlay-end: {{ section.settings.overlay_color_end }};
     --ch-hero-eyebrow-color: {{ section.settings.eyebrow_color }};
     --ch-hero-heading-color: {{ section.settings.heading_color }};
+    --ch-hero-subheading-color: {{ section.settings.subheading_color }};
     --ch-hero-subtext-color: {{ section.settings.subtext_color }};
+    --ch-hero-divider-color: {{ section.settings.divider_color }};
+    --ch-hero-verse-color: {{ section.settings.verse_text_color }};
+    --ch-hero-features-bg: {{ section.settings.features_background_color }};
+    --ch-hero-features-icon-color: {{ section.settings.features_icon_color }};
+    --ch-hero-features-title-color: {{ section.settings.features_title_color }};
+    --ch-hero-features-text-color: {{ section.settings.features_text_color }};
     {% if section.settings.heading_font_size != blank %}--ch-hero-heading-size: {{ section.settings.heading_font_size }};{% endif %}
     {% if section.settings.heading_font_weight != blank %}--ch-hero-heading-weight: {{ section.settings.heading_font_weight }};{% endif %}
     {% if section.settings.subtext_font_size != blank %}--ch-hero-subtext-size: {{ section.settings.subtext_font_size }};{% endif %}
@@ -27,51 +34,150 @@
       <div class="chosenhope-hero__image-wrap">
         <img
           class="media-cover"
-          src="{{ 'chosenhope-hero-you-are-chosen.png' | asset_url }}"
+          src="{{ 'chosenhope-hero-empty-tomb.png' | asset_url }}"
           alt="{{ section.settings.hero_heading }}"
           loading="eager"
         >
       </div>
     {% endif %}
 
-    <div class="chosenhope-hero__overlay">
+    <div class="chosenhope-hero__overlay"></div>
+
+    <div class="chosenhope-hero__content">
       <div class="chosenhope-hero__copy">
-        <span class="eyebrow on-dark">{{ section.settings.hero_eyebrow }}</span>
+        <span class="chosenhope-hero__eyebrow">{{ section.settings.hero_eyebrow }}</span>
         <h1 id="chosenhope-hero-heading-{{ section.id }}" class="chosenhope-hero__heading">{{ section.settings.hero_heading }}</h1>
+
+        {% if section.settings.hero_subheading != blank %}
+          <p class="chosenhope-hero__subheading">{{ section.settings.hero_subheading }}</p>
+        {% endif %}
+
+        <div class="chosenhope-hero__divider" aria-hidden="true">
+          <span class="chosenhope-hero__divider-line"></span>
+          <span class="chosenhope-hero__divider-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 3v18M7 8h10" stroke-linecap="round" />
+            </svg>
+          </span>
+          <span class="chosenhope-hero__divider-line"></span>
+        </div>
+
         <p class="chosenhope-hero__subtext">{{ section.settings.hero_subtext }}</p>
+
         <div class="chosenhope-hero__buttons">
           {% if section.settings.hero_primary_label != blank %}
-            <a class="btn btn-gold" href="{{ section.settings.hero_primary_url | default: '#' }}">{{ section.settings.hero_primary_label }}</a>
+            <a class="btn btn-gold" href="{{ section.settings.hero_primary_url | default: '#' }}">
+              {{ section.settings.hero_primary_label }}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
           {% endif %}
           {% if section.settings.hero_secondary_label != blank %}
             <a class="btn btn-outline-light" href="{{ section.settings.hero_secondary_url | default: '#' }}">{{ section.settings.hero_secondary_label }}</a>
           {% endif %}
         </div>
+
+        {% if section.settings.watch_label != blank %}
+          <a class="chosenhope-hero__watch" href="{{ section.settings.watch_url | default: '#' }}">
+            <span class="chosenhope-hero__watch-icon">
+              {{- 'icon-play.svg' | inline_asset_content -}}
+            </span>
+            <span class="chosenhope-hero__watch-copy">
+              <strong>{{ section.settings.watch_label }}</strong>
+              <span>{{ section.settings.watch_sublabel }}</span>
+            </span>
+          </a>
+        {% endif %}
       </div>
     </div>
+
+    {% if section.settings.verse_reference != blank %}
+      <div class="chosenhope-hero__verse">
+        <span class="chosenhope-hero__verse-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 3v18M7 8h10" stroke-linecap="round" />
+          </svg>
+        </span>
+        <span class="chosenhope-hero__verse-ref">{{ section.settings.verse_reference }}</span>
+        <p class="chosenhope-hero__verse-text">{{ section.settings.verse_text }}</p>
+      </div>
+    {% endif %}
   </div>
+
+  {% if section.blocks.size > 0 %}
+    <div class="chosenhope-hero__features">
+      {% for block in section.blocks %}
+        <div class="chosenhope-hero__feature" {{ block.shopify_attributes }}>
+          <span class="chosenhope-hero__feature-icon">
+            {%- case block.settings.icon -%}
+              {%- when 'shield' -%}
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                  <path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z" stroke-linejoin="round" stroke-linecap="round" />
+                </svg>
+              {%- when 'leaf' -%}
+                <svg width="26" height="26" viewBox="0 0 20 20" fill="currentColor">
+                  {%- render 'icon', icon: 'leaf' -%}
+                </svg>
+              {%- when 'heart' -%}
+                <svg width="26" height="26" viewBox="0 0 20 20" fill="currentColor">
+                  {%- render 'icon', icon: 'heart' -%}
+                </svg>
+              {%- when 'gift' -%}
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="8" width="18" height="12" rx="1" />
+                  <path d="M3 12h18" />
+                  <path d="M12 8v12" />
+                  <path d="M12 8c-1.4-3.6-5.6-3.6-5.6-1.2S9 8 12 8z" />
+                  <path d="M12 8c1.4-3.6 5.6-3.6 5.6-1.2S15 8 12 8z" />
+                </svg>
+            {%- endcase -%}
+          </span>
+          <div class="chosenhope-hero__feature-copy">
+            <strong>{{ block.settings.title }}</strong>
+            <span>{{ block.settings.text }}</span>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
 </section>
 
 {% schema %}
 {
   "name": "ChosenHope Hero",
   "settings": [
-    { "type": "text", "id": "hero_eyebrow", "label": "Hero eyebrow", "default": "ChosenHope collection" },
-    { "type": "text", "id": "hero_heading", "label": "Hero heading", "default": "You Are Chosen." },
-    { "type": "textarea", "id": "hero_subtext", "label": "Hero subtext", "default": "Cross necklaces, faith jewelry, canvas art, and apparel — made with quiet quality for a life set apart." },
-    { "type": "text", "id": "hero_primary_label", "label": "Primary button label", "default": "Shop collection" },
+    { "type": "text", "id": "hero_eyebrow", "label": "Eyebrow", "default": "You Are" },
+    { "type": "text", "id": "hero_heading", "label": "Heading", "default": "Chosen" },
+    { "type": "text", "id": "hero_subheading", "label": "Sub-heading", "default": "Loved. Called. Sent." },
+    { "type": "textarea", "id": "hero_subtext", "label": "Subtext", "default": "Faith-inspired jewelry, apparel, home décor, and gifts that remind you of God's promises every day." },
+    { "type": "text", "id": "hero_primary_label", "label": "Primary button label", "default": "Shop Collection" },
     { "type": "url", "id": "hero_primary_url", "label": "Primary button link" },
-    { "type": "text", "id": "hero_secondary_label", "label": "Secondary button label", "default": "Our story" },
+    { "type": "text", "id": "hero_secondary_label", "label": "Secondary button label", "default": "Our Story" },
     { "type": "url", "id": "hero_secondary_url", "label": "Secondary button link" },
-    { "type": "image_picker", "id": "hero_image", "label": "Hero image" },
+    { "type": "image_picker", "id": "hero_image", "label": "Hero background image" },
+    { "type": "header", "content": "Watch our story" },
+    { "type": "text", "id": "watch_label", "label": "Label", "default": "Watch Our Story" },
+    { "type": "text", "id": "watch_sublabel", "label": "Sub-label", "default": "Be inspired. Be reminded." },
+    { "type": "url", "id": "watch_url", "label": "Video link" },
+    { "type": "header", "content": "Verse badge" },
+    { "type": "text", "id": "verse_reference", "label": "Reference", "default": "Romans 8:28" },
+    { "type": "textarea", "id": "verse_text", "label": "Verse text", "default": "All things work together for good to those who love God." },
     { "type": "header", "content": "Colors" },
     { "type": "color", "id": "section_background_color", "label": "Section background", "default": "#f9f8f4" },
-    { "type": "color", "id": "overlay_color_start", "label": "Overlay color (top)", "default": "rgba(23, 22, 20, 0.82)" },
-    { "type": "color", "id": "overlay_color_mid", "label": "Overlay color (middle)", "default": "rgba(23, 22, 20, 0.55)" },
-    { "type": "color", "id": "overlay_color_end", "label": "Overlay color (bottom accent)", "default": "rgba(200, 162, 74, 0.28)" },
+    { "type": "color", "id": "overlay_color_start", "label": "Image overlay (left)", "default": "rgba(15, 13, 11, 0.94)" },
+    { "type": "color", "id": "overlay_color_mid", "label": "Image overlay (middle)", "default": "rgba(15, 13, 11, 0.78)" },
+    { "type": "color", "id": "overlay_color_end", "label": "Image overlay (right)", "default": "rgba(15, 13, 11, 0.05)" },
     { "type": "color", "id": "eyebrow_color", "label": "Eyebrow text color", "default": "#c8a24a" },
     { "type": "color", "id": "heading_color", "label": "Heading text color", "default": "#f9f8f4" },
+    { "type": "color", "id": "subheading_color", "label": "Sub-heading color", "default": "#c8a24a" },
     { "type": "color", "id": "subtext_color", "label": "Subtext color", "default": "rgba(249, 248, 244, 0.86)" },
+    { "type": "color", "id": "divider_color", "label": "Divider color", "default": "#c8a24a" },
+    { "type": "color", "id": "verse_text_color", "label": "Verse badge text color", "default": "#f9f8f4" },
+    { "type": "color", "id": "features_background_color", "label": "Features strip background", "default": "#14120f" },
+    { "type": "color", "id": "features_icon_color", "label": "Features icon color", "default": "#c8a24a" },
+    { "type": "color", "id": "features_title_color", "label": "Features title color", "default": "#f9f8f4" },
+    { "type": "color", "id": "features_text_color", "label": "Features text color", "default": "rgba(249, 248, 244, 0.7)" },
     { "type": "header", "content": "Typography" },
     {
       "type": "select",
@@ -127,8 +233,38 @@
       "default": ""
     }
   ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "shield", "label": "Shield" },
+            { "value": "leaf", "label": "Leaf" },
+            { "value": "heart", "label": "Heart" },
+            { "value": "gift", "label": "Gift" }
+          ],
+          "default": "shield"
+        },
+        { "type": "text", "id": "title", "label": "Title", "default": "Faith Inspired" },
+        { "type": "text", "id": "text", "label": "Text", "default": "Rooted in Christ-centered values" }
+      ]
+    }
+  ],
   "presets": [
-    { "name": "ChosenHope Hero" }
+    {
+      "name": "ChosenHope Hero",
+      "blocks": [
+        { "type": "feature", "settings": { "icon": "shield", "title": "Faith Inspired", "text": "Rooted in Christ-centered values" } },
+        { "type": "feature", "settings": { "icon": "leaf", "title": "Quality You Can Trust", "text": "Carefully crafted, built to last" } },
+        { "type": "feature", "settings": { "icon": "heart", "title": "Made With Purpose", "text": "Created to uplift and encourage" } },
+        { "type": "feature", "settings": { "icon": "gift", "title": "Perfect For Gifting", "text": "Meaningful gifts for every occasion" } }
+      ]
+    }
   ]
 }
 {% endschema %}
