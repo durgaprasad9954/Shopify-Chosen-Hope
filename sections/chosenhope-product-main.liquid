@@ -90,6 +90,23 @@
             {% endfor %}
           </div>
         {% endif %}
+
+        {% if gallery_images.size > 0 %}
+          <div class="pdp-mobile-gallery">
+            {% for image in gallery_images %}
+              {% liquid
+                if forloop.first
+                  assign slide_loading = 'eager'
+                else
+                  assign slide_loading = 'lazy'
+                endif
+              %}
+              <div class="pdp-mobile-slide">
+                {{ image | image_url: width: 1200 | image_tag: widths: '600,900,1200', alt: image.alt, loading: slide_loading }}
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
       </div>
 
       <div class="pdp-info">

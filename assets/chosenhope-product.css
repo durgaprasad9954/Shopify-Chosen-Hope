@@ -64,6 +64,39 @@
 .chosenhope-home-scope .pdp-thumb img,
 .chosenhope-home-scope .pdp-thumb .fallback-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 
+/* Mobile-only swipeable gallery (Flipkart-style: no thumbnail strip, swipe the
+   main image itself to move between photos). Hidden on desktop/tablet, where
+   the click-to-zoom main image + thumbnail strip above stay unchanged. */
+.chosenhope-home-scope .pdp-mobile-gallery { display: none; }
+@media (max-width: 640px) {
+  .chosenhope-home-scope .pdp-main-image,
+  .chosenhope-home-scope .pdp-thumbs {
+    display: none;
+  }
+  .chosenhope-home-scope .pdp-mobile-gallery {
+    display: flex;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--ch-radius-lg);
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .chosenhope-home-scope .pdp-mobile-slide {
+    position: relative;
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+  .chosenhope-home-scope .pdp-mobile-slide img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
 /* ---------- Info panel ---------- */
 .chosenhope-home-scope .pdp-heading .eyebrow { margin-bottom: 0.75rem; }
 .chosenhope-home-scope .pdp-title { font-size: clamp(2.5rem, 1.7rem + 3vw, 4rem); font-style: italic; }
@@ -164,6 +197,12 @@
 .chosenhope-home-scope .carousel-wrap { position: relative; }
 .chosenhope-home-scope .carousel-track { display: flex; gap: 1.5rem; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 6px; }
 .chosenhope-home-scope .carousel-track .product-card { min-width: 250px; scroll-snap-align: start; flex: 0 0 auto; }
+@media (max-width: 640px) {
+  /* Cards were sized for desktop (250px), so only ~1.3 fit on a phone screen.
+     Shrink to show 2 full cards with a peek of the third as a scroll hint. */
+  .chosenhope-home-scope .carousel-track { gap: 0.75rem; }
+  .chosenhope-home-scope .carousel-track .product-card { flex: 0 0 45%; min-width: 0; }
+}
 
 /* ---------- Sticky add-to-cart bar ---------- */
 .chosenhope-home-scope .sticky-atc {
@@ -171,6 +210,9 @@
   box-shadow: 0 -10px 28px rgba(23, 22, 20, 0.1); padding: 12px 2.25rem; z-index: 150;
   transform: translateY(110%); transition: transform 0.3s var(--ch-ease); display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
 }
+/* JS toggles this class (via IntersectionObserver on the main add-to-cart
+   row) to reveal the bar — without this rule the bar never slides up. */
+.chosenhope-home-scope .sticky-atc.show { transform: translateY(0); }
 .chosenhope-home-scope .sticky-atc-info { display: flex; align-items: center; gap: 12px; min-width: 0; }
 .chosenhope-home-scope .sticky-atc-thumb { width: 56px; height: 56px; border-radius: var(--ch-radius-sm); flex-shrink: 0; overflow: hidden; position: relative; justify-content:left;}
 .chosenhope-home-scope .sticky-atc-thumb img,
@@ -178,7 +220,20 @@
 .chosenhope-home-scope .sticky-atc-info h4 { font-size: 1rem; font-weight: 600; color: var(--ch-black); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-family: var(--ch-font-body); }
 .chosenhope-home-scope .sticky-atc-info .product-price { font-size: 1.2rem;  justify-content:left;}
 .chosenhope-home-scope .sticky-atc-actions { display: flex; align-items:center; gap: 12px; flex-shrink: 0; justify-content:right; }
-@media (max-width: 640px) { .chosenhope-home-scope .sticky-atc-info h4 { max-width: 120px; } }
+.chosenhope-home-scope .sticky-buy-now { display: none; }
+@media (max-width: 640px) {
+  .chosenhope-home-scope .sticky-atc-info h4 { max-width: 120px; }
+
+  /* On phone the bar is too narrow for thumb + title + price + qty-stepper +
+     two buttons, so drop everything except the two actions and let Add to
+     Cart / Buy Now fill the bar side by side — the primary mobile CTA. */
+  .chosenhope-home-scope .sticky-atc { padding: 10px 1rem; gap: 0.75rem; }
+  .chosenhope-home-scope .sticky-atc-info,
+  .chosenhope-home-scope .sticky-atc-actions .qty-stepper { display: none; }
+  .chosenhope-home-scope .sticky-atc-actions { flex: 1; width: 100%; }
+  .chosenhope-home-scope .sticky-atc-actions .btn { flex: 1; }
+  .chosenhope-home-scope .sticky-buy-now { display: inline-flex; }
+}
 
 /* ---------- Lightbox ---------- */
 .chosenhope-home-scope .lightbox-backdrop {
